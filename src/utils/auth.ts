@@ -11,7 +11,7 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/signin",
   },
   adapter: PrismaAdapter(prisma) as Adapter,
-  secret: process.env.SECRET,
+  secret: process.env.SECRET, // openssl rand -hex 32
   session: {
     strategy: "jwt",
   },
@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
       credentials: {
         email: { label: "Email", type: "text", placeholder: "John Doe" },
         password: { label: "Password", type: "password" },
-        username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
+       // username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
       },
 
       async authorize(credentials) {
