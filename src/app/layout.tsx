@@ -11,6 +11,7 @@ import "../styles/prism-vsc-dark-plus.css";
 import ToasterContext from "./api/contex/ToasetContex";
 import React, { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
+import {SessionProvider} from "next-auth/react";
 
 export default function RootLayout({
   children,
@@ -32,22 +33,24 @@ export default function RootLayout({
       <head ><title>Hello</title></head>
 
       <body>
-        {loading ? (
-          <PreLoader />
-        ) : (
+          <SessionProvider>
             <ThemeProvider
               attribute="class"
               enableSystem={false}
-              defaultTheme="light"
-            >
+              defaultTheme="light">
               <ToasterContext />
               <Header />
               {children}
               <Footer />
               <ScrollToTop />
             </ThemeProvider>
-        )}
+          </SessionProvider>
       </body>
     </html>
   );
 }
+/*
+{loading ? (
+          <PreLoader />
+        ) : (
+ */
