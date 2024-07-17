@@ -21,7 +21,7 @@ export default function RootLayout({
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
-
+  console.log("HELLO AAAAHs")
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
       {/*
