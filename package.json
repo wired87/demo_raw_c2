@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx prisma generate --schema demo_raw_c2/prisma/schema.prisma && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
