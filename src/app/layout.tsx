@@ -3,7 +3,8 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-import { SessionProvider } from "next-auth/react";
+// import { SessionProvider } from "next-auth/react";          <SessionProvider>
+
 import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
@@ -34,7 +35,6 @@ export default function RootLayout({
         {loading ? (
           <PreLoader />
         ) : (
-          <SessionProvider>
             <ThemeProvider
               attribute="class"
               enableSystem={false}
@@ -46,7 +46,6 @@ export default function RootLayout({
               <Footer />
               <ScrollToTop />
             </ThemeProvider>
-          </SessionProvider>
         )}
       </body>
     </html>
