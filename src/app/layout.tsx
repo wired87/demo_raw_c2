@@ -8,7 +8,7 @@ import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
 import ToasterContext from "./api/contex/ToasetContex";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head />
+      <head ><title>Hello</title></head>
 
       <body>
         {loading ? (
