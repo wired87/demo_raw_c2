@@ -1,10 +1,6 @@
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import { authOptions } from "@/utils/auth";
 
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-/*
-GITHUB_CLIENT_SECRET=""
-GITHUB_CLIENT_ID=""
- */
