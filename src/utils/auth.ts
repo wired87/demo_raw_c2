@@ -1,9 +1,7 @@
 import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "./prismaDB";
 import type { Adapter } from "next-auth/adapters";
@@ -22,7 +20,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "Jhondoe" },
+        email: { label: "Email", type: "text", placeholder: "John Doe" },
         password: { label: "Password", type: "password" },
         username: { label: "Username", type: "text", placeholder: "Jhon Doe" },
       },
@@ -61,17 +59,17 @@ export const authOptions: NextAuthOptions = {
         return user;
       },
     }),
-
+    /*
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-
+    */
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-
+    /*
     EmailProvider({
       server: {
         host: process.env.EMAIL_SERVER_HOST,
@@ -82,7 +80,7 @@ export const authOptions: NextAuthOptions = {
         },
       },
       from: process.env.EMAIL_FROM,
-    }),
+    }),*/
   ],
 
   callbacks: {
