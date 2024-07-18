@@ -1,30 +1,20 @@
 "use client";
-import SectionTitle from "../Common/SectionTitle";
-import PricingBox from "./PricingBox";
-import { pricingData } from "@/stripe/pricingData";
+import ProductBox, {pBox} from "@/components/Pricing/PricingBox";
 
 const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="relative z-20 overflow-hidden bg-white pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]"
+      className="relative z-20 overflow-hidden bg-white pb-12  dark:bg-dark lg:pb-[90px]"
     >
-      <div className="container">
-        <div className="mb-[60px]">
-          <SectionTitle
-            subtitle="Pricing Table"
-            title="Our Pricing Plan"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
-            center
-          />
-        </div>
+
 
         <div className="-mx-4 flex flex-wrap justify-center">
-          {pricingData.map((product, i) => (
-            <PricingBox key={i} product={product} />
+          {pBox.map((product, i) => (
+            <ProductBox key={i} product={product} key2={i+1}/>
           ))}     
         </div>
-      </div>
+
     </section>
   );
 };

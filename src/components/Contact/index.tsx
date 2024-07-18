@@ -1,4 +1,33 @@
-const Contact = () => {
+"use client";
+import React, {useEffect, useState} from "react";
+
+interface ContactCustom {
+  heading?: string;
+
+}
+
+const Contact: React.FC<ContactCustom> = (
+  {
+    heading
+  }
+) => {
+  const [text, setText] = useState<ContactCustom>();
+
+  const updateContactText = () => {
+    let obj: ContactCustom = {};
+    if (heading) {
+      obj.heading = heading
+    }else {
+      obj.heading = "Let's talk about your problem."
+    }
+
+    setText(obj)
+  }
+
+  useEffect(() => {
+    updateContactText();
+  }, []);
+
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
@@ -12,7 +41,7 @@ const Contact = () => {
                   CONTACT US
                 </span>
                 <h2 className="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
-                  Let&#39;s talk about your problem.
+                  {text?.heading}
                 </h2>
               </div>
               <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
@@ -33,7 +62,7 @@ const Contact = () => {
                       Our Location
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      401 Broadway, 24th Floor, Orchard Cloud View, London
+                      Klingestr. 22 01159 Dresden, Germany
                     </p>
                   </div>
                 </div>
@@ -53,11 +82,9 @@ const Contact = () => {
                       How Can We Help?
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@yourdomain.com
+                      info@botworld.cloud
                     </p>
-                    <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                      contact@yourdomain.com
-                    </p>
+
                   </div>
                 </div>
               </div>
@@ -83,7 +110,7 @@ const Contact = () => {
                   <input
                     type="text"
                     name="fullName"
-                    placeholder="Adam Gelius"
+                    placeholder="Olaf"
                     className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
                   />
                 </div>
@@ -111,7 +138,7 @@ const Contact = () => {
                   <input
                     type="text"
                     name="phone"
-                    placeholder="+885 1254 5211 552"
+                    placeholder="+49 1254 5211 552"
                     className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
                   />
                 </div>

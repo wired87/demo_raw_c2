@@ -9,48 +9,62 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "About",
+    title: "Eye",
     path: "/about",
     newTab: false,
   },
   {
     id: 3,
-    title: "Pricing",
+    title: "Body",
     path: "/pricing",
     newTab: false,
   },
   {
     id: 5,
-    title: "Contact",
-    path: "/contact",
-    newTab: false,
-  },
-  {
-    id: 5,
-    title: "Blog",
+    title: "Extensions",
     path: "/blogs",
     newTab: false,
+    submenu: [
+      {
+        id: 99,
+        title: "Fingers",
+        path: "/about",
+        newTab: false,
+      },
+      {
+        id: 5555,
+        title: "Cyber arm extensions",
+        path: "/pricing",
+        newTab: false,
+      },
+      {
+        id: 11111111111,
+        title: "Cyber legs extensions",
+        path: "/contact",
+        newTab: false,
+      },
+    ]
   },
   {
     id: 6,
-    title: "Pages",
+    title: "Mind",
     newTab: false,
     submenu: [
       {
         id: 61,
-        title: "About Page",
+        title: "Updates",
         path: "/about",
         newTab: false,
       },
       {
         id: 62,
-        title: "Pricing Page",
+        title: "Kits",
         path: "/pricing",
         newTab: false,
       },
       {
         id: 63,
-        title: "Contact Page",
+        title: "Hardware",
         path: "/contact",
         newTab: false,
       },

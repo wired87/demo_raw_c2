@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import menuData from "./menuData";
+import Search from "@/components/components/layout/navbar/search";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -258,6 +259,7 @@ const Header = () => {
                   </ul>
                 </nav>
               </div>
+              <Search />
               <div className="hidden items-center justify-end pr-16 sm:flex lg:pr-0">
                 {/* theme toggler */}
                 <button

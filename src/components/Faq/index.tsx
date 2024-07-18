@@ -1,10 +1,61 @@
+"use client"
 import SectionTitle from "../Common/SectionTitle";
 import SingleFaq from "./SingleFaq";
+import React, {useEffect, useState} from "react";
+import {faqContent, faqContent2} from "@/components/Faq/data/faq";
+import {DataTypes} from "@/components/Faq/data/dataInterface";
 
-const Faq = () => {
-  return (
-    <section className="relative z-20 overflow-hidden bg-white pb-8 pt-20 dark:bg-dark lg:pb-[50px] lg:pt-[120px]">
-      <div className="container">
+interface FaqConfig {
+  data: DataTypes[];
+  data2: DataTypes[];
+  faq?: boolean | null;
+}
+
+
+const Faq: React.FC<FaqConfig> = ({data, data2, faq}) => {
+  const [content, setContent] = useState<DataTypes[]>([]);
+  const [content2, setContent2] = useState<DataTypes[]>([]);
+
+  const getContent = () => {
+    return content.map((item, i) => {
+      return(
+        <SingleFaq
+          key={i}
+          question={item.text}
+          answer={item.paragraph}
+          icon={item.icon}
+        />
+      )
+    })
+  }
+
+  const getContent2 = () => {
+    return content2.map((item, i) => {
+      return(
+        <SingleFaq
+          key={i}
+          question={item.text}
+          answer={item.paragraph}
+          icon={item.icon}
+        />
+      )
+    })
+  }
+
+
+  useEffect(() => {
+    if (data && data2) {
+      setContent(data);
+      setContent2(data2);
+    }else {
+      setContent(faqContent)
+      setContent2(faqContent2)
+    }
+  }, []);
+
+  const getHeading = () => {
+    if (faq) {
+      return (
         <SectionTitle
           subtitle="FAQ"
           title="Any Questions? Answered"
@@ -12,36 +63,29 @@ const Faq = () => {
           width="640px"
           center
         />
+      )
+    }
+  }
 
+  return (
+    <section className="relative z-20 overflow-hidden bg-white pb-8 pt-20 dark:bg-dark lg:pb-[50px] lg:pt-[120px]">
+      <div className="container">
+
+        {
+          getHeading()
+        }
         <div className="-mx-4 mt-[60px] flex flex-wrap lg:mt-20">
           <div className="w-full px-4 lg:w-1/2">
-            <SingleFaq
-              question="How to use TailGrids?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
-            <SingleFaq
-              question="How to download icons from LineIcons?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
-            <SingleFaq
-              question="Is GrayGrids part of UIdeck?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
+            {
+              getContent()
+            }
+
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
-            <SingleFaq
-              question="Can I use this template for commercial project?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
-            <SingleFaq
-              question="Do you have plan to releasing Play Pro?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
-            <SingleFaq
-              question="Where and how to host this template?"
-              answer="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
-            />
+            {
+              getContent2()
+            }
           </div>
         </div>
       </div>
