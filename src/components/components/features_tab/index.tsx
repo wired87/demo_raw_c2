@@ -127,14 +127,15 @@ const FeaturesTab = () => {
             viewport={{ once: true }}
             className="animate_top mx-auto max-w-c-1154"
           >
-            {featuresTabData.map((feature, key:number) => (
-              <div
-                className={feature.id === currentTab ? "block" : "hidden"}
-                key={key}
-              >
-                <FeaturesTabItem featureTab={feature} />
-              </div>
-            ))}
+
+            <div
+              className={"block" || "hidden"}
+              key={1}
+            >
+              {/*<FeaturesTabItem featureTab={feature}/>*/}
+
+            </div>
+
           </motion.div>
           {/* <!-- Tab Content End --> */}
         </div>
