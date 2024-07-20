@@ -18,7 +18,7 @@ export const pBox = [
     category: "Arm",
     helpText: "Prothesis, extensions and improvements for biological arms",
     helpTextTwo: "Get the ultimative grip!",
-    img: img,
+    img: "../../../public/images/product/arm/img.png",
     icon: <ReactSVG src={term} />,
 
     // software: turbo mode, updates for small info display,
@@ -26,13 +26,13 @@ export const pBox = [
     category: "Brain", // also sub catgory for specifft "part-of-the-brain-bci's"
     helpText: "Explore BCI's, utils, chips and software",
     helpTextTwo: "of our partners",
-    img: brain_prev,
+    img: "../../../public/images/product/brain_prev.jpg",
     icon: (<FaBrain size={100} color={"white"} />),
   },{
     category: "Eye",
     helpText: "Explore invasive and non invasive improvements for your eyes",
     helpTextTwo: "of our partners",
-    img: vision_prev, // todo
+    img: "../../../public/images/product/vision_prev.jpg", // todo
     icon: (<MdOutlineRemoveRedEye size={100} color={"white"} />),
     // software: filter for eye, infra rot new iris color
   },{
@@ -49,7 +49,7 @@ export const pBox = [
     category: "Leg",
     helpText: "",
     helpTextTwo: "of our partners",
-    img: leg_prev, // todo
+    img: "../../../public/images/product/leg_prev.png", // todo
     // software smart watch, apps for the display (navigator,...)
   },
 ]
