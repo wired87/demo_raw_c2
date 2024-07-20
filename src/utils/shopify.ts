@@ -1,8 +1,8 @@
-import { default as fetch } from 'node-fetch';
+/*import { default as fetch } from 'node-fetch';
 
 export const postToShopify = async ( query: string, variables: object = {} ) => {
   try {
-    const result = await fetch(process.env.SHOPIFY_API_ENDPOINT, {
+    const result = await fetch(process.env.SHOPIFY_API_ENDPOINT!, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,3 +24,5 @@ export const postToShopify = async ( query: string, variables: object = {} ) => 
     console.log(error);
   }
 };
+
+ */
