@@ -16,7 +16,7 @@ const FunFact = (product: any) => {
     if (product.product) {
       if (product.product.title.includes("Tabea")) {
         return {
-          main: main,
+          main:  "../../../public/images/product/arm/main.png",
           previewSection: [
             product.product.featuredImage?.url ? product.product.featuredImage.url : "",
           ],
@@ -26,7 +26,7 @@ const FunFact = (product: any) => {
         console.log( "hhhhhhhhhhhhhhhhhhhhhh")
 
         return {
-          main: img_1,
+          main: "../../../public/images/product/emotiv/insight/img_1.png",
           previewSection: [
             product.product.featuredImage?.url ? product.product.featuredImage.url : "",
           ],
