@@ -24,5 +24,4 @@ export const postToShopify = async ( query: string, variables: object = {} ) => 
     console.log(error);
   }
 };
-
  */
