@@ -24,7 +24,7 @@ export const ProductSlider: React.FC<PSliderT> = (
     return(
       <Carousel show={3.5} slide={2} transition={0.5}>
         {products.map((item: any, i: number) => {
-          <SingleBlog  productItem={item} key={i}/>
+          <SingleBlog productItem={item} key={i}/>
         })}
       </Carousel>
     )
