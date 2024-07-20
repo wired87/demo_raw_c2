@@ -37,7 +37,7 @@ const About: React.FC<AboutTypes> = ({title, mainContent, subContent, route}) =>
               </div>
             </div>
 
-            <AboutVisualContent route={route}/>
+            <AboutVisualContent />
           </div>
         </div>
       </div>
