@@ -18,7 +18,7 @@ export const pBox = [
     category: "Arm",
     helpText: "Prothesis, extensions and improvements for biological arms",
     helpTextTwo: "Get the ultimative grip!",
-    img: img,
+    img: "../../../public/images/product/arm/img.png",
     icon: <ReactSVG src={term} />,
 
     // software: turbo mode, updates for small info display,
@@ -26,7 +26,7 @@ export const pBox = [
     category: "Brain", // also sub catgory for specifft "part-of-the-brain-bci's"
     helpText: "Explore BCI's, utils, chips and software",
     helpTextTwo: "of our partners",
-    img: brain_prev,
+    img: "../../../public/images/product/brain_prev.jpg",
     icon: (<FaBrain size={100} color={"white"} />),
   },{
     category: "Eye",
