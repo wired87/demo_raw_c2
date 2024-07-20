@@ -1,3 +1,85 @@
+
+import bcrypt from "bcrypt";
+import { NextAuthOptions } from "next-auth";
+import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { prisma } from "./prismaDB";
+import type { Adapter } from "next-auth/adapters";
+
+export const authOptions: NextAuthOptions = {
+  pages: {
+    signIn: "/auth/signin",
+  },
+  adapter: PrismaAdapter(prisma) as Adapter,
+  secret: process.env.SECRET, // Ensure this is set in your environment variables
+  session: {
+    strategy: "jwt",
+  },
+  providers: [
+    CredentialsProvider({
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "text", placeholder: "John Doe" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        // Check if email and password are provided
+        if (!credentials?.email || !credentials?.password) {
+          throw new Error("Please enter an email and password");
+        }
+
+        // Find the user by email
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
+
+        // If user is not found or password is missing
+        if (!user || !user.password) {
+          throw new Error("Invalid email or password");
+        }
+
+        // Check if the password matches
+        const passwordMatch = await bcrypt.compare(credentials.password, user.password);
+        if (!passwordMatch) {
+          throw new Error("Incorrect password");
+        }
+
+        return user;
+      },
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+  ],
+  callbacks: {
+    jwt: async ({ token, user }) => {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        return {
+          ...session,
+          user: {
+            ...session.user,
+            id: token?.id,
+          },
+        };
+      }
+      return session;
+    },
+  },
+
+};
+
+
+
+/*
+
 import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -64,12 +146,12 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
-    */
+
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
-    /*
+
     EmailProvider({
       server: {
         host: process.env.EMAIL_SERVER_HOST,
@@ -80,7 +162,7 @@ export const authOptions: NextAuthOptions = {
         },
       },
       from: process.env.EMAIL_FROM,
-    }),*/
+    }),
   ],
 
   callbacks: {
@@ -113,3 +195,4 @@ export const authOptions: NextAuthOptions = {
 
   //v process.env.NODE_ENV === "developement",
 };
+*/
