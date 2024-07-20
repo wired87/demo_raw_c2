@@ -111,6 +111,8 @@ export default async function ProductPage({ params }: { params: { handle: string
       <SubContent
         name={product.title}
       />
+
+
     </div>
   );
 }

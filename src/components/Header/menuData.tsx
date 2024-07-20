@@ -1,28 +1,64 @@
 import { Menu } from "@/types/menu";
 
 const menuData: Menu[] = [
-  {
-    id: 1,
-    title: "Home",
-    path: "/",
-    newTab: false,
-  },
+
   {
     id: 2,
-    title: "Eye",
-    path: "/about",
+    title: "Head",
     newTab: false,
+    submenu: [
+      {
+        id: 99,
+        title: "BCI's",
+        path: "/about",
+        newTab: false,
+      },
+      {
+        id: 5555,
+        title: "Eye",
+        path: "/pricing",
+        newTab: false,
+      },
+      {
+        id: 61,
+        title: "Updates",
+        path: "/about",
+        newTab: false,
+      },
+      {
+        id: 62,
+        title: "Kits",
+        path: "/pricing",
+        newTab: false,
+      },
+    ]
   },
   {
     id: 3,
     title: "Body",
-    path: "/pricing",
     newTab: false,
+    submenu: [
+      {
+        id: 559,
+        title: "Arm",
+        path: "/contact",
+        newTab: false,
+      },{
+        id: 666,
+        title: "Leg",
+        path: "/contact",
+        newTab: false,
+      },{
+        id: 999,
+        title: "Other",
+        path: "/contact",
+        newTab: false,
+      },
+    ]
   },
   {
     id: 5,
     title: "Extensions",
-    path: "/blogs",
     newTab: false,
     submenu: [
       {
@@ -47,49 +83,13 @@ const menuData: Menu[] = [
   },
   {
     id: 6,
-    title: "Mind",
+    title: "Enterprise",
     newTab: false,
     submenu: [
       {
-        id: 61,
-        title: "Updates",
-        path: "/about",
-        newTab: false,
-      },
-      {
-        id: 62,
-        title: "Kits",
-        path: "/pricing",
-        newTab: false,
-      },
-      {
         id: 63,
-        title: "Hardware",
+        title: "Cooperation",
         path: "/contact",
-        newTab: false,
-      },
-      {
-        id: 64,
-        title: "Blog Grid Page",
-        path: "/blogs",
-        newTab: false,
-      },
-      {
-        id: 66,
-        title: "Sign Up Page",
-        path: "/signup",
-        newTab: false,
-      },
-      {
-        id: 67,
-        title: "Sign In Page",
-        path: "/signin",
-        newTab: false,
-      },
-      {
-        id: 68,
-        title: "Error Page",
-        path: "/error",
         newTab: false,
       },
     ],

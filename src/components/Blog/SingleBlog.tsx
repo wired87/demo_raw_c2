@@ -1,10 +1,19 @@
-import { Blog } from "@/types/blog";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import {Blog} from "@/types/blog";
 
-const SingleBlog = ({ blog }: { blog: Blog }) => {
-  const { title, coverImage, excerpt, date, slug } = blog;
+interface SingleproductT {
+  productItem: Blog
+}
+
+const SingleBlog: React.FC<SingleproductT> = (
+  {
+    productItem
+  }
+) => {
+  const { title, coverImage, excerpt, date, slug } = productItem;
 
   return (
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">

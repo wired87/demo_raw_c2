@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from "react";
+import React from "react";
 
 interface ContactCustom {
   heading?: string;
@@ -11,25 +11,10 @@ const Contact: React.FC<ContactCustom> = (
     heading
   }
 ) => {
-  const [text, setText] = useState<ContactCustom>();
 
-  const updateContactText = () => {
-    let obj: ContactCustom = {};
-    if (heading) {
-      obj.heading = heading
-    }else {
-      obj.heading = "Let's talk about your problem."
-    }
-
-    setText(obj)
-  }
-
-  useEffect(() => {
-    updateContactText();
-  }, []);
 
   return (
-    <section id="contact" className="relative py-20 md:py-[120px]">
+    <section id="contact" className="relative py-20 md:py-[120px] w-full h-[700px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
       <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
       <div className="container px-4">
@@ -40,8 +25,8 @@ const Contact: React.FC<ContactCustom> = (
                 <span className="mb-6 block text-base font-medium text-dark dark:text-white">
                   CONTACT US
                 </span>
-                <h2 className="max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
-                  {text?.heading}
+                <h2 className="max-w-[460px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
+                  {heading}
                 </h2>
               </div>
               <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
