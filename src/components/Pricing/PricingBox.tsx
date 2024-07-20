@@ -67,7 +67,7 @@ interface MasItemT {
 
 const ProductBox: React.FC<MasItemT> = ({ product, key2 }) => {
   // POST request
-  const handleSubscription = async (e: any) => {
+  const handleSubscription = async (e: any): Promise<any> => {
     e.preventDefault();
     const { data } = await axios.post(
       "/api/payment",
