@@ -11,7 +11,20 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
         pathname: '/s/files/**'
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.squarespace-cdn.com',
+        pathname: '/**' // Adjust the path if needed based on your image URLs
+      },{
+        protocol: 'https',
+        hostname: 'th.bing.com',
+        pathname: '/**' // Adjust the path if needed based on your image URLs
+      },{
+        protocol: 'https',
+        hostname: 'twin-cities.umn.edu',
+        pathname: '/**' // Adjust the path if needed based on your image URLs
+      },
     ]
   },
   async redirects() {

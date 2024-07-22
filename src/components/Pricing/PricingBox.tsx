@@ -18,7 +18,7 @@ export const pBox = [
     category: "Arm",
     helpText: "Prothesis, extensions and improvements for biological arms",
     helpTextTwo: "Get the ultimative grip!",
-    img: "../../../public/images/product/arm/img.png",
+    img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/1630548770756-UFVPG5VTVTL0H4TETT80/cropToughpic.png?format=1500w",
     icon: <ReactSVG src={term} />,
 
     // software: turbo mode, updates for small info display,
@@ -26,17 +26,17 @@ export const pBox = [
     category: "Brain", // also sub catgory for specifft "part-of-the-brain-bci's"
     helpText: "Explore BCI's, utils, chips and software",
     helpTextTwo: "of our partners",
-    img: "../../../public/images/product/brain_prev.jpg",
+    img: "https://th.bing.com/th/id/R.dad2b43d6b03f4b9b124861812a496ca?rik=wG5jCrI217pdWg&pid=ImgRaw&r=0",
     icon: (<FaBrain size={100} color={"white"} />),
   },{
     category: "Eye",
     helpText: "Explore invasive and non invasive improvements for your eyes",
     helpTextTwo: "of our partners",
-    img: "/../../../public/images/product/vision_prev.jpg", // todo
+    img: "https://twin-cities.umn.edu/sites/twin-cities.umn.edu/files/styles/desktop/public/media/bionic-eye.jpg?itok=wfrDdCur", // todo
     icon: (<MdOutlineRemoveRedEye size={100} color={"white"} />),
     // software: filter for eye, infra rot new iris color
   },{
-    category: "Extensions",
+    category: "Attachments",
     helpText: "Finger -, arm - or leg attachment's,  ",
     helpTextTwo: "of our partners",
     icon: (<GiGearStickPattern size={100} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
