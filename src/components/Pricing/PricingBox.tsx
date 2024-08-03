@@ -12,13 +12,17 @@ import { FaBrain } from "react-icons/fa6";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import ReactSVG from "react-inlinesvg";
 import term from "../../../public/icons/term.svg"
+import { useRouter } from 'next/navigation';
+import Link from "next/link";
 
+// todo alle fragen ob bilder verwnden!
 export const pBox = [
   {
     category: "Arm",
     helpText: "Prothesis, extensions and improvements for biological arms",
     helpTextTwo: "Get the ultimative grip!",
-    img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/1630548770756-UFVPG5VTVTL0H4TETT80/cropToughpic.png?format=1500w",
+    img: "https://www.jhuapl.edu/sites/default/files/2023-01/ourwork_prosthetics.jpg", //"https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/1630548770756-UFVPG5VTVTL0H4TETT80/cropToughpic.png?format=1500w",
+    href: "/arm",
     icon: <ReactSVG src={term} />,
 
     // software: turbo mode, updates for small info display,
@@ -39,23 +43,22 @@ export const pBox = [
     category: "Attachments",
     helpText: "Finger -, arm - or leg attachment's,  ",
     helpTextTwo: "of our partners",
+    img: "https://static.wixstatic.com/media/cd865f_af463112a89d496c8784601b9ff2c92a~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg0",
     icon: (<GiGearStickPattern size={100} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
   },{
     category: "Updates & Software",
     helpText: "Get updates, sell or get new software",
     helpTextTwo: "of our partners",
+    img: "https://www.procemex.com/wp-content/uploads/2023/03/AdobeStock_245636933.jpeg",
     icon: (<FaTools size={100} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
   },{
     category: "Leg",
     helpText: "",
     helpTextTwo: "of our partners",
-    img: "/../../../public/images/product/leg_prev.png", // todo
+    img: "https://robotics.umich.edu/wp-content/uploads/2020/07/Leg-scaled.jpg", // todo
     // software smart watch, apps for the display (navigator,...)
   },
 ]
-
-
-
 
 
 interface MasItemT {
@@ -94,29 +97,33 @@ const ProductBox: React.FC<MasItemT> = ({ product, key2 }) => {
     }
   }
 
+  const router = useRouter();
 
+  const handleClick = () => {
+    router.push(product.href || "/");
+  };
 
   const content = () => {
     if (product.img) {
       return(
-        <Image quality={95}  width={200} height={700} src={product.img} alt={"brain_prev.png"} priority={false}
-               className={"w-full cursor-pointer absolute top-0 left-0 h-full object-cover opacity-20"} />
+        <Image quality={95} onClick={handleClick} width={200} height={700} src={product.img} alt={"brain_prev.png"} priority={false}
+               className={"w-full blur-sm cursor-pointer absolute top-0 left-0 h-full object-cover opacity-20"} />
       )
     }
   }
 
   return (
 
-    <div className="w-full px-4 md:w-1/2 lg:w-1/3 bg-transparent ">
+    <Link className="w-full px-4 md:w-1/2 lg:w-1/3 bg-transparent " href={product.href || "/"}>
       {
         headingSection()
       }
       <div
         className={"mt-6 relative pointer cursor-pointer min-h-[700px] z-10 mb-10  overflow-hidden rounded-xl bg-white px-8 py-10 " +
-          "shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14 "} //  + flexShrink()
+          "shadow-[0px_0px_40px_0px_rgba(0,0,0,0.08)] dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14 "}
         data-wow-delay=".1s">
 
-        <div  className={"flex top-0 left-0 absolute justify-center items-center w-full h-full bg-gradient-to-bl from-gray-600 to-blue-700"}>
+        <div  className={"flex top-0 left-0 absolute justify-center items-center w-full h-full bg-gradient-to-bl from-gray-600 to-blue-400"}>
           {product.icon}
           {
             content()
@@ -130,7 +137,7 @@ const ProductBox: React.FC<MasItemT> = ({ product, key2 }) => {
 
         </h2>
       </div>
-    </div>
+    </Link>
 
   );
 };

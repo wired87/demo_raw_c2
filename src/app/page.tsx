@@ -50,9 +50,18 @@ export default async function Home() {
 
   try {
     products = await getProducts(graphUrl);
+    console.log("productsxxxxxxxxxxxxxxx", products)
   } catch (err: unknown) {
     if (err instanceof Error) {
       console.error("Error fetching products:", err.message);
+    }
+  }
+
+  const getCarousel = () => {
+    if (products && products.length > 0) {
+      return(
+        <Carousel p={products} />
+      )
     }
   }
 
@@ -62,7 +71,9 @@ export default async function Home() {
       <Hero />
       <Pricing />
       <Mission />
-      <Carousel p={products} />
+      {
+        getCarousel()
+      }
       <Testimonials />
       <Contact heading={"Let's get in touch"} />
     </main>

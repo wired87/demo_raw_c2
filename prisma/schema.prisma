@@ -58,3 +58,30 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+
+model Product {
+  id            String @unique
+  name          String
+  category      String
+  price         String
+  desText       String
+  desPoints     String[]
+  images        String[]
+  stripePriceId String
+  companie      Companie @relation(fields: on)
+}
+
+
+model Companie {
+  name                     String @unique
+  image                    String
+  slogan                   String
+  products                 Product[]
+  info     String
+
+}
+
+model Companies {
+  head                    Companie[]
+}

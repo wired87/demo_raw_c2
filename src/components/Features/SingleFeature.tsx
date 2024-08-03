@@ -17,7 +17,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
           {paragraph}
         </p>
         <Link
-          href={btnLink}
+          href={btnLink || "/"}
           className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
         >
           {btn}

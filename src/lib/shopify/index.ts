@@ -78,7 +78,7 @@ export async function shopifyFetch<T>({
       headers: {
         'Content-Type': 'application/json',
         'X-Shopify-Storefront-Access-Token': key,
-        ...headers
+      ...headers
       },
       body: JSON.stringify({
         ...(query && { query }),

@@ -79,6 +79,7 @@ export const getProducts = async (graphUrl: string): Promise<ShopifyProduct[]> =
     })
   });
 
+
   if (!res.ok) {
     const text = await res.text(); // get the response body for more information
 

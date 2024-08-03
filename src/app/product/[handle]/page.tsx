@@ -2,17 +2,18 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Link from 'next/link';
-import { Suspense } from 'react';
+import {ReactNode, Suspense} from 'react';
 import {getProduct, getProductRecommendations} from "@/lib/shopify";
 import {HIDDEN_PRODUCT_TAG} from "@/lib/constants";
 import {Gallery} from "@/components/components/product/gallery";
 import {Image as ImageTypes} from "@/lib/shopify/types";
 import {ProductDescription} from "@/components/components/product/product-description";
 import {GridTileImage} from "@/components/components/grid/tile";
-import FunFact from "@/components/product";
 
 
 import {SubContent} from "@/components/components/product/sub_content";
+import SectionTitle from "@/components/Common/SectionTitle";
+
 
 export async function generateMetadata({
   params
@@ -53,6 +54,8 @@ export async function generateMetadata({
 }
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
+  console.log("params.handle", params.handle);
+
   const product = await getProduct(params.handle);
 
   if (!product) return notFound();
@@ -74,11 +77,30 @@ export default async function ProductPage({ params }: { params: { handle: string
     }
   };
 
+  const getHeader = (): ReactNode | null  => {
+    if (product.title.includes("Insight")) {
+      return null
 
+    } else if (product.title.includes("Ability")) {
+      return(
+        <SectionTitle
+          subtitle={""}
+          title={"Meet the Ability Hand"}
+          paragraph={"The world’s fastest and first touch sensing bionic hand."}
+          center
+        />
+      )
+
+
+    } else if (product.title.includes("")) {
+      return null
+  }}
 
   return (
     <div className={"relative mb-5 mt-20"}>
-      <FunFact product={product} />
+      {
+        getHeader()
+      }
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -86,8 +108,8 @@ export default async function ProductPage({ params }: { params: { handle: string
         }}
       />
       <div className="mx-auto max-w-screen-2xl px-4 ">
-        <div className="flex flex-col rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
-          <div className="h-full w-full basis-full lg:basis-4/6">
+        <div className="rounded-lg border border-neutral-200 bg-white p-8 md:p-12 lg:flex-row lg:gap-8 dark:border-neutral-800 dark:bg-black">
+          <div className="h-full  w-full basis-full lg:basis-4/6">
             <Suspense
               fallback={
                 <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
@@ -111,15 +133,13 @@ export default async function ProductPage({ params }: { params: { handle: string
       <SubContent
         name={product.title}
       />
-
-
     </div>
   );
 }
 
-async function RelatedProducts({ id }: { id: string }) {
+export async function RelatedProducts({ id }: { id: string }) {
   const relatedProducts = await getProductRecommendations(id);
-
+  console.log("id:", id )
   if (!relatedProducts.length) return null;
 
   return (
@@ -131,7 +151,7 @@ async function RelatedProducts({ id }: { id: string }) {
             key={product.handle}
             className="aspect-square w-full flex-none min-[475px]:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5"
           >
-            <Link className="relative h-full w-full" href={`/product/${product.handle}`}>
+            <Link className="relative h-full w-full" href={`/product/${product.handle || ""}` }>
               <GridTileImage
                 alt={product.title}
                 label={{

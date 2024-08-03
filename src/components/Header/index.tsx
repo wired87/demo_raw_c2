@@ -54,14 +54,14 @@ const Header = () => {
       >
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4">
+            <div className="px-4">
               <Link
                 href="/"
-                className={`text-2xl navbar-logo block w-full ${
+                className={`text-2xl navbar-logo block ${
                   sticky ? "py-2" : "py-5"
                 } `}
               >
-                CyberWare.house
+                Logo
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
@@ -116,7 +116,7 @@ const Header = () => {
                             <Link
                               onClick={navbarToggleHandler}
                               scroll={false}
-                              href={menuItem.path}
+                              href={menuItem.path || "/"}
                               className={`ud-menu-scroll flex py-2 text-base text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${
                                 pathUrl === menuItem?.path && "text-primary"
                               }`}
@@ -126,7 +126,7 @@ const Header = () => {
                           ) : (
                             <Link
                               scroll={false}
-                              href={menuItem.path}
+                              href={menuItem.path || "/"}
                               className={`ud-menu-scroll flex py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${
                                 sticky
                                   ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
@@ -202,7 +202,7 @@ const Header = () => {
                           >
                             {menuItem?.submenu?.map((submenuItem: any, i) => (
                               <Link
-                                href={submenuItem.path}
+                                href={submenuItem.path || "/"}
                                 key={i}
                                 className={`block rounded px-4 py-[10px] text-sm ${
                                   pathUrl === submenuItem.path

@@ -10,7 +10,6 @@ import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
 import ToasterContext from "./api/contex/ToasetContex";
 import React, { useEffect, useState } from "react";
-import PreLoader from "@/components/Common/PreLoader";
 import {SessionProvider} from "next-auth/react";
 
 export default function RootLayout({

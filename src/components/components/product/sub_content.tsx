@@ -1,6 +1,4 @@
-import Image from "next/image";
-import accessories_des from "../../../../public/images/product/arm/brainrobotics/accessories_des.png";
-import Contact from "@/components/Contact";
+
 import Features from "@/components/Features";
 import emoInsightData from "@/components/Features/data/emotiv_insight";
 import Faq from "@/components/Faq";
@@ -8,6 +6,7 @@ import {insightPros, insightPros2} from "@/components/Faq/data/emotiv/insight/in
 import React from "react";
 import TwoCols from "@/components/components/product/two_col_section";
 import info from "../../../../public/images/product/emotiv/insight/info.png";
+import CTA from "@/components/components/product/arm";
 
 interface SubContenttypes {
   name: string;
@@ -44,7 +43,9 @@ const pros = [
   }
 ]
 
-
+const ability = {
+  img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/5f0d2972-b8bb-4556-8abe-670862b687dd/touch+bg2.png"
+}
 
 export const SubContent: React.FC<SubContenttypes> = ({name}) => {
   if (name.includes("Insight")) {
@@ -64,20 +65,15 @@ export const SubContent: React.FC<SubContenttypes> = ({name}) => {
         </div>
       </>
     )
-  } else if (name.includes("BrainRobotics Hand")) {
+  } else if (name.includes("Ability")) {
     return(
       <>
-        <Image
-
-          src={accessories_des}
-          alt="Man"
-          className="my-9 w-full left-0  h-full object-cover opacity-80"
-        />
-
-        <Contact
-          heading={"Explore What You Can Do"}
-        />
+        <CTA img={ability.img} />
       </>
+    )
+  } else if (name.includes("")) {
+    return(
+      <></>
     )
   }
 }

@@ -46,7 +46,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
               <Link
                 aria-label="Previous product image"
-                href={previousUrl}
+                href={previousUrl || "/"}
                 className={buttonClassName}
                 scroll={false}
               >
@@ -55,7 +55,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               <div className="mx-1 h-6 w-px bg-neutral-500"></div>
               <Link
                 aria-label="Next product image"
-                href={nextUrl}
+                href={nextUrl || "/"}
                 className={buttonClassName}
                 scroll={false}
               >
@@ -78,7 +78,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
               <li key={image.src} className="h-20 w-20">
                 <Link
                   aria-label="Enlarge product image"
-                  href={createUrl(pathname, imageSearchParams)}
+                  href={createUrl(pathname, imageSearchParams) || "/"}
                   scroll={false}
                   className="h-full w-full"
                 >

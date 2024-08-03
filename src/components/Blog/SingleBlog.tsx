@@ -18,7 +18,7 @@ const SingleBlog: React.FC<SingleproductT> = (
   return (
     <div className="wow fadeInUp group mb-10" data-wow-delay=".1s">
       <div className="mb-8 overflow-hidden rounded">
-        <Link href={`/blogs/${slug}`} aria-label="blog cover" className="block">
+        <Link href={`/blogs/${slug || ""}` || "/"} aria-label="blog cover" className="block">
           <Image
             src={coverImage!}
             alt="image"
@@ -34,7 +34,7 @@ const SingleBlog: React.FC<SingleproductT> = (
         </span>
         <h3>
           <Link
-            href={`/blogs/${slug}`}
+            href={`/blogs/${slug || ""}`}
             className="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white dark:hover:text-primary sm:text-2xl lg:text-xl xl:text-2xl"
           >
             {title}
