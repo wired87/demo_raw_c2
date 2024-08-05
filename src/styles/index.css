@@ -7,13 +7,10 @@
 body {
   font-family: "Inter", sans-serif;
 }
+/*
 
 .sticky-menu .navbar-logo {
   @apply py-2;
-}
-
-.sticky-menu #navbarToggler span {
-  @apply bg-dark dark:bg-white;
 }
 
 .sticky-menu #navbarCollapse li > a {
@@ -75,3 +72,5 @@ body {
 .blog-details h3 {
   @apply text-dark mb-6 text-2xl font-bold dark:text-white sm:text-[28px] sm:leading-[40px];
 }
+
+ */

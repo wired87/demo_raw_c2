@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 // import { SessionProvider } from "next-auth/react";          <SessionProvider>
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
@@ -22,7 +24,7 @@ export default function RootLayout({
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
   }, []);
-  console.log("HELLO AAAAHss")
+
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
       {/*
@@ -31,7 +33,7 @@ export default function RootLayout({
       */}
       <head ><title>Hello</title></head>
 
-      <body>
+      <body className={`dark:bg-[#000000] w-full bg-zumthor ${inter.className}`}>
           <SessionProvider>
             <ThemeProvider
               attribute="class"

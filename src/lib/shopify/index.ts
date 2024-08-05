@@ -86,7 +86,7 @@ export async function shopifyFetch<T>({
       }),
       cache,
       ...(tags && { next: { tags } })
-    });
+    })
 
     const body = await result.json();
 

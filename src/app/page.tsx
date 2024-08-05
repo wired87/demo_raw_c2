@@ -3,13 +3,15 @@ import ScrollUp from "@/components/Common/ScrollUp";
 import Contact from "@/components/Contact";
 
 import Hero from "@/components/Hero";
-import Pricing from "@/components/Pricing";
-import Testimonials from "@/components/Testimonials";
 import { Metadata } from "next";
 import Mission from "@/components/Mission";
 
 import {getProducts} from "@/types/shopify";
 import {Carousel} from "@/components/components/carousel";
+import {PartnerSection} from "@/components/Partners";
+import Testimonials from "@/components/Testimonials";
+import {ProductCarousel} from "@/components/product/ProductCarousel";
+import {TrippleUse} from "@/components/tripplePros";
 
 
 export const metadata: Metadata = {
@@ -20,7 +22,9 @@ export const metadata: Metadata = {
 
 const graphUrl: string = process.env.SHOPIFY_STORE_DOMAIN! + process.env.SHOPIFY_API_ENDPOINT!;
 
+const partners = [
 
+]
 // types/shopify.ts
 export interface ShopifyProduct {
   description: string;
@@ -42,8 +46,6 @@ export interface ShopifyProduct {
   tags: string[];
   title: string;
 }
-
-
 
 export default async function Home() {
   let products: ShopifyProduct[] = [];
@@ -69,11 +71,11 @@ export default async function Home() {
     <main>
       <ScrollUp />
       <Hero />
-      <Pricing />
+      <PartnerSection partners={partners}/>
+
       <Mission />
-      {
-        getCarousel()
-      }
+      <TrippleUse />
+      <ProductCarousel />
       <Testimonials />
       <Contact heading={"Let's get in touch"} />
     </main>

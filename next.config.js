@@ -11,6 +11,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
         pathname: '/s/files/**'
+      },{
+        protocol: 'https',
+        hostname: 'news.mit.edu',
+        pathname: '/**'
       },
       {
         protocol: 'https',
@@ -27,23 +31,43 @@ module.exports = {
       },{
         protocol: 'https',
         hostname: 'robotics.umich.edu',
-        pathname: '/**',// wp-content/uploads/2020/07/' // Adjust the path if needed based on your image URLs
+        pathname: '/**',
       },{
         protocol: 'https',
         hostname: 'www.jhuapl.edu',
-        pathname: '/**',// wp-content/uploads/2020/07/' // Adjust the path if needed based on your image URLs
+        pathname: '/**',
       },{
         protocol: 'https',
         hostname: 'www.procemex.com',
-        pathname: '/**',// wp-content/uploads/2020/07/' // Adjust the path if needed based on your image URLs
+        pathname: '/**',
       },{
         protocol: 'https',
         hostname: 'static.wixstatic.com',
-        pathname: '/**',// wp-content/uploads/2020/07/' // Adjust the path if needed based on your image URLs
+        pathname: '/**',
       },{
         protocol: 'https',
         hostname: 'www.thedigitalspeaker.com',
-        pathname: '/**',// wp-content/uploads/2020/07/' // Adjust the path if needed based on your image URLs
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'engineering.stanford.edu',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'blackrockneurotech.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'synchron.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'i.giphy.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'openbci.com',
+        pathname: '/**',
       },
     ]
   },

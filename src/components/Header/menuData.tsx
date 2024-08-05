@@ -4,6 +4,58 @@ const menuData: Menu[] = [
 
   {
     id: 2,
+    title: "Home",
+    newTab: false,
+    path: "/"
+  },
+  {
+    id: 3,
+    title: "Techniques",
+    newTab: false,
+    path: "/"
+  },
+  {
+    id: 5,
+    title: "Companies",
+    newTab: false,
+    path: "/"
+  },
+  {
+    id: 6,
+    title: "Who we are?",
+    newTab: false,
+    submenu: [
+      {
+        id: 63, 
+        title: "About Us",
+        path: "/about",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Imprint",
+        path: "/imprint",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Contact",
+        path: "/contact",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "For clinicians",
+    newTab: false,
+    path: "/"
+  },
+];
+export default menuData;
+
+
+/*
+{
+    id: 2,
     title: "Head",
     newTab: false,
     submenu: [
@@ -96,3 +148,5 @@ const menuData: Menu[] = [
   },
 ];
 export default menuData;
+
+ */
