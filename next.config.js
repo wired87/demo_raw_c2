@@ -68,6 +68,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'openbci.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'shop.openbci.com',
+        pathname: '/**',
       },
     ]
   },

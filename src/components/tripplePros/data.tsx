@@ -2,7 +2,7 @@ import {TrippleDataT} from "@/types/trippleUse";
 
 export const trippleData: TrippleDataT[] = [
   {
-    img: "https://www.researchgate.net/profile/Lea-Pillette/publication/318773151/figure/fig1/AS:621794956439552@1525258878133/A-participant-taking-part-in-a-BCI-training-process-Along-the-training-PEANUT-on-the.png",
+    img: "https://shop.openbci.com/cdn/shop/products/DSC03064BFTCROPPED.jpg?v=1627928828&width=900",
     heading: "Clinicians",
     btnText: "",
     href: "/",

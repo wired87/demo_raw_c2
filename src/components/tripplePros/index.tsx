@@ -18,7 +18,7 @@ const TrippleSectionT: React.FC<TripleImgT> = (
       alt={"image.png"}
       src={src}
       fill
-      className={"object-cover absolute top-0 left-0"}
+      className={"object-cover absolute top-0 left-0 "}
     />
   );
 }
@@ -26,16 +26,23 @@ const TrippleSectionT: React.FC<TripleImgT> = (
 export const TrippleUse = () => {
   return(
     <div className={"w-full flex flex-col my-5 py-3 relative"}>
+      <div className={"flex items-center justify-center"}>
         <SectionTitle
           subtitle="Fit your needs"
           title="Explore whats possible "
           paragraph="Our BCI'S are crafted for everybody to impac everydays life"
         />
+      </div>
 
-      <div className={"grid h-[600px] sm:grid-cols-3 relative sm:grid-rows-1 gap-4 grid-rows-3 grid-cols-1"}>
+      <div className={"grid h-[600px] md:grid-cols-3 relative md:grid-rows-1 gap-4 grid-rows-3 grid-cols-1 "}>
         {trippleData.map((item, i: number) => (
-          <div className={"relative"}>
+          <div className={"relative cursor-pointer opacity-40 hover:scale-110 transition duration-300 ease-in-out hover:opacity-100 group"}>
             <TrippleSectionT key={i} src={item.img} />
+            <div className={"w-full absolute h-full flex flex-col justify-center items-center gap-y-5"}>
+              <p id={"hello"} className={"bold font-bold group-hover:scale-125 transition duration-300 text-gray-200 ease-in-out text-4xl"}>{item.heading}</p>
+              <p id={"world"} className={"group-hover:scale-150 transition duration-300 ease-in-out text-gray-200"}>{item.des}</p>
+            </div>
+
           </div>
         ))}
       </div>
