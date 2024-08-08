@@ -1,16 +1,15 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import {Circles} from "@/components/Hero/circles";
-import {OfferCarousel} from "@/components/Hero/OfferCarousel";
-import {sliderData} from "@/components/Hero/data";
+import {newsData} from "@/components/Hero/data";
+import {NewsCarousel} from "@/components/Hero/OfferCarousel";
 
 const Hero = () => {
   return (
     <>
       <section
 
-        className="relative overflow-hidden bg-gradient-to-tr from-red-800 to-black pt-[120px] md:pt-[130px] lg:pt-[160px] min-h-[1300px]"
+        className="relative overflow-hidden bg-gradient-to-tr from-red-800 to-black pt-[120px] md:pt-[130px] lg:pt-[160px] min-h-[1100px]"
       >
         <Image alt={"image.kkk"} src={"https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202211/MIT-Neural-Networks-01_0.gif?itok=JNbooIWQ"} className={"object-cover"} fill unoptimized />
         <div className="container">
@@ -20,10 +19,10 @@ const Hero = () => {
                 className="hero-content relative z-10000 wow fadeInUp mx-auto max-w-[780px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-6 text-3xl z-1000 font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                <h1 className="mb-6 z-1000 text-center text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
                   The future is today!
                 </h1>
-                <h1 className="text-center text-6xl leading-tight font-bold text-gray-200 gap-y-4">
+                <p className="text-center text-2xl leading-tight font-bold text-gray-200 gap-y-6">
                   Explore the
                   <span
                     className="bg-clip-text
@@ -45,7 +44,7 @@ const Hero = () => {
                     text-primary transition hover:brightness-125"
                   >{" "}Marketplace
                   </span>{" "}
-                </h1>
+                </p>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
 
                 </p>
@@ -61,15 +60,18 @@ const Hero = () => {
                   </li>
                 </ul>
                 <div>
-                  {/*icon from every body part*/}
+                  {/*icon from every body part <Circles />*/}
                 </div>
               </div>
             </div>
-            <Circles />
+
           </div>
 
         </div>
-        <OfferCarousel data={sliderData}/>
+        <h1 className="mb-6 z-1000 text-left text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+          Whats new?
+        </h1>
+        <NewsCarousel data={newsData}/>
       </section>
     </>
   );

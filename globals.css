@@ -38,3 +38,8 @@ button {
     }
   }
 }
+@layer utilities {
+  .animation-pause {
+    animation-play-state: paused;
+  }
+}

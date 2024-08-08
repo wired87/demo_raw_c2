@@ -7,6 +7,8 @@ import {CItemT, CListT, SliderDataT} from "@/types/carousel";
 import BackgroundVideo from 'next-video/background-video';
 import "@/styles/embla.css";
 import Link from "next/link";
+
+
 const  CItem: React.FC<CItemT> = ({item}) =>  {
 
   const media = () => {
@@ -29,7 +31,7 @@ const  CItem: React.FC<CItemT> = ({item}) =>  {
         <p className={"text-white font-bold"}>{item.heading}</p>
         <p>{item.des}</p>
         <Link
-          href={item.path || "/contact"}
+          href={item?.btn?.path || "/contact"}
           className=" rounded-lg ml-5 bg-dark opacity-70 px-6 py-3 text-base font-medium text-white flex justify-center items-center
       duration-300 ease-in-out hover:bg-waterloo/90 dark:bg-white/10 dark:hover:bg-white/20 max-w-[300px]"
         >
@@ -43,10 +45,12 @@ const  CItem: React.FC<CItemT> = ({item}) =>  {
 
 export const Carousel: React.FC<CListT> = (
   {
-    data
+    data,
+    CustomItem
   }
 ) => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+  
 
   return (
     <section className="embla">

@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import { GridTileImage } from './tile';
+import SectionTitle from "@/components/Common/SectionTitle";
+import React from "react";
+import {ProductT} from "@/types/product";
 
-interface ProductT {
-  title: string;
-  amount: string;
-  img: string;
-  handle: string;
-}
+
 
 const carouselProducts: ProductT[] = [
   {
@@ -43,11 +41,16 @@ const carouselProducts: ProductT[] = [
 ]
 
 
-export async function ProductCarousel() {
+export const ProductCarousel: React.FC<any> =(
+  {
+    sH
+  }
+) => {
 
   return (
     <div className="w-full overflow-x-auto pb-6 pt-1">
-      <ul className="flex animate-carousel gap-4">
+
+      <ul className="flex slide-left gap-4">
         {carouselProducts.map((product: ProductT, i: number) => (
           <li
             key={`${i}`}

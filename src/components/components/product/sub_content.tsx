@@ -56,12 +56,11 @@ export const SubContent: React.FC<SubContenttypes> = ({name}) => {
         <Faq  data={insightPros} data2={insightPros2} faq={false}/>
         <div className="-mx-4 flex flex-wrap justify-center w-full py-4 px-2 h-[500px]">
           {pros.map((pro, i) => (
-            <div  key={i}>
+            <div  key={i} className={"gap-y-3"}>
               <h3>{pro.title}</h3>
               <p>{pro.content}</p>
             </div>
           ))}
-
         </div>
       </>
     )

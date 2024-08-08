@@ -10,7 +10,7 @@ export const Logo = (sticky) => {
       } `}
     >
       <p className={""}>Best</p>
-      <Image alt={"image.j"} width={70} height={70} className={"rounded-full border-primary border-3"} src={"/images/header/blackrock.png"}/>
+      <Image alt={"image.j"} width={70} height={70} className={"rounded-full "} src={"/images/header/img.png"}/>
       <p>Brain</p>
     </Link>
   )

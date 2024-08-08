@@ -1,4 +1,3 @@
-import {Container} from "@/components/Container";
 import React, {ReactNode} from "react";
 
 interface PT {
@@ -11,20 +10,25 @@ export const PartnerSection: React.FC<any> = (
   }
 ) => {
   return(
-    <Container>
-      <div className="flex flex-col justify-center">
+    <section className="bg-black text-white py-8">
+      <h2 className="text-center text-2xl mb-2 font-bold leading-8">Our Partners</h2>
+      <p className="text-center text-lg font-extralight leading-8 ">We are trusted by the world’s most innovative teams</p>
 
+      <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
+        <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+          {partners.map((pa, i) => (
+              <p key={i}>{pa}</p>
+            ))}
+        </div>
 
-        <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
-
-          {partners.map((item: PT, i: number) => (
-            <div className="pt-2 text-gray-400 dark:text-gray-400" key={i}>
-              {item}
-            </div>
-          ))}
+        <!-- Duplicate of the above for infinite effect (you can use javascript to duplicate this too) -->
+        <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
+          {partners.map((pa, i) => (
+              <p key={i}>{pa}</p>
+            ))}
         </div>
       </div>
-    </Container>
+    </section>
   );
 }
 /*

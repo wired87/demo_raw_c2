@@ -72,6 +72,30 @@ module.exports = {
         protocol: 'https',
         hostname: 'shop.openbci.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'www.behance.net',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'www.premierprosthetic.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'openbionics.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'neurosky.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'www.emotiv.com',
+        pathname: '/**',
       },
     ]
   },

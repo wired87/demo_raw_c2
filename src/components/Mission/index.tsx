@@ -3,13 +3,59 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionTitle from "@/components/Common/SectionTitle";
-import Link from "next/link";
-import {sliderData} from "@/components/Hero/data";
+import {bioWareData, sliderData} from "@/components/Hero/data";
 import {Carousel} from "@/components/carousel/Carousel";
+import {Explore} from "@/components/Btns/Explore";
 
 const softwareGif: string = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2pzNmRzOWFoeWptaXVieGs3emtmbzgyeDc1ejFzNXc5eTFwcjN1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1BfRG8cK5SPOer97aK/giphy.gif"
 const brainGif: string = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmh0OWprMzZ2bDJyN25oaTgzNGRrOTE2eHA1dmYwcTJscG9wajI5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PjJ1cLHqLEveXysGDB/giphy-downsized-large.gif"
+const universalBCI: string = "https://neurosky.com/wp-content/uploads/2015/06/man-thinking-011.jpg"
 
+const data = [
+  {
+    media: [ // todo build check for mp4
+      "https://blackrockneurotech.com/wp-content/uploads/2023/01/home-pioneering-the-future-video.mp4",
+      "https://blackrockneurotech.com/wp-content/uploads/2023/01/home-pioneering-the-future-video.mp4",
+      "https://synchron.com/uploads/images/SYN003-TedTalk-4K-4.mp4",
+    ],
+    heading: "BCI's",
+    des: "Choose from various techniques of carefully chosen partners from all over the World to fit your needs.",
+    btn: {
+      text: "Explore the possibilities",
+      path: "/bci"
+    }
+  },{
+    media: [
+      "https://www.premierprosthetic.com/wp-content/uploads/iStock-503663810.jpg",
+      "https://openbionics.com/wp-content/uploads/2021/09/Cath-Shilling-new-website-.jpg"
+      // todo later https://www.steepergroup.com/prosthetics/lower-limb-prosthetics/cosmesis/prosthetic-leg-cover/
+    ],
+    heading: "Bio Ware",
+    des: "",
+    btn: {
+      text: "",
+      path: "/"
+    }
+  },{
+    media: [""],
+    heading: "Clinicians",
+    des: "Explore our high qualitative EEG Clinical Equipments ",
+    btn: {
+      text: "Explore Equipment",
+      path: "/clinician"
+    }
+  },{
+    media: [
+      "https://raw.githubusercontent.com/scott-huberty/wip_pipeline-figures/main/dashboard.png"
+    ],
+    heading: "Software",
+    des: "Explore our smart solutions for EEG signal monitorings",
+    btn: {
+      text: "Get it!",
+      path: "/software"
+    }
+  },
+]
 const Mission = () => {
   return (
     <div className={"bg-transparent"}>
@@ -41,7 +87,7 @@ const Mission = () => {
               className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-3/4"
             >
               <Image
-                src={softwareGif}
+                src={"/images/mission/man_think.jpg"}
                 alt="About"
                 className="block object-contain rounded-2xl"
                 fill
@@ -67,14 +113,15 @@ const Mission = () => {
               className="animate_right md:w-1/2"
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
-                Software
+                BCI & Tools
               </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Explore our Software Solutions
+                BCI
               </h2>
               <p>
-                Explore the different types of devices as <Link href={"/invasive"}>invasive</Link> <Link href={"/non-invasive"}>non-invasive</Link>
+                Choose from various devices of carefully chosen partners from all over the World to fit your needs.
               </p>
+              <Explore path={"/bci"} text={"Tak a look"}/>
             </motion.div>
           </div>
         </div>
@@ -102,31 +149,16 @@ const Mission = () => {
               className="animate_left md:w-1/2"
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
-                The Techniques
+                BioWare & Tools
               </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Devices
+                BioWare
               </h2>
               <p>
                 Explore which of our devices fits your needs
               </p>
               <div>
-                <Link
-                  href="/"
-                  className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
-                >
-                  <span className="duration-300 group-hover:pr-2">
-                    Explore
-                  </span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="currentColor"
-                  >
-                    <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
-                  </svg>
-                </Link>
+                <Explore path={"/under-construction"} text={"Take a look"}/>
               </div>
             </motion.div>
             <motion.div
@@ -147,7 +179,7 @@ const Mission = () => {
               viewport={{ once: true }}
               className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5]  md:w-1/2"
             >
-              <Carousel data={sliderData} />
+              <Carousel data={bioWareData} />
             </motion.div>
           </div>
         </div>
@@ -201,31 +233,73 @@ const Mission = () => {
             >
               <span className="font-medium uppercase text-black dark:text-white">
                 <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
-                  Science
+                  for Clinicians
                 </span>{" "}
               </span>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Our Vision and Mission
+                Clinicians
               </h2>
               <p>
                Explore with us the future!
               </p>
-              <Link
-                href="/"
-                className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
-              >
-                  <span className="duration-300 group-hover:pr-2">
-                    Get inspired
-                  </span>
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 14 14"
-                  fill="currentColor"
-                >
-                  <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
-                </svg>
-              </Link>
+              <Explore path={"/under-construction"} text={"Explore"}/>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="mx-auto max-w-c-1235 overflow-hidden  px-4 md:px-8 2xl:px-0 bg-transparent">
+          <div className="flex items-center gap-8 lg:gap-x-32.5 px-9 py-9 ">
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  x: -20,
+                },
+
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 1, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="animate_left md:w-1/2"
+            >
+              <h4 className="font-medium uppercase text-black dark:text-white">
+                Software
+              </h4>
+              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
+                Updates & Software
+              </h2>
+              <p>
+                Explore our sortiment of EEG monitoring and community crafted Software for your hardware
+              </p>
+              <div>
+                <Explore path={"/under-construction"} text={"Get your Update"}/>
+              </div>
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  x: 20,
+                },
+
+                visible: {
+                  opacity: 1,
+                  x: 0,
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 1, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5]  md:w-1/2"
+            >
+              <Carousel data={sliderData} />
             </motion.div>
           </div>
         </div>

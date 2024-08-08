@@ -48,6 +48,11 @@ const menuData: Menu[] = [
     title: "For clinicians",
     newTab: false,
     path: "/"
+  },{
+    id: 222,
+    title: "Investors",
+    newTab: false,
+    path: "/"
   },
 ];
 export default menuData;

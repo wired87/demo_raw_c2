@@ -6,7 +6,7 @@ interface VideoProps {
   videoId: string;
 }
 
-export function Index({ videoId }: Readonly<VideoProps>) {
+export function Video({ videoId }: Readonly<VideoProps>) {
   const [playVideo, setPlayVideo] = useState(false);
 
   if (!videoId) return null;

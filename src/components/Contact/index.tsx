@@ -1,160 +1,370 @@
 "use client";
-import React from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import React, {useCallback, useEffect, useState} from "react";
+import {Checkbox, CheckboxGroup} from '@nextui-org/react';
+import {Slider} from "@nextui-org/slider";
+import {CheckBoxObj, MailT} from "@/types/contact";
 
-interface ContactCustom {
-  heading?: string;
+import {Spinner} from "@nextui-org/spinner";
+import CModal from "@/components/Modal";
+import axios from "axios";
 
-}
 
-const Contact: React.FC<ContactCustom> = (
+const checkBoxValues: CheckBoxObj[] = [
   {
-    heading
-  }
-) => {
+    title: "BCI",
+    selected: false
+  },{
+    title: "Bio Ware",
+    selected: false
+  },{
+    title: "Clinical Equipment ",
+    selected: false
+  },{
+    title: "Software",
+    selected: false
+  },
+]
 
+const checkBoxValues2: CheckBoxObj[] =[
+  {
+    title: "Partnerships",
+    selected: false
+  },{
+    title: "General Contact",
+    selected: false
+  },
+
+]
+
+
+const sliderMasrks = [
+  {
+    value: 3,
+    label: "3",
+  },{
+    value: 6,
+    label: "6",
+  },{
+    value: 9,
+    label: "9",
+  },{
+    value: 12,
+    label: "12",
+  },{
+    value: 15,
+    label: "15",
+  },{
+    value: 18,
+    label: "18",
+  },{
+    value: 21,
+    label: "21",
+  },{
+    value: 24,
+    label: "24",
+  },
+
+]
+const Contact = () => {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+
+  const updateSuccessError = () => {
+    setError(false);
+    setSuccess(false);
+  }
+
+  const [formData, setFormData] = useState<MailT>({
+    name: '',
+    email: '',
+    subject: '',
+    phone: '', // Optional
+    message: '',
+    preferredServices: selected, // Array for multiple checkboxes
+    time: 0, // Slider value
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  useEffect(() => {
+    console.log("formData",formData);
+  }, [formData]);
+  useEffect(() => {
+    console.log("selected",selected);
+  }, [selected]);
+  const handleSliderChange = (value: number) => {
+    setFormData({ ...formData, time: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    setError(false);
+    setSuccess(false);
+    if (!loading) {
+      setLoading(true);
+      e.preventDefault();
+      try { // 'http://localhost:3000/api/' 'https://www.botworld.cloud/api/'
+        const res = await axios.post('https://www.botworld.cloud/api/', formData);
+        console.log("res: ",res);
+        if (res.data.ok) {
+          setSuccess(true);
+          setError(false);
+          setSelected([]);
+          setFormData({
+            name: '',
+            email: '',
+            subject: '',
+            phone: '',
+            message: '',
+            preferredServices: selected,
+            time: 0,
+          });
+        } else {
+          setError(true);
+          setSuccess(false);
+        }
+
+      } catch(e:unknown) {
+        if (e instanceof Error) {
+          console.log("Error occurred:", e);
+          setError(true);
+        }
+      }finally {
+        setLoading(false);
+
+      }
+    }
+  };
+  const getModal = useCallback(() => {
+    if (error) {
+      return <CModal state={false} updateState={updateSuccessError} />
+    } else if (success) {
+      return <CModal state={true} updateState={updateSuccessError} />
+    }
+  }, [error, success]);
+
+  const btnContent = () => {
+    if (loading) {
+      return(
+        <Spinner size={"sm"} color="primary" labelColor="foreground"/>
+      )
+    }
+
+    return(
+      <svg
+        className="fill-white"
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"
+          fill=""
+        />
+      </svg>
+    )
+  }
 
   return (
-    <section id="contact" className="relative py-20 md:py-[120px] w-full h-[700px]">
-      <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
-      <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
-      <div className="container px-4">
-        <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <div className="ud-contact-content-wrapper">
-              <div className="ud-contact-title mb-12 lg:mb-[150px]">
-                <span className="mb-6 block text-base font-medium text-dark dark:text-white">
-                  CONTACT US
-                </span>
-                <h2 className="max-w-[460px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white">
-                  {heading}
-                </h2>
-              </div>
-              <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
-                <div className="mb-8 flex w-[330px] max-w-full">
-                  <div className="mr-6 text-[32px] text-primary">
-                    <svg
-                      width="29"
-                      height="35"
-                      viewBox="0 0 29 35"
-                      className="fill-current"
-                    >
-                      <path d="M14.5 0.710938C6.89844 0.710938 0.664062 6.72656 0.664062 14.0547C0.664062 19.9062 9.03125 29.5859 12.6406 33.5234C13.1328 34.0703 13.7891 34.3437 14.5 34.3437C15.2109 34.3437 15.8672 34.0703 16.3594 33.5234C19.9688 29.6406 28.3359 19.9062 28.3359 14.0547C28.3359 6.67188 22.1016 0.710938 14.5 0.710938ZM14.9375 32.2109C14.6641 32.4844 14.2812 32.4844 14.0625 32.2109C11.3828 29.3125 2.57812 19.3594 2.57812 14.0547C2.57812 7.71094 7.9375 2.625 14.5 2.625C21.0625 2.625 26.4219 7.76562 26.4219 14.0547C26.4219 19.3594 17.6172 29.2578 14.9375 32.2109Z" />
-                      <path d="M14.5 8.58594C11.2734 8.58594 8.59375 11.2109 8.59375 14.4922C8.59375 17.7188 11.2187 20.3984 14.5 20.3984C17.7812 20.3984 20.4062 17.7734 20.4062 14.4922C20.4062 11.2109 17.7266 8.58594 14.5 8.58594ZM14.5 18.4297C12.3125 18.4297 10.5078 16.625 10.5078 14.4375C10.5078 12.25 12.3125 10.4453 14.5 10.4453C16.6875 10.4453 18.4922 12.25 18.4922 14.4375C18.4922 16.625 16.6875 18.4297 14.5 18.4297Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="mb-[18px] text-lg font-semibold text-dark dark:text-white">
-                      Our Location
-                    </h3>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      Klingestr. 22 01159 Dresden, Germany
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-8 flex w-[330px] max-w-full">
-                  <div className="mr-6 text-[32px] text-primary">
-                    <svg
-                      width="34"
-                      height="25"
-                      viewBox="0 0 34 25"
-                      className="fill-current"
-                    >
-                      <path d="M30.5156 0.960938H3.17188C1.42188 0.960938 0 2.38281 0 4.13281V20.9219C0 22.6719 1.42188 24.0938 3.17188 24.0938H30.5156C32.2656 24.0938 33.6875 22.6719 33.6875 20.9219V4.13281C33.6875 2.38281 32.2656 0.960938 30.5156 0.960938ZM30.5156 2.875C30.7891 2.875 31.0078 2.92969 31.2266 3.09375L17.6094 11.3516C17.1172 11.625 16.5703 11.625 16.0781 11.3516L2.46094 3.09375C2.67969 2.98438 2.89844 2.875 3.17188 2.875H30.5156ZM30.5156 22.125H3.17188C2.51562 22.125 1.91406 21.5781 1.91406 20.8672V5.00781L15.0391 12.9922C15.5859 13.3203 16.1875 13.4844 16.7891 13.4844C17.3906 13.4844 17.9922 13.3203 18.5391 12.9922L31.6641 5.00781V20.8672C31.7734 21.5781 31.1719 22.125 30.5156 22.125Z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="mb-[18px] text-lg font-semibold text-dark dark:text-white">
-                      How Can We Help?
-                    </h3>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      info@botworld.cloud
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-            </div>
+    <>
+      <section className="px-4 md:px-8 2xl:px-0 mb-15 w-full border-1 dark:border-strokedark">
+        <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
+          <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
+            <Image
+              src="./images/shape/shape-dotted-light.svg"
+              alt="Dotted"
+              className="dark:hidden"
+              fill
+            />
+            <Image
+              src="./images/shape/shape-dotted-dark.svg"
+              alt="Dotted"
+              className="hidden dark:block"
+              fill
+            />
           </div>
-          <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <div
-              className="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:bg-dark-2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
-              data-wow-delay=".2s
-              "
+
+          <div className="flex flex-col-reverse flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -20,
+                },
+
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 1, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:bg-tp
+              dark:border-strokedark md:w-3/5 lg:w-3/4 xl:p-15"
             >
-              <h3 className="mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]">
-                Send us a Message
-              </h3>
-              <form>
-                <div className="mb-[22px]">
-                  <label
-                    htmlFor="fullName"
-                    className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                  >
-                    Full Name*
-                  </label>
+              <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
+                Lets get in touch!
+              </h2>
+              <form
+                onSubmit={handleSubmit}
+                method="POST"
+              >
+                <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
-                    name="fullName"
-                    placeholder="Olaf"
-                    className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
+                    required
+                    name={"name"}
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Full Name"
+                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
-                </div>
-                <div className="mb-[22px]">
-                  <label
-                    htmlFor="email"
-                    className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                  >
-                    Email*
-                  </label>
+
                   <input
                     type="email"
-                    name="email"
-                    placeholder="example@yourmail.com"
-                    className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
+                    required
+                    name={"email"}
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email"
+                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
-                <div className="mb-[22px]">
-                  <label
-                    htmlFor="phone"
-                    className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                  >
-                    Phone*
-                  </label>
+
+                <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:justify-between lg:gap-14">
                   <input
                     type="text"
-                    name="phone"
-                    placeholder="+49 1254 5211 552"
-                    className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
+                    name={"subject"}
+                    value={formData.subject}
+
+                    onChange={handleChange}
+                    placeholder="Subject"
+                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                  />
+
+                  <input
+                    type="text"
+                    name={"phone"}
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone (optional)"
+                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
-                <div className="mb-[30px]">
-                  <label
-                    htmlFor="message"
-                    className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                  >
-                    Message*
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={1}
-                    placeholder="type your message here"
-                    className="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
-                  ></textarea>
+                <div className={"my-10 "}>
+                  <h3 className={"bold my-4"}>
+                    Choose the section of your interest
+                  </h3>
+                  <div className={"flex flex-col gap-x-7 gap-y-3 md:flex-row"}>
+                    <CheckboxGroup
+                      onChange={setSelected}
+                      onValueChange={setSelected}
+                      value={selected}>
+                      {checkBoxValues.map((item: CheckBoxObj, i: number) => (
+                        <Checkbox
+                          value={item.title}
+                          key={i}>
+                          {item.title}
+                        </Checkbox>
+                      ))}
+                    </CheckboxGroup>
+                    <CheckboxGroup
+                      onValueChange={setSelected}
+                      value={selected}>
+                      {checkBoxValues2.map((item: CheckBoxObj, i: number) => (
+                        <Checkbox
+                          value={item.title}
+                          key={i}>
+                          {item.title}
+                        </Checkbox>
+                      ))}
+                    </CheckboxGroup>
+                  </div>
                 </div>
-                <div className="mb-0">
+
+                <div className="mb-11.5 flex flex-col">
+                  <h3 className={"bold mb-8 mt-4 underline-offset-2"}>How do we can help?</h3>
+                  <textarea
+                    placeholder="Hi, ..."
+                    required
+                    value={formData.message}
+                    name={"message"}
+                    onChange={handleChange}
+                    className="w-full border-b border-stroke bg-transparent focus:border-waterloo
+                      focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark
+                      dark:focus:border-manatee dark:focus:placeholder:text-white min-h-[250px]"
+                  >
+                    </textarea>
+                </div>
+                <div className="flex flex-wrap gap-4 xl:justify-between ">
+
                   <button
-                    type="submit"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
+                    type={"submit"}
+                    aria-label="send message"
+                    className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
                   >
                     Send
+                    {
+                      btnContent()
+                    }
                   </button>
+
                 </div>
+
               </form>
-            </div>
+            </motion.div>
+
+            <motion.div
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  y: -20,
+                },
+
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              transition={{ duration: 2, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="animate_top w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15"
+            >
+              <h2 className="mb-12.5 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
+                We are looking forward to your message!
+              </h2>
+              <div className="5 mb-7">
+
+              </div>
+
+              <div>
+                <Image height={100} width={100} alt={"hello_call_center"} className={"object-contain mb-5"} src={"/images/contact/call_center.jpg"}/>
+              </div>
+              <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
+                E-Mail-Adresse
+              </h3>
+              <p>
+                <a href="#">info@botworld.cloud</a>
+              </p>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      {
+        getModal()
+      }
+    </>
   );
 };
 

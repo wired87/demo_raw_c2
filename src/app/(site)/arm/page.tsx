@@ -1,6 +1,6 @@
 
 import { Metadata } from "next";
-import ProductPage, {RelatedProducts} from "@/app/product/[handle]/page";
+import ProductPage from "@/app/product/[handle]/page";
 
 export const metadata: Metadata = {
   title:

@@ -8,7 +8,7 @@ const testimonialData: Testimonial[] = [
     name: "Klaus Schäfer",
     designation: "Customer",
     content:
-      "I like the mission of that guys. They have some fantastic ideas and a great sortiment!",
+      "Very cool Marketplace with a lot of possibilities within the future! ",
     image: "/images/testimonials/author-01.png",
     star: 5,
   },
@@ -34,7 +34,7 @@ const testimonialData: Testimonial[] = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-gray-1 py-20 dark:bg-dark-2 md:py-[120px]">
+    <section className="bg-gray-1 h-30 dark:bg-dark-2 md:py-[120px]">
       <div className="container px-4">
         <SectionTitle
           subtitle="Testimonials"
