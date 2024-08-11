@@ -36,7 +36,7 @@ export const sliderData: SliderDataT[] = [
 export const bioWareData: SliderDataT[] = [
   {
     img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/1630548770756-UFVPG5VTVTL0H4TETT80/cropToughpic.png?format=2500w",
-    heading: "Ability Hand",
+    heading: "Ability Hand™",
     des: "by Psyonics",
     btn: {
       path: "",

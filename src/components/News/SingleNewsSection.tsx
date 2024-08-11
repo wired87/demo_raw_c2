@@ -2,18 +2,26 @@
 import {whatDoBCI} from "@/components/News/data";
 import {motion} from "framer-motion";
 import {Explore} from "@/components/Btns/Explore";
-import Image from "next/image";
 import {Video} from "@/components/Video";
+import React from "react";
+import {NewsT} from "@/types/news";
 
-// <TextRightZ index={0} item={whatDoBCI} plusMDiv={imageStyles} />
-const whatsBci: string = "rUFvkQ_Nrvc"
-export const SingleNewsSection = () => {
+
+interface CompNewsT {
+  data: NewsT;
+}
+export const SingleNewsSection: React.FC<CompNewsT> = (
+  {
+    data
+  }
+) => {
 
   return(
     <>
       <section>
-        <div className="mx-auto max-w-c-1235 overflow-hidden  px-4 md:px-8 2xl:px-0 bg-transparent">
-          <div className="flex items-center gap-8 lg:gap-x-32.5 px-9 py-9 ">
+        <div className=" flex items-center justify-center w-full overflow-hidden md:px-18 2xl:px-5 bg-transparent">
+          <div className="w-full items-center justify-center grid lg:grid-cols-2 grid-cols-1
+              grid-rows-2 lg:grid-rows-1">
             <motion.div
               variants={{
                 hidden: {
@@ -29,7 +37,7 @@ export const SingleNewsSection = () => {
               whileInView="visible"
               transition={{ duration: 1, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_left md:w-1/2"
+              className="animate_left md:px-10 px-5 w-full  flex items-start justify-center flex-col "
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
 
@@ -60,9 +68,9 @@ export const SingleNewsSection = () => {
               whileInView="visible"
               transition={{ duration: 1, delay: 0.1 }}
               viewport={{ once: true }}
-              className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5]  md:w-1/2"
+              className="animate_right justify-start w-full flex md:justify-center items-center relative mx-auto aspect-[588/526.5]"
             >
-             <Video  videoId={whatsBci}/>
+             <Video  videoId={data.videoId} />
             </motion.div>
           </div>
         </div>

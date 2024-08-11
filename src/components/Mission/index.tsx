@@ -6,6 +6,7 @@ import SectionTitle from "@/components/Common/SectionTitle";
 import {bioWareData, sliderData} from "@/components/Hero/data";
 import {Carousel} from "@/components/carousel/Carousel";
 import {Explore} from "@/components/Btns/Explore";
+import {TextRightZ} from "@/components/offer/sections/TextRightZ";
 
 const softwareGif: string = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2pzNmRzOWFoeWptaXVieGs3emtmbzgyeDc1ejFzNXc5eTFwcjN1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1BfRG8cK5SPOer97aK/giphy.gif"
 const brainGif: string = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmh0OWprMzZ2bDJyN25oaTgzNGRrOTE2eHA1dmYwcTJscG9wajI5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PjJ1cLHqLEveXysGDB/giphy-downsized-large.gif"
@@ -14,7 +15,6 @@ const universalBCI: string = "https://neurosky.com/wp-content/uploads/2015/06/ma
 const data = [
   {
     media: [ // todo build check for mp4
-      "https://blackrockneurotech.com/wp-content/uploads/2023/01/home-pioneering-the-future-video.mp4",
       "https://blackrockneurotech.com/wp-content/uploads/2023/01/home-pioneering-the-future-video.mp4",
       "https://synchron.com/uploads/images/SYN003-TedTalk-4K-4.mp4",
     ],
@@ -26,19 +26,19 @@ const data = [
     }
   },{
     media: [
-      "https://www.premierprosthetic.com/wp-content/uploads/iStock-503663810.jpg",
+      //"https://www.premierprosthetic.com/wp-content/uploads/iStock-503663810.jpg",
       "https://openbionics.com/wp-content/uploads/2021/09/Cath-Shilling-new-website-.jpg"
       // todo later https://www.steepergroup.com/prosthetics/lower-limb-prosthetics/cosmesis/prosthetic-leg-cover/
     ],
     heading: "Bio Ware",
-    des: "",
+    des: "Explore our bioware solutions for every situation.",
     btn: {
       text: "",
       path: "/"
     }
   },{
     media: [""],
-    heading: "Clinicians",
+    heading: "Clinicians & Research",
     des: "Explore our high qualitative EEG Clinical Equipments ",
     btn: {
       text: "Explore Equipment",
@@ -59,14 +59,22 @@ const data = [
 const Mission = () => {
   return (
     <div className={"bg-transparent"}>
-      <Image src={""} alt={"blur_bg.png"} className={"blur-sm object-cover"}/>
       <SectionTitle
         subtitle={"Subtitle"}
         title={"Our Mission"}
         paragraph={"paragraph"}
         center
       />
-      <section className="overflow-hidden pb-10 lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
+      {data.map((item,i) => (
+        <TextRightZ  index={i} item={item}/>
+      ))}
+    </div>
+  );
+};
+
+export default Mission;
+/*
+ <section className="overflow-hidden pb-10 lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
@@ -113,7 +121,7 @@ const Mission = () => {
               className="animate_right md:w-1/2"
             >
               <h4 className="font-medium uppercase text-black dark:text-white">
-                BCI & Tools
+
               </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
                 BCI
@@ -304,8 +312,4 @@ const Mission = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
-};
-
-export default Mission;
+ */

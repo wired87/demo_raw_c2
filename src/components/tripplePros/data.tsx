@@ -3,7 +3,7 @@ import {TrippleDataT} from "@/types/trippleUse";
 export const trippleData: TrippleDataT[] = [
   {
     img: "https://shop.openbci.com/cdn/shop/products/DSC03064BFTCROPPED.jpg?v=1627928828&width=900",
-    heading: "Clinicians",
+    heading: "Clinicians & Research",
     btnText: "",
     href: "/",
     des: ""

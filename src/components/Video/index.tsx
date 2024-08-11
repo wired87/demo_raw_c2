@@ -3,10 +3,11 @@ import { useState } from "react";
 import {Container} from "@/components/Container";
 
 interface VideoProps {
-  videoId: string;
+  videoId?: string;
+  videoUrl?: string;
 }
 
-export function Video({ videoId }: Readonly<VideoProps>) {
+export function Video({ videoId, videoUrl }: Readonly<VideoProps>) {
   const [playVideo, setPlayVideo] = useState(false);
 
   if (!videoId) return null;
@@ -36,7 +37,7 @@ export function Video({ videoId }: Readonly<VideoProps>) {
         )}
         {playVideo && (
           <iframe
-            src={`https://www.youtube-nocookie.com/embed/${videoId}?controls=0&autoplay=1`}
+            src={ `https://www.youtube-nocookie.com/embed/${videoId}?controls=0&autoplay=1`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             className="w-full h-full aspect-video"

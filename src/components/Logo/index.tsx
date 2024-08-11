@@ -9,9 +9,9 @@ export const Logo = (sticky) => {
         sticky ? "py-2" : "py-5"
       } `}
     >
-      <p className={""}>Best</p>
-      <Image alt={"image.j"} width={70} height={70} className={"rounded-full "} src={"/images/header/img.png"}/>
-      <p>Brain</p>
+      <p className={"text-xs uppercase text-primary text-center font-bold tracking-[0.3em]"}>Best</p>
+      <Image alt={"image.j"} width={70} height={70} className={"rounded-full bg-tp"} src={"/images/header/img.png"}/>
+      <p className={"text-xs uppercase text-primary text-center font-bold tracking-[0.3em]"}>Brain</p>
     </Link>
   )
 }

@@ -49,27 +49,26 @@ export const ImageCarousel: React.FC<ImageListT> = (
 ) => {
 
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
-  const mediaItem = (item: string) => {
+  const mediaItem = (item: string, i:number) => {
     return item.endsWith(".mp4") ?
-      <BackgroundVideo fill src={item} className={"relative object-cover opacity-50"} /> :
+      <BackgroundVideo fill key={i} src={item} className={"relative size-full object-cover opacity-50"} /> :
       <Image
         fill
+        key={i}
         src={item}
         alt={"image.lsa"}
-        className={"absolute top-0 left-0 object-cover opacity-50"}
+        className=" w-[300px] h-[300px] object-cover relative opacity-100 embla__slide"
       />
   }
 
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <section className="embla size-full">
+      <div className="embla__viewport size-full" ref={emblaRef}>
+        <div className="embla__container size-full">
           {media.map((item: string, i: number) => (
-            <div className="embla__slide" key={i}>
-              {
-                mediaItem(item)
-              }
-            </div>
+
+              mediaItem(item, i)
+
           ))}
         </div>
       </div>

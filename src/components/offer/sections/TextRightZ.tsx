@@ -13,10 +13,10 @@ interface t {
   plusMDiv?: string;
   customMotionDiv?: string;
 }
+
 function isStringArray(data: string[] | StaticImageData[]): data is string[] {
   return data.length > 0 && typeof data[0] === 'string';
 }
-
 
 
 export const TextRightZ: React.FC<t> = (
@@ -28,14 +28,17 @@ export const TextRightZ: React.FC<t> = (
         <Image
           src={item.media}
           alt="About"
-          className="block object-contain rounded-2xl"
+          className={`block object-contain rounded-2xl ${item.conf?.classAdd} zoomed-image`}
           fill
           priority={false}
         />
       )
     }
-    else if (isStringArray(item.media)) {
-      return <ImageCarousel media={item.media}/>
+    else {
+
+      return (
+        <div className={"w-full h-full flex items-center justify-center "}><ImageCarousel media={item.media} /></div>
+        )
     }
   }
 
@@ -60,8 +63,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className={customMotionDiv || `animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-3/4 ${plusMDiv || ""}`}
-          >
+            className={customMotionDiv || `animate_left  relative mx-auto hidden aspect-[588/526.5] md:block md:w-3/4  ${plusMDiv || ""}`}>
             {media()}
           </motion.div>
           <motion.div
@@ -83,13 +85,13 @@ export const TextRightZ: React.FC<t> = (
             className="animate_right md:w-1/2"
           >
             <h4 className="font-medium uppercase text-black dark:text-white">
-              BCI & Tools
+
             </h4>
             <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-              BCI
+              {item.heading}
             </h2>
             <p>
-              {item.heading}
+              {item.des}
             </p>
             <Explore path={item?.btn?.path || ""} text={item?.btn?.text || ""}/>
           </motion.div>
@@ -150,7 +152,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 1, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5]  md:w-1/2"
+            className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5] md:w-3/4"
           >
             {media()}
           </motion.div>

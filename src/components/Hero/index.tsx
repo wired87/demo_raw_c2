@@ -9,14 +9,14 @@ const Hero = () => {
     <>
       <section
 
-        className="relative overflow-hidden bg-gradient-to-tr from-red-800 to-black pt-[120px] md:pt-[130px] lg:pt-[160px] min-h-[1100px]"
+        className="relative w-full overflow-hidden bg-gradient-to-tr from-red-800 to-black pt-[120px] md:pt-[130px] lg:pt-[160px] min-h-[1100px]"
       >
         <Image alt={"image.kkk"} src={"https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202211/MIT-Neural-Networks-01_0.gif?itok=JNbooIWQ"} className={"object-cover"} fill unoptimized />
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap items-center">
+        <div className="w-full">
+          <div className="-mx-4 flex flex-wrap w-full items-center">
             <div className="w-full px-4">
               <div
-                className="hero-content relative z-10000 wow fadeInUp mx-auto max-w-[780px] text-center"
+                className="hero-content w-full  relative z-10000 wow fadeInUp mx-auto text-center"
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-6 z-1000 text-center text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">

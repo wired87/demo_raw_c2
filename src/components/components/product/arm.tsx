@@ -69,7 +69,7 @@ const CTA: React.FC<CTAT> = (
                 You’ve got the touch...
               </h2>
               <p>
-                The Ability Hand™ has sensors in its fingertips that detect pressure when you’re gripping an object and send a vibration to your arm to communicate that sensation. It lets you feel what you’re doing, so you can work with even the most delicate objects.
+                The Ability Hand™™ has sensors in its fingertips that detect pressure when you’re gripping an object and send a vibration to your arm to communicate that sensation. It lets you feel what you’re doing, so you can work with even the most delicate objects.
               </p>
             </motion.div>
           </div>

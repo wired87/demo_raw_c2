@@ -11,8 +11,6 @@ type HeaderInfo = {
 const SectionHeader = ({ headerInfo }: { headerInfo: HeaderInfo }) => {
   const { title, subtitle, description, link } = headerInfo;
 
-
-
   return (
     <>
       <motion.div

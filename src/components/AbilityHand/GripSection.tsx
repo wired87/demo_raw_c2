@@ -30,13 +30,13 @@ const imgStuff: string[] = [
 
 export const GripSection = () => {
   return(
-    <div className={"flex flex-col justify-center items-center w-full py-20"}>
+    <div className={"flex flex-col justify-center items-center w-full py-10"}>
       <div className={"flex mb-10 px-20 justify-start items-start w-full"}>
         <h1 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
           ... and the Grip!
         </h1>
       </div>
-      <div className={"grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-3"}>
+      <div className={"grid lg:grid-cols-4 grid-cols-3 md:grid-cols-3 gap-3"}>
         {imgStuff.map((item: string, i:number) => (
           <div className={"w-[150px] h-[150px]"} key={i}>
             <Image src={item} alt={"item.ongwIEFB"} width={150} height={150} className={"absolute object-cover"} />

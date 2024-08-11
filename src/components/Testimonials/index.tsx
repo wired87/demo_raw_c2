@@ -34,11 +34,10 @@ const testimonialData: Testimonial[] = [
 
 const Testimonials = () => {
   return (
-    <section className="bg-gray-1 h-30 dark:bg-dark-2 md:py-[120px]">
-      <div className="container px-4">
+    <section className="w-full h-[700px] flex items-center justify-center flex-col">
+
         <SectionTitle
-          subtitle="Testimonials"
-          title="What our Client Say"
+          title="What our Customers Say"
           paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
           width="640px"
           center
@@ -49,7 +48,6 @@ const Testimonials = () => {
             <SingleTestimonial key={i} testimonial={testimonial} />
           ))}
         </div>
-      </div>
     </section>
   );
 };

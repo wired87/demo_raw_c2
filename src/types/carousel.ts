@@ -11,7 +11,11 @@ export interface SliderDataT {
     path: string;
     text: string;
   }
+  design?: {
+    textColor?: string;
+  }
 }
+
 export interface CItemT {
   item: SliderDataT;
 }

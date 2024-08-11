@@ -109,7 +109,7 @@ const Contact = () => {
       setLoading(true);
       e.preventDefault();
       try { // 'http://localhost:3000/api/' 'https://www.botworld.cloud/api/'
-        const res = await axios.post('https://www.botworld.cloud/api/', formData);
+        const res = await axios.post('http://localhost:3000/api/contact/', formData);
         console.log("res: ",res);
         if (res.data.ok) {
           setSuccess(true);
@@ -174,7 +174,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="px-4 md:px-8 2xl:px-0 mb-15 w-full border-1 dark:border-strokedark">
+      <section className="px-4 relative md:px-8 2xl:px-0 my-15 w-full h-full border-1 dark:border-strokedark">
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
             <Image

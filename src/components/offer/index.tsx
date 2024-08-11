@@ -49,7 +49,7 @@ const data = [
     }
   },{
     media: [""],
-    heading: "Clinicians",
+    heading: "Clinicians & Research",
     des: "Explore our high qualitative EEG Clinical Equipments ",
     btn: {
       text: "Explore Equipment",

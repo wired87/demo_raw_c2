@@ -85,7 +85,7 @@ export default async function ProductPage({ params }: { params: { handle: string
       return(
         <SectionTitle
           subtitle={""}
-          title={"Meet the Ability Hand"}
+          title={"Meet the Ability Hand™"}
           paragraph={"The world’s fastest and first touch sensing bionic hand."}
           center
         />

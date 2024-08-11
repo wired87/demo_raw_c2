@@ -96,6 +96,18 @@ module.exports = {
         protocol: 'https',
         hostname: 'www.emotiv.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'galea.co',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'www.svgrepo.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'assets.newatlas.com',
+        pathname: '/**',
       },
     ]
   },

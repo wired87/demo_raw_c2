@@ -1,18 +1,15 @@
-const SectionTitle = ({
+import React from "react";
+import {SectionTitleT} from "@/types/title";
+
+const SectionTitle: React.FC<SectionTitleT> = ({
   subtitle,
   title,
   paragraph,
   width = "635px",
   center,
-}: {
-  subtitle?: string;
-  title: string;
-  paragraph: string;
-  width?: string;
-  center?: boolean;
 }) => {
   return (
-    <div className="-mx-4 flex flex-wrap my-7 ">
+    <div className=" flex self-stretch relative ">
       <div
         className={`wow fadeInUp w-full px-4 text-center ${
           center ? "mx-auto " : ""
