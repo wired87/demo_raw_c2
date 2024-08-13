@@ -6,12 +6,15 @@ import {ReactNode, Suspense} from "react";
 import {Gallery} from "@/components/components/product/gallery";
 import {Image} from "@/lib/shopify/types";
 import {ProductDescription} from "@/components/components/product/product-description";
-import Footer from "@/components/Footer";
 import Link from "next/link";
+import {validateProductContent} from "@/components/product/validateContent";
 
+export default async function ProductPage({ params }: { params: { handle: string[] }, subContent?: ReactNode }) {
 
-export default async function ProductPage({ params, SubContent }: { params: { handle: string }, subContent?: ReactNode }) {
-  const product = await getProduct(params.handle);
+  const productName = params.handle[2];
+  const company = params.handle[1];
+
+  const product = await getProduct(productName);
 
   if (!product) return notFound();
 
@@ -64,8 +67,7 @@ export default async function ProductPage({ params, SubContent }: { params: { ha
         </div>
         <RelatedProducts id={product.id} />
       </div>
-      <SubContent />
-      <Footer />
+      {validateProductContent(productName, company)}
     </ProductProvider>
   );
 }
@@ -223,7 +225,7 @@ import Footer from 'components/layout/footer';
 import { Gallery } from 'components/product/gallery';
 import { ProductProvider } from 'components/product/product-context';
 import { ProductDescription } from 'components/product/product-description';
-import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
+import { HIDDEN_PRODUCT_TAG } from '@/lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
 import { Image } from 'lib/shopify/types';
 import Link from 'next/link';

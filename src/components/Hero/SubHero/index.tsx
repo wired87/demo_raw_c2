@@ -31,7 +31,7 @@ const SubHeroCarousel: React.FC<SingleLeftT> = (
     if (typeof item === "string") {
       if (item.endsWith(".mp4")) {
         return(
-          <BackgroundVideo fill src={item} className={"relative object-cover opacity-85"} />
+          <BackgroundVideo src={item} className={"relative object-cover opacity-85"} />
         )
       } else {
         return(
@@ -49,7 +49,7 @@ const SubHeroCarousel: React.FC<SingleLeftT> = (
     }, [data]);
 
   return (
-    <div className={"relative overflow-hidden top-0  items-center justify-center h-[500px] mb-10 pt-20"}>
+    <div className={"relative overflow-hidden items-center justify-center h-[500px] min-h-[600px] py-15"}>
       <section className={"rounded-2xl w-full relative h-[100%]"}>
           <section className="embla rounded-2xl">
             <div className="embla__viewport rounded-2xl" ref={emblaRef}>

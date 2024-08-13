@@ -1,7 +1,7 @@
 export interface SectionTitleT {
-  subtitle?: string;
+  subTitle?: string;
   title: string;
-  paragraph: string;
+  des: string;
   width?: string;
   center?: boolean;
 }

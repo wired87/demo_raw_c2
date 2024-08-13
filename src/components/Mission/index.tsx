@@ -14,10 +14,7 @@ const universalBCI: string = "https://neurosky.com/wp-content/uploads/2015/06/ma
 
 const data = [
   {
-    media: [ // todo build check for mp4
-      "https://blackrockneurotech.com/wp-content/uploads/2023/01/home-pioneering-the-future-video.mp4",
-      "https://synchron.com/uploads/images/SYN003-TedTalk-4K-4.mp4",
-    ],
+    media: "/images/mission/man_think.jpg",
     heading: "BCI's",
     des: "Choose from various techniques of carefully chosen partners from all over the World to fit your needs.",
     btn: {
@@ -25,24 +22,15 @@ const data = [
       path: "/bci"
     }
   },{
-    media: [
-      //"https://www.premierprosthetic.com/wp-content/uploads/iStock-503663810.jpg",
-      "https://openbionics.com/wp-content/uploads/2021/09/Cath-Shilling-new-website-.jpg"
+    media:
+      "https://openbionics.com/wp-content/uploads/2021/09/Cath-Shilling-new-website-.jpg",
       // todo later https://www.steepergroup.com/prosthetics/lower-limb-prosthetics/cosmesis/prosthetic-leg-cover/
-    ],
+
     heading: "Bio Ware",
     des: "Explore our bioware solutions for every situation.",
     btn: {
       text: "",
       path: "/"
-    }
-  },{
-    media: [""],
-    heading: "Clinicians & Research",
-    des: "Explore our high qualitative EEG Clinical Equipments ",
-    btn: {
-      text: "Explore Equipment",
-      path: "/clinician"
     }
   },{
     media: [
@@ -60,9 +48,9 @@ const Mission = () => {
   return (
     <div className={"bg-transparent"}>
       <SectionTitle
-        subtitle={"Subtitle"}
-        title={"Our Mission"}
-        paragraph={"paragraph"}
+        subTitle={"Subtitle"}
+        title={"Explore our sortiment"}
+        des={""}
         center
       />
       {data.map((item,i) => (
@@ -74,6 +62,15 @@ const Mission = () => {
 
 export default Mission;
 /*
+,{
+    media: ,
+    heading: "Clinicians & Research",
+    des: "Explore our high qualitative EEG Clinical Equipments ",
+    btn: {
+      text: "Explore Equipment",
+      path: "/clinician"
+    }
+  },
  <section className="overflow-hidden pb-10 lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
         <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
           <div className="flex items-center gap-8 lg:gap-32.5">

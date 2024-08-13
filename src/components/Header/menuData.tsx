@@ -12,7 +12,7 @@ const menuData: Menu[] = [
     id: 3,
     title: "BCI",
     newTab: false,
-    path: "/"
+    path: "/category/bci/"
   },{
     id: 3,
     title: "Bioware",

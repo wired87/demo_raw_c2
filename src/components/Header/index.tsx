@@ -351,8 +351,7 @@ const Header = () => {
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
-                  }`}
-                >
+                  }`} >
                   <ul className="block lg:ml-8 lg:flex lg:gap-x-8 xl:ml-14 xl:gap-x-12">
                     {menuData.map((menuItem, index) =>
                       menuItem.path ? (
@@ -364,8 +363,7 @@ const Header = () => {
                               href={menuItem.path || "/"}
                               className={`ud-menu-scroll flex py-2 text-base text-dark dark:text-white dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${
                                 pathUrl === menuItem?.path 
-                              }`}
-                            >
+                              }`} >
                               {menuItem.title}
                             </Link>
                           ) : (
@@ -378,8 +376,7 @@ const Header = () => {
                                   : "text-body-color dark:text-white lg:text-white"
                               } ${
                                 pathUrl === menuItem?.path 
-                              }`}
-                            >
+                              }`} >
                               {menuItem.title}
                             </Link>
                           )}

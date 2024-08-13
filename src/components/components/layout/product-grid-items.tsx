@@ -4,12 +4,19 @@ import Link from 'next/link';
 import {Product} from "@/lib/shopify/types";
 import {GridTileImage} from "@/components/components/grid/tile";
 
-export default function ProductGridItems({ products }: { products: Product[] }) {
+export default function ProductGridItems({ products, url }: { products: Product[], url?: string }) {
+  const getUrl = (item) => {
+    if (url) {
+      return `/category/${url}${item.handle || ""}`
+    } else {
+      return `/product/${item.handle || ""}`
+    }
+  }
   return (
     <>
       {products.map((product: Product) => (
         <Grid.Item key={product.handle} className="animate-fadeIn">
-          <Link className="relative inline-block h-full w-full" href={`/product/${product.handle || ""}`}>
+          <Link className="relative inline-block h-full w-full" href={getUrl(product)}>
             <GridTileImage
               alt={product.title}
               label={{

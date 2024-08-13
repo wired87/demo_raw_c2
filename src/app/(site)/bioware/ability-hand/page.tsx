@@ -6,6 +6,11 @@ import SubHeroCarousel from "@/components/Hero/SubHero";
 import {SliderDataT} from "@/types/carousel";
 import BoxLoop from "@/components/Box/BoxLoop";
 import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
+import React from "react";
+import Contact from "@/components/Contact";
+import SectionTitle from "../../../../components/Common/SectionTitle";
+import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
+import {sHAbilityMovie} from "@/components/Common/data";
 
 
 
@@ -45,27 +50,21 @@ const AbilityHandPage = () => {
   return (
     <div className={"size-full pt-10"}>
       <SubHeroCarousel data={data} />
+      <SectionTitle
+        subTitle={"Finally"}
+        title={"A ability hand that can actually feel!"}
+        des={"The world’s fastest and first touch sensing bionic hand."}
+        center
+      />
       {abilitySectionData.map((item, i) => (
         <TextRightZ item={item} index={i}/>
       ))}
-      <BoxLoop  data={abilityBoxData}/>
+      <MovieBoxLoop data={abilityBoxData2} titleD={sHAbilityMovie}/>
       <Video videoId={"ulCU5QoIdyo"} />
+      <BoxLoop  data={abilityBoxData} />
       <GripSection />
-      <div className={"w-full  py-10 items-center justify-center flex "}>
-        <div className="grid items-center gap-6 justify-center  w-full grid-cols-1 md:grid-cols-2 ">
-          {abilityBoxData2.map((item, i) => (
-            <div key={i} className="w-full gap-y-3  items-center justify-center flex flex-col" >
-                <p className="text-center text-xl  uppercase text-dark dark:text-white font-bold tracking-[0.3em]">
-                  {item.title}
-                </p>
-                <p className="pl-10  uppercase text-xs text-primary text-center font-bold tracking-[0.3em]">
-                  {item.des}
-                </p>
 
-            </div>
-          ))}
-        </div>
-      </div>
+      <Contact />
     </div>
   );
 }

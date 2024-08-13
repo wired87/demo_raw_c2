@@ -1,33 +1,30 @@
 import Infinite from "@/components/carousel/Infinite";
 import SectionTitle from "@/components/Common/SectionTitle";
 import {ShopNow} from "@/components/Shop/ShopNow";
-import {SectionHeaderT} from "@/types/offer";
 import {getCollectionProducts} from "@/lib/shopify";
 import ProductGridItems from "@/components/components/layout/product-grid-items";
 import {GrabShopifyProductT} from "@/types/shopify";
+import {SectionTitleT} from "@/types/title";
 
-
-const sH: SectionHeaderT = {
-  heading: "Our Best sellers",
-  subTitle: "Explore",
-  des: ""
+interface InfiniteProdT {
+  params: GrabShopifyProductT;
+  sH?: SectionTitleT;
 }
-
 export default async function InfiniteProductsBest({
                                                params,
-
-                                             }: GrabShopifyProductT
+                                                     sH
+                                             }: InfiniteProdT
 ) {
 
-  const products = await getCollectionProducts({ collection: params?.collection || "" });
-
+  const products = await getCollectionProducts({ collection: params?.params?.collection || "" });
 
   return (
     <section className="logo-cloud-container w-[90vw] items-center justify-center mx-auto mt-25 mb-25">
+
       <SectionTitle
-        subtitle={sH.subTitle}
-        title={sH.heading}
-        paragraph={sH.des}
+        subTitle={sH?.subTitle || ""}
+        title={sH?.title || ""}
+        des={sH?.des || ""}
         center
       />
 

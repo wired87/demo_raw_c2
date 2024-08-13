@@ -18,7 +18,7 @@ export const CItem: React.FC<CItemT> = ({item}) =>  {
         priority={false}
         className={"w-full h-[500px] md:w-[1300px] object-cover relative dark:bg-[rgba(0,0,0,.7)] zoomed-image bg-[rgba(255,255,255,.7)] transition duration ease-in-out"}
       /> : (item.video) ? (
-      <BackgroundVideo fill src={item.video} className={"w-full h-[500px] md:w-[1300px] object-cover opacity-80"} />
+      <BackgroundVideo src={item.video} className={"w-full h-[500px] md:w-[1300px] object-cover opacity-80"} />
       ) : <></>
   }
 
@@ -30,7 +30,7 @@ export const CItem: React.FC<CItemT> = ({item}) =>  {
   }
   const textColor = getTextColor();
   return(
-    <div  className={"border-1 border-gray-300 relative w-full md:w-[90%] flex justify-center items-center h-[500px] flex-col"}>
+    <div  className={"border-1 border-gray-300 relative w-full md:w-[90%] flex justify-center items-center h-[500px] mb-10 flex-col"}>
       {
         media()
       }

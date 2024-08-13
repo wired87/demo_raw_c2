@@ -8,6 +8,11 @@ export const abilitySectionData: SectionT[] = [
     des: "You’ll be surprised how quickly you get the hang of using the Ability Hand™. Its patented motor control and " +
       "sensory feedback system makes it responsive and intuitive. The Ability Hand™ will be a natural " +
       "extension of yourself before you know it.",
+
+    btn: {
+      path: "/contact/ability-hand",
+      text: "Learn more!",
+    },
     conf: {
       mediaSize: {
         h: "h-[500px]",
@@ -21,6 +26,10 @@ export const abilitySectionData: SectionT[] = [
     des: "The Hand is perfect for outdoor activity, providing unparalleled durability and functionality in challenging " +
       "environments.\n Whether you're hiking, biking, or enjoying a day at the beach, ensuring you can confidently " +
       "tackle any adventure.",
+    btn: {
+      path: "/contact/ability-hand/",
+      text: "Contact us",
+    },
   },{
     media: [
       "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/1630481559774-GJKZ4WXO58L90QCYS3BL/9-0+Green+-+V2.png?format=2500w",

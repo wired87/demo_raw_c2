@@ -294,7 +294,7 @@ const Contact = () => {
                 <div className="mb-11.5 flex flex-col">
                   <h3 className={"bold mb-8 mt-4 underline-offset-2"}>How do we can help?</h3>
                   <textarea
-                    placeholder="Hi, ..."
+                    placeholder="Hi!"
                     required
                     value={formData.message}
                     name={"message"}

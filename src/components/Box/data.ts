@@ -4,27 +4,27 @@ export const abilityBoxData: BoxT[] = [
   {
     icon: "https://www.svgrepo.com/show/339617/touch-id.svg",
     title: "Instant feedback.",
-    des: "With sensors in the fingertips, you can feel what you’re doing with the Ability Hand™™ and use it with even the most delicate objects. It’s the first bionic hand with multi-touch feedback on the market.",
+    des: "With sensors in the fingertips, you can feel what you’re doing with the Ability Hand™ and use it with even the most delicate objects. It’s the first bionic hand with multi-touch feedback on the market.",
   },
   {
     icon: "https://www.svgrepo.com/show/365511/lightning-thin.svg",
     title: "Lightning fast.",
-    des: "With a 200 millisecond closing speed, the Ability Hand™™ is faster than any bionic hand on the market.",
+    des: "With a 200 millisecond closing speed, the Ability Hand™ is faster than any bionic hand on the market.",
   },
   {
     icon: "https://www.svgrepo.com/svg/314140/hands-solid",
     title: "Tough.",
-    des: "The Ability Hand™™ is lightweight, water-resistant, and each finger can handle blunt force impact without breaking.",
+    des: "The Ability Hand™ is lightweight, water-resistant, and each finger can handle blunt force impact without breaking.",
   },
   {
     icon: "https://www.svgrepo.com/show/314140/hands-solid.svg",
     title: "Lightweight.",
-    des: "The Ability Hand™™ weighs in at 490 grams – about 20 percent less than the average human hand.",
+    des: "The Ability Hand™ weighs in at 490 grams – about 20 percent less than the average human hand.",
   },
   {
-    icon: "https://www.svgrepo.com/svg/532084/water-arrow-down",
-    title: "Waterproof.",
-    des: "The Ability Hand™™ is waterproof",
+    icon: "https://www.svgrepo.com/show/532084/water-arrow-down.svg",
+    title: "Water Proof.",
+    des: "The Ability Hand™ is waterproof",
   },
   {
     icon: "https://www.svgrepo.com/show/308262/germany.svg",
@@ -33,31 +33,6 @@ export const abilityBoxData: BoxT[] = [
   },
 ]
 export const abilityBoxData2: BoxT[] = [
-  {
-    icon: "instant-feedback-icon",
-    title: "Instant feedback.",
-    des: "With sensors in the fingertips, you can feel what you’re doing with the Ability Hand™ and use it with even the most delicate objects. It’s the first bionic hand with multi-touch feedback on the market.",
-  },
-  {
-    icon: "lightning-fast-icon",
-    title: "Lightning fast.",
-    des: "With a 200 millisecond closing speed, the Ability Hand™ is faster than any bionic hand on the market.",
-  },
-  {
-    icon: "tough-icon",
-    title: "Tough.",
-    des: "The Ability Hand™ is lightweight, water-resistant, and each finger can handle blunt force impact without breaking.",
-  },
-  {
-    icon: "lightweight-icon",
-    title: "Lightweight.",
-    des: "The Ability Hand™ weighs in at 490 grams – about 20 percent less than the average human hand.",
-  },
-  {
-    icon: "made-in-usa-icon",
-    title: "Made in the USA.",
-    des: "We’re the first company building bionic hands in the United States, which means we offer the quickest service when you need a hand with your hand.",
-  },
   {
     icon: "multi-articulated-icon",
     title: "Multi-articulated.",
