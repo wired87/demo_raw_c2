@@ -3,7 +3,7 @@ import {SectionT} from "@/types/offer";
 
 import React from "react";
 import {motion} from "framer-motion";
-import Image, {StaticImageData} from "next/image";
+import Image from "next/image";
 import {Explore} from "@/components/Btns/Explore";
 import {ImageCarousel} from "@/components/carousel/ImageCarousel";
 
@@ -14,9 +14,6 @@ interface t {
   customMotionDiv?: string;
 }
 
-function isStringArray(data: string[] | StaticImageData[]): data is string[] {
-  return data.length > 0 && typeof data[0] === 'string';
-}
 
 
 export const TextRightZ: React.FC<t> = (
@@ -41,7 +38,9 @@ export const TextRightZ: React.FC<t> = (
         )
     }
   }
-
+  const getBtn = () => {
+    return (<Explore path={item.btn?.path} text={item.btn?.text}/>)
+  }
   console.log("index:", index)
   if (index === 1 || index === 3 ) {
     return(
@@ -93,7 +92,7 @@ export const TextRightZ: React.FC<t> = (
             <p>
               {item.des}
             </p>
-            <Explore path={item?.btn?.path || ""} text={item?.btn?.text || ""}/>
+            {getBtn()}
           </motion.div>
         </div>
       </div>
@@ -133,7 +132,7 @@ export const TextRightZ: React.FC<t> = (
               {item.des}
             </p>
             <div>
-              <Explore path={item.btn?.path || ""} text={item.btn?.text || ""}/>
+              {getBtn()}
             </div>
           </motion.div>
           <motion.div

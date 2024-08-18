@@ -1,14 +1,14 @@
-import { getCart } from '@/lib/shopify';
-import { cookies } from 'next/headers';
-import CartModal from './modal';
+"use client";
+import {Suspense} from "react";
+import OpenCart from "@/components/components/cart/open-cart";
+import Cart from "@/components/components/cart/cart";
 
-export default async function Cart() {
-  const cartId = cookies().get('cartId')?.value;
-  let cart;
-
-  if (cartId) {
-    cart = await getCart(cartId);
-  }
-
-  return <CartModal cart={cart} />;
+export const CartComponent = () => {
+  return (
+    <div className="flex justify-end md:w-1/3">
+      <Suspense fallback={<OpenCart/>}>
+        <Cart/>
+      </Suspense>
+    </div>
+  )
 }

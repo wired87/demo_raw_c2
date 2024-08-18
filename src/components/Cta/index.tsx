@@ -1,11 +1,11 @@
 "use client";
 
 import React, {ReactNode} from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {FaCheck} from "react-icons/fa";
+import {ctaDat} from "@/components/Categories/Exo-Skeletons/German-Bionics/data";
 
-interface CTAT {
+export interface CTAT {
   heading?: string;
   des?: string | string[];
   image?: ReactNode;
@@ -33,24 +33,18 @@ export const getPoints = (points: string[] | undefined) => {
   }
 }
 // todo header less width in sm otherwise overlapp
-const validateProps = (heading,
-                       des,
-                       image,
-                       btnText,
-                       href,
-                       trustImg
+const validateProps = (props: CTAT
 ) => {
+  const {heading,
+    des,
+    image,
+    btnText,
+    href,
+    trustImg} = props
   if (!heading || !des || !image || !btnText) {
     return {
       heading: "Wie können wir helfen?",
       des: "Vereinbaren Sie ein unverbindliches Erstgespräch mit einem unserer Experten.",
-      image: <Image
-        width={210}
-        height={200}
-        src={trustImg || "/images/trust/bene_bg.png"}
-        alt="profile_img.png"
-        className=""
-      />,
       btnText: "Projekt besprechen",
       href: "/contact"
     }
@@ -64,7 +58,7 @@ const validateProps = (heading,
     return {
       heading: heading,
       des: desComp,
-      image:image,
+
       btnText: btnText,
       href: href
     }
@@ -72,20 +66,25 @@ const validateProps = (heading,
 }
 
 const CTA: React.FC<CTAT> = (
-  {
-    heading,
-    des,
-    image,
-    btnText,
-    href,
-    trustImg
-  }
+
+    props
+
 ) => {
+    const a= {
+      heading: "Know somebody with interest?",
+      des: "We are shipping world wide with qualified made in Germany.",
+      image: "dhlBote.png",
+      btnText: "Contact us!",
+      href: "/contact",
+      trustImg: "hellooo.123"
 
-  const r = validateProps(heading, des, image, btnText, href, trustImg)
+    }
 
+
+  const r: any = validateProps(ctaDat)
+  console.log("props", props)
   return (
-    <section className="overflow-hidden px-4 py-5 md:px-8 lg:py-10 2xl:px-0">
+    <section className="overflow-hidden px-4 py-5 md:px-8 lg:py-10 2xl:px-0 w-full">
       <div className="mx-auto max-w-c-1390 rounded-lg bg-gradient-to-t from-[#F8F9FF] to-[#DEE7FF]
         px-7.5 py-12.5 dark:bg-blacksection dark:bg-gradient-to-t dark:from-transparent
         dark:to-transparent dark:stroke-strokedark md:px-12.5 xl:px-17.5 xl:py-0 sm:py-10">
@@ -135,10 +134,8 @@ const CTA: React.FC<CTAT> = (
 
             <div className="flex flex-row items-center
               justify-end xl:justify-between">
-              <div className={"md:w-[300px] w-[0] h-[0] my-10 md:h-[150px]  xl:block"}>
-                {
-                  r.image
-                }
+              <div className={"px-5 py-7 my-10 md:h-[150px]  xl:block"}>
+
               </div>
               <a
                 href={r.href}
@@ -148,20 +145,7 @@ const CTA: React.FC<CTAT> = (
                 {
                   r.btnText
                 }
-                <Image
-                  width={20}
-                  height={20}
-                  src="/images/icon/icon-arrow-dark.svg"
-                  alt="Arrow"
-                  className="dark:hidden"
-                />
-                <Image
-                  width={20}
-                  height={20}
-                  src="/images/icon/icon-arrow-light.svg"
-                  alt="Arrow"
-                  className="hidden dark:block"
-                />
+
               </a>
             </div>
           </motion.div>

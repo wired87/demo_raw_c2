@@ -7,8 +7,10 @@ import { useSearchParams } from 'next/navigation';
 import { useFormState, useFormStatus } from 'react-dom';
 import React from "react";
 import LoadingDots from "@/components/components/loading-dots";
-import {ProductVariant} from "@/lib/shopify/types";
+import {Product, ProductVariant} from "@/lib/shopify/types";
 import {addItem} from "@/components/components/cart/actions";
+import {useCart} from "@/components/components/cart/cart-context";
+import {useProduct} from "@/components/components/product/product-context";
 
 function SubmitButton({
   availableForSale,
@@ -65,13 +67,43 @@ function SubmitButton({
   );
 }
 
-export function AddToCart({
+export function AddToCart({ product }: { product: Product }) {
+  const { variants, availableForSale } = product;
+  const { addCartItem } = useCart();
+  const { state } = useProduct();
+  const [message, formAction] = useFormState(addItem, null);
+
+  const variant: any = variants.find((variant: ProductVariant) =>
+    variant.selectedOptions.every((option) => option.value === state[option.name.toLowerCase()])
+  );
+  const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
+  const selectedVariantId = variant?.id || defaultVariantId;
+  const actionWithVariant = formAction.bind(null, selectedVariantId);
+  const finalVariant = variants.find((variant: ProductVariant) => variant.id === selectedVariantId)!;
+
+  return (
+    <form
+      action={() => {
+        addCartItem(finalVariant, product);
+        actionWithVariant();
+      }}
+    >
+      <SubmitButton availableForSale={availableForSale} selectedVariantId={selectedVariantId} />
+      <p aria-live="polite" className="sr-only" role="status">
+        {message}
+      </p>
+    </form>
+  );
+}
+
+export function AddToCart1({
   variants,
   availableForSale
 }: {
   variants: ProductVariant[];
   availableForSale: boolean;
 }) {
+
   const [message, formAction] = useFormState(addItem, null);
   const searchParams = useSearchParams();
   const defaultVariantId = variants.length === 1 ? variants[0]?.id : undefined;
@@ -80,6 +112,7 @@ export function AddToCart({
       (option) => option.value === searchParams.get(option.name.toLowerCase())
     )
   );
+
   const selectedVariantId = variant?.id || defaultVariantId;
   const actionWithVariant = formAction.bind(null, selectedVariantId);
 

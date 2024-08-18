@@ -30,7 +30,7 @@ export const CItem: React.FC<CItemT> = ({item}) =>  {
   }
   const textColor = getTextColor();
   return(
-    <div  className={"border-1 border-gray-300 relative w-full md:w-[90%] flex justify-center items-center h-[500px] mb-10 flex-col"}>
+    <div  className={"border-1 border-gray-300 relative w-full md:w-[90%] flex justify-center items-center h-[500px] flex-col"}>
       {
         media()
       }

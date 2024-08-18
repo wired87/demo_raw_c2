@@ -3,7 +3,6 @@ import ProductSection from "@/components/product/ProductSection";
 import {SingleNewsSection} from "@/components/News/SingleNewsSection";
 import {whatDoBCI} from "@/components/News/data";
 import {InfiniteLogo} from "@/components/carousel/infinite/InfiniteLogo";
-import {partners} from "@/components/carousel/data";
 import Contact from "@/components/Contact";
 
 import {SliderDataT} from "@/types/carousel";
@@ -37,7 +36,7 @@ export const MainSoftware = () => {
         <ProductSection searchParams={{sort: ""}} params={{ collection: "bci" }} />
       </div>
       <SingleNewsSection data={whatDoBCI} />
-      <InfiniteLogo data={partners}  />
+      <InfiniteLogo />
       <Contact />
     </>
   )

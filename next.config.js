@@ -108,6 +108,18 @@ module.exports = {
         protocol: 'https',
         hostname: 'assets.newatlas.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'neurotechnology.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'player.vimeo.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'germanbionic.com',
+        pathname: '/**',
       },
     ]
   },

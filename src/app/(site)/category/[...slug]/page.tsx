@@ -1,37 +1,20 @@
-import {CatMain} from "@/components/Categories/CategoryMain";
-import {subHeroData} from "@/components/Categories/Bci/data";
-import {CatMainT} from "@/types/cat";
-import {validateHandleOne} from "@/app/(site)/category/[...slug]/validateOne";
 import ProductPage from "@/components/product";
-import {CompanyMain} from "@/components/Company";
 import InfiniteProductsBest from "@/components/carousel/infinite/InfiniteProductsBest";
 import {sHProdRelevant} from "@/components/Common/data";
 import Contact from "@/components/Contact";
 import React from "react";
+import CompanyMain from "@/components/Company";
+import {CategoryMain} from "@/components/Categories";
 
-/**
- * category
- * company
- * product
- */
-
-export const Category: React.FC<any> = async ({params}) => {
-  console.log("PARAMS:", params);
+const Category: React.FC<any> = async ({params}) => {
+  console.log("PARAMS CATGORY:", params);
   const handle: string[] = params.slug;
 
   const validateHandle = () => {
-    let stuff: CatMainT;
+    console.log("handle00", handle)
     if (handle.length === 1) {
-      // category section
-      stuff = validateHandleOne(handle);
       return (
-        <CatMain
-          subHeroData={subHeroData}
-          prodSecD={stuff.prodSecD}
-          newsSecD={stuff.newsSecD}
-          catPartnerSecD={stuff.catPartnerSecD}
-          content={stuff.content}
-        />
+        <CategoryMain handle={handle}/>
       )
     }
     else if (handle.length === 2) {
@@ -59,3 +42,4 @@ export const Category: React.FC<any> = async ({params}) => {
   return validateHandle();
 
 }
+export default Category;

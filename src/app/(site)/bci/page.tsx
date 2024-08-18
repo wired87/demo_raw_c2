@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import {MainBci} from "../../../components/Categories/Bci";
+import {CategoryMain} from "@/components/Categories";
 
 
 export const metadata: Metadata = {
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 const BCI = () => {
   return (
     <div className={"w-full gap-y-10 pt-30"}>
-      <MainBci />
+      <CategoryMain  handle={["bci"]}/>
     </div>
   );
 }
 
 export default BCI;
-// <Sections data={bciData} sectionHeader={sectionHeader} />
+// <Sections data={bciData} sectionHeader={sectionHeader} /> <MainBci />

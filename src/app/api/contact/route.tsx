@@ -13,7 +13,7 @@ export async function POST(req: any) {
     //const res = await sendMail(formData)
     const result = await resend.emails.send({
       from: "BESTBRAIN REQ <noreply@botworld.cloud>",
-      to: [process.env.NEXT_PUBLIC_GMAIL],
+      to: [process.env.NEXT_PUBLIC_GMAIL!],
       subject: formData.subject,
       react: EmailTemplate(formData),
     });

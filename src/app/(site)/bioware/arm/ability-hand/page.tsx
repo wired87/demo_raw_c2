@@ -1,20 +1,18 @@
 import {Video} from "@/components/Video";
-import {GripSection} from "@/components/AbilityHand/GripSection";
+import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
 import {TextRightZ} from "@/components/offer/sections/TextRightZ";
-import {abilitySectionData} from "@/components/AbilityHand/data";
+import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data";
 import SubHeroCarousel from "@/components/Hero/SubHero";
 import {SliderDataT} from "@/types/carousel";
 import BoxLoop from "@/components/Box/BoxLoop";
 import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
-import React from "react";
 import Contact from "@/components/Contact";
-import SectionTitle from "../../../../components/Common/SectionTitle";
+import SectionTitle from "../../../../../components/Common/SectionTitle";
 import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
 import {sHAbilityMovie} from "@/components/Common/data";
 
 
-
-export const data: SliderDataT[] = [
+const data: SliderDataT[] = [
   {
     img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/a28cd56f-4017-4e98-928f-242c00c23e9a/Product+hero.png?format=2500w",
     heading: "Meet the Ability Hand™",

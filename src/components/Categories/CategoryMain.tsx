@@ -26,15 +26,14 @@ export const CatMain: React.FC<CatMainT> = (
           />
         </div>
       )
-    }
-    else if (content?.cusProdSec) {
+    } else if (content?.cusProdSec) {
       return content.cusProdSec;
     }
   }
 
   const validateNewsSecD = () => {
     if (newsSecD) {
-      return(
+      return (
         <SingleNewsSection data={newsSecD} />
       );
     }
@@ -46,7 +45,7 @@ export const CatMain: React.FC<CatMainT> = (
   const validatePartnerD = () => {
     if (catPartnerSecD) {
       return(
-        <InfiniteLogo data={catPartnerSecD}  />
+        <InfiniteLogo />
       );
     }
     else if (content?.cutPartnerSec) {

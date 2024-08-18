@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import {newsData} from "@/components/Hero/data";
 import {NewsCarousel} from "@/components/Hero/OfferCarousel";
+import {Suspense} from "react";
+import {Search, SearchSkeleton} from "@/components/components/layout/navbar/search";
 
 const Hero = () => {
   return (
@@ -19,7 +21,8 @@ const Hero = () => {
                 className="hero-content w-full  relative z-10000 wow fadeInUp mx-auto text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-6 z-1000 text-center text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                <h1
+                  className="mb-6 z-1000 text-center text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
                   The future is today!
                 </h1>
                 <p className="text-center text-2xl leading-tight font-bold text-gray-200 gap-y-6">
@@ -29,15 +32,12 @@ const Hero = () => {
                     text-primary transition hover:brightness-125"
                   >{" "}worlds
                   </span>{" "}
-                    most innovative
-
-
+                  most innovative
                   <span
                     className="bg-clip-text
                     text-primary transition hover:brightness-125"
                   >{" "}Brain Technologies
                   </span>{" "}
-
                   at One
                   <span
                     className="bg-clip-text
@@ -48,6 +48,11 @@ const Hero = () => {
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
 
                 </p>
+                <div className="justify-center flex w-full">
+                  <Suspense fallback={ <SearchSkeleton /> }>
+                    <Search formClass={"mb-9 relative w-full lg:w-80 xl:w-full max-w-[800px]"}/>
+                  </Suspense>
+                </div>
                 <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
                     <Link
@@ -68,7 +73,8 @@ const Hero = () => {
           </div>
 
         </div>
-        <h1 className="mb-6 z-1000 text-left text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+        <h1
+          className="mb-6 z-1000 text-left text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
           Whats new?
         </h1>
         <NewsCarousel data={newsData}/>

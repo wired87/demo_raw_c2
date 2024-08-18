@@ -1,10 +1,12 @@
 
-import {getCollectionProducts} from '@/lib/shopify';
+
+
+
+import {getCollection, getCollectionProducts, getProducts} from '@/lib/shopify';
 import ProductGridItems from "@/components/components/layout/product-grid-items";
 import Grid from "@/components/components/grid";
 import {CompanyContainer} from "@/components/Company/Container";
 import {GrabShopifyProductT} from "@/types/shopify";
-import {getCollection, getProducts} from "../../../commerce/lib/shopify";
 import {defaultSort, sorting} from "@/lib/constants";
 
 export const metadata = {
@@ -36,7 +38,6 @@ export const ProductListView = async (
     sV = searchValue
     const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
     products = await getProducts({ sortKey, reverse, query: searchValue });
-
   }
 
   const resultsText = products.length > 1 ? 'results' : 'result';
@@ -56,9 +57,10 @@ export const ProductListView = async (
       ) : null}
       {products.length > 0 ? (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} url={`/${compStuff[0]}/${compStuff[1]}/`}/>
+          <ProductGridItems products={products} url={`/${compStuff?.[0]}/${compStuff?.[1]}/`}/>
         </Grid>
       ) : null}
     </section>
   );
 }
+

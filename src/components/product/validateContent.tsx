@@ -1,4 +1,6 @@
 import {Insight} from "@/components/product/Content/emotiv/Insight";
+import AbilityHandIndex from "../Company/Psyonics/AbilityHand";
+import RoamExoIndex from "@/components/Company/Roam/Exo";
 
 
 const COMPANIES = [
@@ -25,18 +27,6 @@ export const validateProductContent = (product: string, company: string) => {
         return (
           <Insight/>
         )
-      } else if (product === "openbci") {
-        return (
-          <Insight/>
-        )
-      } else if (product === "mindrow") {
-        return (
-          <Insight/>
-        )
-      } else if (product === "psyonic") {
-        return (
-          <Insight/>
-        )
       }
     }
     else if (company === "emotiv") {
@@ -46,12 +36,22 @@ export const validateProductContent = (product: string, company: string) => {
 
     }
     else if (company === "psyonic") {
-
+      if (product === "abiity-hand") {
+        return(
+          <AbilityHandIndex />
+        )
+      }
+    }
+    else if (company === "roam") {
+      if (product === "exo-skeleton") {
+        return(
+          <RoamExoIndex />
+        )
+      }
     }
   }
   else {
     // todo
-    console.error("FETCHING PRODUCT CONTENT...")
-    null;
+    return <></>
   }
 }

@@ -11,20 +11,20 @@ export const MovieBoxLoop: React.FC<MovieBoxLoopT> = ({data, titleD}) => {
 
   const {subTitle, title, des} = titleD
   return (
-    <>
+    <section className={"pt-25 min-h-[700px] "}>
       <SectionTitle
         subTitle={subTitle}
         title={title}
         des={des}
         center
       />
-      <div className={"w-full py-10 items-center justify-center flex "}>
+      <div className={"w-full h-[500px] items-center justify-center flex "}>
         <div className="grid items-center gap-x-8 gap-y-5 justify-center md:px-25 w-full grid-cols-1 md:grid-cols-2 ">
           {data.map((item: BoxT, i) => (
             <MovieBox item={item} i={i} />
           ))}
         </div>
       </div>
-    </>
+    </section>
   )
 }

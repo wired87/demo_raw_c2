@@ -16,8 +16,9 @@ export default async function InfiniteProductsBest({
                                              }: InfiniteProdT
 ) {
 
-  const products = await getCollectionProducts({ collection: params?.params?.collection || "" });
 
+  const products = await getCollectionProducts({ collection: "bci" });
+  console.log("products", products);
   return (
     <section className="logo-cloud-container w-[90vw] items-center justify-center mx-auto mt-25 mb-25">
 
@@ -34,7 +35,7 @@ export default async function InfiniteProductsBest({
         {products.length === 0 ? (
           <p className="py-3 text-lg">{`No items found in this collection mb-5`}</p>
         ) : (
-          <ProductGridItems products={products} />
+            <ProductGridItems products={products} extraClass={"h-[300px] w-[300px] "}/>
         )}
       </Infinite>
       <ShopNow href={"/bci"} explore={"BCIs"}/>

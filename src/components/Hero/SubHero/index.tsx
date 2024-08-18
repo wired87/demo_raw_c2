@@ -40,7 +40,7 @@ const SubHeroCarousel: React.FC<SingleLeftT> = (
             src={item}
             objectFit={"cover"}
             alt={"image.lsa"}
-            className={"relative object-cover opacity-85 h-[500px]"}
+            className={"relative object-cover opacity-75 h-[500px]"}
           />
         )
       }
@@ -49,7 +49,7 @@ const SubHeroCarousel: React.FC<SingleLeftT> = (
     }, [data]);
 
   return (
-    <div className={"relative overflow-hidden items-center justify-center h-[500px] min-h-[600px] py-15"}>
+    <div className={"relative overflow-hidden w-full backdrop-blur-1 md:w-[95%] top-5 items-end justify-end  h-[750px] min-h-[600px] py-25"}>
       <section className={"rounded-2xl w-full relative h-[100%]"}>
           <section className="embla rounded-2xl">
             <div className="embla__viewport rounded-2xl" ref={emblaRef}>

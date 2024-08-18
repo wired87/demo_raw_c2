@@ -1,59 +1,64 @@
-
-import { getCollection, getCollectionProducts } from '@/lib/shopify';
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+"use client";
 
 import Grid from '@/components/components/grid';
 import ProductGridItems from '@/components/components/layout/product-grid-items';
-import { defaultSort, sorting } from '@/lib/constants';
 import {ShopNow} from "@/components/Shop/ShopNow";
 import SectionTitle from "@/components/Common/SectionTitle";
+import {useCallback} from "react";
+import axios from "axios";
 
-export async function generateMetadata(
-  {
-                                         params
-                                       }: {
-  params: { collection: string };
-}): Promise<Metadata> {
-  const collection = await getCollection(params.collection);
 
-  if (!collection) return notFound();
-
-  return {
-    title: collection.seo?.title || collection.title,
-    description:
-      collection.seo?.description || collection.description || `${collection.title} products`
-  };
-}
-
-export default async function ProductSection({
+const ProductSection = ({
                                              params,
-                                             searchParams, sectionHeader
+                                             searchParams
                                            }: {
   params: { collection: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+}) => {
 
-  const { sort } = searchParams as { [key: string]: string };
-  const { sortKey, reverse } = sorting.find((item) => item.slug === sort) || defaultSort;
-  const products = await getCollectionProducts({ collection: params.collection, sortKey, reverse });
+  const getProducts = async () => {
+    try {
+      const data = {
+        searchParams: searchParams,
+        params: params
+      }
+      const res = await axios.post(process.env.NODE_ENV === "production" ? "" : "http://localhost:3000/api/get-product", data);
+      console.log("RES FORM P FETCH", res)
+      if (res?.data?.products) {
+        return res?.data?.products
+      }
+    }catch(e) {
+      console.error("ERRO WHILE PROD FETCH:", e);
+    }
+    return null
+  }
 
-  return (
-    <section>
-      <SectionTitle
-        subtitle={"sectionHeader.subTitle"}
-        title={"sectionHeader.heading"}
-        paragraph={"sectionHeader.des"}
-        center
-      />
-      {products.length === 0 ? (
-        <p className="py-3 text-lg">{`No products found in this collection`}</p>
-      ) : (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} />
-        </Grid>
-      )}
-      <ShopNow href={"/bci"} explore={"BCIs"}/>
-    </section>
-  );
+  const Content =  useCallback(async() => {
+    const prod = await getProducts().then(() => console.log("fetched proiducts"))
+    if (prod) {
+      return (
+        <section>
+          <SectionTitle
+            subTitle={"Our offer"}
+            title={"Explore our BCI's"}
+            des={"sectionHeader.des"}
+            center
+          />
+          {prod?.length === 0 ? (
+            <p className="py-3 text-lg">{`No products found in this collection`}</p>
+          ) : (
+            <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              <ProductGridItems products={prod} />
+            </Grid>
+          )}
+          <ShopNow href={"/bci"} explore={"BCIs"} />
+        </section>
+      );
+    }
+  }, [params,
+    searchParams])
+
+  return Content();
 }
+
+export default ProductSection;

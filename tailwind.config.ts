@@ -40,6 +40,7 @@ module.exports = {
         alabaster: "#FBFBFB",
         zumthor: "#EDF5FF",
         socialicon: "#D1D8E0",
+        apogee: "#c3bf28",
         tpBtn: "rgba(209,216,224,0.51)",
       },
       fontSize: {

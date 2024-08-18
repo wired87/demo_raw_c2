@@ -21,14 +21,14 @@ export const InfiniteLogo: React.FC = () => {
     <div className="logo-cloud-container w-[90vw] items-center justify-center mx-auto mt-25 mb-20">
 
       <SectionTitle
-        subtitle={sH.subTitle}
+        subTitle={sH.subTitle}
         title={sH.heading}
-        paragraph={sH.des}
+        des={sH.des}
         center
       />
       <Infinite
         pauseOnHover
-        className="[--duration:20s] gap-20 my-8 logo-cloud">
+        className="[--duration:20s] gap-20 my-8 logo-cloud dark:bg-strokedark bg-[#e6e6e6]">
         {bciPartners.map((item, i) => (
 
           <Link href={item.url} className="relative w-[350px] h-[120px] items-center mx-4" key={i}>

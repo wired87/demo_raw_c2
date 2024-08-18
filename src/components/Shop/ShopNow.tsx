@@ -2,7 +2,7 @@ import Link from "next/link";
 interface ShopNowT {
   href: string;
   explore: string
-}
+}// todo push to search to get all bcis
 export const ShopNow = ({ href, explore }) => {
   return(
     <div className={"w-full flex items-center flex-col mt-7"}>

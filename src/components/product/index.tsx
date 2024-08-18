@@ -1,13 +1,13 @@
 import {GridTileImage} from "@/components/components/grid/tile";
 import {getProduct, getProductRecommendations} from "@/lib/shopify";
 import notFound from "@/app/not-found";
-import {ProductProvider} from "../../../commerce/components/product/product-context";
 import {ReactNode, Suspense} from "react";
 import {Gallery} from "@/components/components/product/gallery";
 import {Image} from "@/lib/shopify/types";
 import {ProductDescription} from "@/components/components/product/product-description";
 import Link from "next/link";
 import {validateProductContent} from "@/components/product/validateContent";
+import {ProductProvider} from "@/components/components/product/product-context";
 
 export default async function ProductPage({ params }: { params: { handle: string[] }, subContent?: ReactNode }) {
 

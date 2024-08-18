@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {GripSection} from "@/components/AbilityHand/GripSection";
+import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
 
 
 interface CTAT {

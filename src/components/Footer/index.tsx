@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
 
-    <footer className="border-t w-full border-stroke dark:border-strokedark bg-transparent">
+    <footer className="border-t w-full border-stroke dark:border-strokedark bg-transparent mt-5000 relative">
       <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
         {/* <!-- Footer Top --> */}
         <div className="py-20 lg:py-25">
@@ -62,7 +62,7 @@ const Footer = () => {
                 className="animate_top"
               >
                 <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                  Dienstleistungen
+                  Marketplace
                 </h4>
 
                 <ul>
@@ -71,7 +71,7 @@ const Footer = () => {
                       href="/web-entwicklung"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      Web Entwicklung
+                      BCI
                     </a>
                   </li>
                   <li>
@@ -79,7 +79,7 @@ const Footer = () => {
                       href="/mobile"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      Mobile App Entwicklung
+                      Bioware
                     </a>
                   </li>
                   <li>
@@ -87,7 +87,7 @@ const Footer = () => {
                       href="/design"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      UI/UX Design
+                      Booster & Stims
                     </a>
                   </li>
                   <li>
@@ -95,34 +95,25 @@ const Footer = () => {
                       href="/mvp"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      MVP Entwicklung
+                      Nano Bots
                     </a>
                   </li>
-                  {/*
- <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Individuelle Software Entwicklung
-                      </a>
-                    </li>
-                   <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        Cloud Infrastruktur
-                      </a>
-                    </li> <li>
-                      <a
-                        href="#"
-                        className="mb-3 inline-block hover:text-primary"
-                      >
-                        API Entwicklung und Integration
-                      </a>
-                    </li>
-                    */}
+                  <li>
+                    <a
+                      href="/mvp"
+                      className="mb-3 inline-block hover:text-primary"
+                    >
+                      Utils
+                    </a>
+                  </li><li>
+                    <a
+                      href="/mvp"
+                      className="mb-3 inline-block hover:text-primary"
+                    >
+                      Software
+                    </a>
+                  </li>
+
                 </ul>
               </motion.div>
 
@@ -145,24 +136,31 @@ const Footer = () => {
                 className="animate_top"
               >
                 <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                  KI
+                  News
                 </h4>
 
                 <ul>
                   <li>
                     <a
-                      href="/chatbot"
+                      href="/under-development"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      Support Agents
+                      Own Devices
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/ki"
+                      href="/under-development"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      KI Entwicklung
+                      Partnerships
+                    </a>
+                  </li> <li>
+                    <a
+                      href="/under-development"
+                      className="mb-3 inline-block hover:text-primary"
+                    >
+                      Science
                     </a>
                   </li>
 
@@ -187,7 +185,7 @@ const Footer = () => {
               className="animate_top"
             >
               <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                Unternehmen
+                Company
               </h4>
 
               <ul>
@@ -196,7 +194,7 @@ const Footer = () => {
                     href="/about"
                     className="mb-3 inline-block hover:text-primary"
                   >
-                    Über uns
+                    Who we are
                   </a>
                 </li>
 
@@ -205,7 +203,14 @@ const Footer = () => {
                     href="/contact"
                     className="mb-3 inline-block hover:text-primary"
                   >
-                    Kontakt
+                    Investors
+                  </a>
+                </li>   <li>
+                  <a
+                    href="/contact"
+                    className="mb-3 inline-block hover:text-primary"
+                  >
+                    Contact
                   </a>
                 </li>
 

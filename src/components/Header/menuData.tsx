@@ -25,38 +25,20 @@ const menuData: Menu[] = [
         newTab: false,
       },{
         id: 63,
-        title: "Leg ",
-        path: "/under-construction",
+        title: "Proteor Leg",
+        path: "/category/bioware/proteor/leg",
         newTab: false,
       },{
+        id: 63,
+        title: "Roman Exo Skeleton",
+        path: "/category/bioware/roman/exo-skeleton",
+        newTab: false,
+      },/*{
         id: 63,
         title: "Utils, Extensions & Improvements",
         path: "/under-construction",
         newTab: false,
-      },
-    ]
-  },{
-    id: 3,
-    title: "Booster",
-    newTab: false,
-    submenu: [
-      {
-        id: 63,
-        title: "Nano Bot's",
-        path: "/under-construction",
-        newTab: false,
-      },{
-        id: 63,
-        title: "Utils",
-        path: "/under-construction",
-        newTab: false,
-      },
-      {
-        id: 63,
-        title: "Idea",
-        path: "/under-construction",
-        newTab: false,
-      },
+      },*/
     ]
   },
   {
@@ -118,5 +100,31 @@ export default menuData;
         newTab: false,
       },
     ],
+  },
+
+
+  {
+    id: 3,
+    title: "Booster",
+    newTab: false,
+    submenu: [
+      {
+        id: 63,
+        title: "Nano Bot's",
+        path: "/under-construction",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Utils",
+        path: "/under-construction",
+        newTab: false,
+      },
+      {
+        id: 63,
+        title: "Idea",
+        path: "/under-construction",
+        newTab: false,
+      },
+    ]
   },
  */

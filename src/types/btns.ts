@@ -1,4 +1,4 @@
 export interface ExploreT {
-  text: string;
-  path: string;
+  text?: string;
+  path?: string;
 }

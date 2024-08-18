@@ -1,11 +1,12 @@
+
 import Grid from "@/components/components/grid";
 
 import Link from 'next/link';
 import {Product} from "@/lib/shopify/types";
 import {GridTileImage} from "@/components/components/grid/tile";
 
-export default function ProductGridItems({ products, url }: { products: Product[], url?: string }) {
-  const getUrl = (item) => {
+export default function ProductGridItems({ products, url, extraClass }: { products: Product[], url?: string, extraClass?: string }) {
+  const getUrl = (item: any) => {
     if (url) {
       return `/category/${url}${item.handle || ""}`
     } else {
@@ -16,7 +17,7 @@ export default function ProductGridItems({ products, url }: { products: Product[
     <>
       {products.map((product: Product) => (
         <Grid.Item key={product.handle} className="animate-fadeIn">
-          <Link className="relative inline-block h-full w-full" href={getUrl(product)}>
+          <Link className={`relative inline-block mx-2 ${extraClass || ""}`} href={getUrl(product)}>
             <GridTileImage
               alt={product.title}
               label={{

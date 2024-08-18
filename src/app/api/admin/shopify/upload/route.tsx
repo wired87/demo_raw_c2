@@ -1,10 +1,8 @@
 
 
 import {NextResponse} from "next/server";
-import {EmailTemplate} from "@/components/EmailTemplates/ToMe";
-import {Resend} from "resend";
+
 // Shopify API URL
-const shopifyUrl = `https://${x}:${PASSWORD}@${SHOP_NAME}.myshopify.com/admin/api/${API_VERSION}/products.json`;
 
 // Define the product data
 const productData = {
@@ -32,11 +30,10 @@ export async function POST(req: any) {
     console.log("server stuff", formData)
     //const res = await sendMail(formData)
 
-    console.log("res", result)
+    console.log("res")
 
     return NextResponse.json(
       {
-        result: result,
         ok: true
       }
     )
