@@ -1,7 +1,6 @@
 import {LeftTopDots} from "@/components/dot/leftTop";
 import SingleFaq from "@/components/Faq/SingleFaq";
 import { CiSettings } from "react-icons/ci";
-import {GiGearStickPattern} from "react-icons/gi";
 
 /*
 "10 EEG, 2 ECG Electrodes and a 9-Axis chip provide a detailed insight about your mental and " +
