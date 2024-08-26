@@ -50,9 +50,9 @@ const Team = () => {
       <div className="container">
         <div className="mb-[60px]">
           <SectionTitle
-            subtitle="Our Team"
+            subTitle="Our Team"
             title="Meet Our Team"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            des="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
             width="640px"
             center
           />
