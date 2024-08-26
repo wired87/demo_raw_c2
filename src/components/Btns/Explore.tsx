@@ -5,7 +5,7 @@ import React from "react";
 export const Explore: React.FC<ExploreT> = ({ text, path }) => {
   return(
     <Link
-      href={path}
+      href={path || "/"}
       className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
     >
                   <span className="duration-300 group-hover:pr-2">
