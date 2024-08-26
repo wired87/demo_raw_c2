@@ -2,71 +2,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React, {useCallback, useEffect, useState} from "react";
-import {Checkbox, CheckboxGroup} from '@nextui-org/react';
-import {Slider} from "@nextui-org/slider";
-import {CheckBoxObj, MailT} from "@/types/contact";
+
+import {MailT} from "@/types/contact";
 
 import {Spinner} from "@nextui-org/spinner";
 import CModal from "@/components/Modal";
 import axios from "axios";
 
 
-const checkBoxValues: CheckBoxObj[] = [
-  {
-    title: "BCI",
-    selected: false
-  },{
-    title: "Bio Ware",
-    selected: false
-  },{
-    title: "Clinical Equipment ",
-    selected: false
-  },{
-    title: "Software",
-    selected: false
-  },
-]
-
-const checkBoxValues2: CheckBoxObj[] =[
-  {
-    title: "Partnerships",
-    selected: false
-  },{
-    title: "General Contact",
-    selected: false
-  },
-
-]
-
-
-const sliderMasrks = [
-  {
-    value: 3,
-    label: "3",
-  },{
-    value: 6,
-    label: "6",
-  },{
-    value: 9,
-    label: "9",
-  },{
-    value: 12,
-    label: "12",
-  },{
-    value: 15,
-    label: "15",
-  },{
-    value: 18,
-    label: "18",
-  },{
-    value: 21,
-    label: "21",
-  },{
-    value: 24,
-    label: "24",
-  },
-
-]
 const Contact = () => {
   const [selected, setSelected] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
@@ -174,8 +117,14 @@ const Contact = () => {
 
   return (
     <>
-      <section className="px-4 relative md:px-8 2xl:px-0 my-15 w-full h-full border-1 dark:border-strokedark">
-        <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
+      <section className="px-4 bg-white relative md:px-8 2xl:px-0 my-15 w-full h-full border-1 dark:border-strokedark">
+        <div className="absolute inset-0 bg-gray-300">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.954213807517!2d13.695810876795147!3d51.03546637170986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709c57778bb2587%3A0x203281e8cb8c69b1!2sKlingestra%C3%9Fe%2022%2C%2001159%20Dresden!5e0!3m2!1sde!2sde!4v1724592625371!5m2!1sde!2sde"
+            width="100%" height="100%" className={"top-0 left-0"}  loading="lazy"
+           ></iframe>
+        </div>
+        <div className="relative  mx-auto max-w-c-1390 px-7.5 py-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
             <Image
               src="./images/shape/shape-dotted-light.svg"
@@ -191,7 +140,8 @@ const Contact = () => {
             />
           </div>
 
-          <div className="flex flex-col-reverse flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
+          <div
+            className="flex flex-col-revers  flex-wrap gap-8 md:flex-row md:flex-nowrap md:justify-between xl:gap-20">
             <motion.div
               variants={{
                 hidden: {
@@ -206,12 +156,12 @@ const Contact = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:bg-tp
+              transition={{duration: 1, delay: 0.1}}
+              viewport={{once: true}}
+              className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8
               dark:border-strokedark md:w-3/5 lg:w-3/4 xl:p-15"
             >
-              <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
+              <h2 className="mb-15 text-3xl font-semibold text-black xl:text-sectiontitle2">
                 Lets get in touch!
               </h2>
               <form
@@ -260,39 +210,9 @@ const Contact = () => {
                     className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
-                <div className={"my-10 "}>
-                  <h3 className={"bold my-4"}>
-                    Choose the section of your interest
-                  </h3>
-                  <div className={"flex flex-col gap-x-7 gap-y-3 md:flex-row"}>
-                    <CheckboxGroup
-                      onChange={setSelected}
-                      onValueChange={setSelected}
-                      value={selected}>
-                      {checkBoxValues.map((item: CheckBoxObj, i: number) => (
-                        <Checkbox
-                          value={item.title}
-                          key={i}>
-                          {item.title}
-                        </Checkbox>
-                      ))}
-                    </CheckboxGroup>
-                    <CheckboxGroup
-                      onValueChange={setSelected}
-                      value={selected}>
-                      {checkBoxValues2.map((item: CheckBoxObj, i: number) => (
-                        <Checkbox
-                          value={item.title}
-                          key={i}>
-                          {item.title}
-                        </Checkbox>
-                      ))}
-                    </CheckboxGroup>
-                  </div>
-                </div>
 
                 <div className="mb-11.5 flex flex-col">
-                  <h3 className={"bold mb-8 mt-4 underline-offset-2"}>How do we can help?</h3>
+                  <h3 className={"bold text-black mb-8 mt-4 underline-offset-2"}>How we can help?</h3>
                   <textarea
                     placeholder="Hi!"
                     required
@@ -301,7 +221,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full border-b border-stroke bg-transparent focus:border-waterloo
                       focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark
-                      dark:focus:border-manatee dark:focus:placeholder:text-white min-h-[250px]"
+                      dark:focus:border-manatee dark:focus:placeholder:text-white min-h-[150px]"
                   >
                     </textarea>
                 </div>
@@ -337,26 +257,11 @@ const Contact = () => {
               }}
               initial="hidden"
               whileInView="visible"
-              transition={{ duration: 2, delay: 0.1 }}
-              viewport={{ once: true }}
+              transition={{duration: 2, delay: 0.1}}
+              viewport={{once: true}}
               className="animate_top w-full md:w-2/5 md:p-7.5 lg:w-[26%] xl:pt-15"
             >
-              <h2 className="mb-12.5 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-                We are looking forward to your message!
-              </h2>
-              <div className="5 mb-7">
 
-              </div>
-
-              <div>
-                <Image height={100} width={100} alt={"hello_call_center"} className={"object-contain mb-5"} src={"/images/contact/call_center.jpg"}/>
-              </div>
-              <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
-                E-Mail-Adresse
-              </h3>
-              <p>
-                <a href="#">info@botworld.cloud</a>
-              </p>
             </motion.div>
           </div>
         </div>

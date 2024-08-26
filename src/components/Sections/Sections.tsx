@@ -34,9 +34,9 @@ export const Sections: React.FC<SectionsCompT> = (
     <div className={"bg-tp"}>
 
       <SectionTitle
-        subtitle={sectionHeader.subTitle}
+        subTitle={sectionHeader.subTitle}
         title={sectionHeader.heading}
-        paragraph={sectionHeader.des}
+        des={sectionHeader.des}
         center
       />
       {data.map((item, i) => (

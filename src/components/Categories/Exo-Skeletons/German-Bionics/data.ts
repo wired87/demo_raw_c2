@@ -9,7 +9,7 @@ export const sliderData: SliderDataT[] = [
     heading: "Explore what is possible",
     des: "Get the best of the Apogee with limitless use cases.",
     btn: {
-      path: "/bioware/exo-skeleton/#possibilities",
+      path: "/bioware/apogee-exo-skeleton/#possibilities",
       text: "Explore",
     }
   },{

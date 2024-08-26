@@ -1,15 +1,15 @@
 import {Video} from "@/components/Video";
-import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
-import {TextRightZ} from "@/components/offer/sections/TextRightZ";
-import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data";
-import SubHeroCarousel from "@/components/Hero/SubHero";
 import {SliderDataT} from "@/types/carousel";
-import BoxLoop from "@/components/Box/BoxLoop";
-import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
-import Contact from "@/components/Contact";
-import SectionTitle from "../../../../../components/Common/SectionTitle";
+import SubHeroCarousel from "@/components/Hero/SubHero";
+import SectionTitle from "@/components/Common/SectionTitle";
+import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data";
+import {TextRightZ} from "@/components/offer/sections/TextRightZ";
 import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
+import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
 import {sHAbilityMovie} from "@/components/Common/data";
+import BoxLoop from "@/components/Box/BoxLoop";
+import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
+import Contact from "@/components/Contact";
 
 
 const data: SliderDataT[] = [
@@ -19,27 +19,26 @@ const data: SliderDataT[] = [
     des: "Impact your daily life",
     btn: {
       path: "/bioware/ability-hand/#infoSection",
-      text: "",
+      text: "Explore Details",
     },
     design: {textColor: "text-black"}
   },{
-    img: "/images/product/arm/img_1.png",
-    heading: "",
-    des: "",
+    img: "https://images.squarespace-cdn.com/content/v1/61229f1b98e6c829c570bace/5f0d2972-b8bb-4556-8abe-670862b687dd/touch+bg2.png",
+    heading: "Feel it!",
+    des: "Integrated Touch Sensors in the fingertip",
     btn: {
-      path: "",
-      text: "Show more!",
+      path: "/bioware/ability-hand#touchSection",
+      text: "Learn more",
     }
-
   },{
     img: "",
-    heading: "Interested",
+    heading: "Need a grip?",
     des: "Check out how the Ability Hand™ can fir your needs",
     btn: {
-      path: "/bioware/ability-hand/#gripSection",
-      text: "",
+      path: "/contact/ability-hand",
+      text: "Contact us",
     },
-    design: {textColor: "text-black"}
+
   },
 ];
 

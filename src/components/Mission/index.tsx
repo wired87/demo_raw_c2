@@ -24,7 +24,7 @@ const Mission:React.FC<any> = ({data, subHeading, bgImg}) => {
   }
 
   return (
-    <div className={"bg-transparent mb-25 relative"}>
+    <div className={"bg-transparent mb-15 relative"}>
 
       <SectionTitle
         subTitle={subHeading.subTitle}
@@ -32,9 +32,11 @@ const Mission:React.FC<any> = ({data, subHeading, bgImg}) => {
         des={subHeading.des}
         center
       />
+
       {data.map((item:any,i:number) => (
-        <TextRightZ  index={i} item={item}/>
+        <TextRightZ index={i} item={item}/>
       ))}
+
     </div>
   );
 };

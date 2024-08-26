@@ -37,7 +37,7 @@ export const CItem: React.FC<CItemT> = ({item}) =>  {
       <div className={"absolute flex flex-col w-[100%] px-20 h-full p gap-y-3 bg-tp top-0 justify-center items-start"}>
         <p className={`mb-2 z-1000 text-left md:max-w-[500px] text-3xl ${textColor} gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]`}>
           {item.heading}</p>
-        <p className={`max-w-90 text-left ${textColor} leading-tight`}>
+        <p className={`md:max-w-[600px] text-left ${textColor} leading-tight`}>
           {item.des}
         </p>
         <Link

@@ -1,10 +1,9 @@
 "use client"
 import Image from "next/image";
-import Link from "next/link";
 import {newsData} from "@/components/Hero/data";
 import {NewsCarousel} from "@/components/Hero/OfferCarousel";
-import {Suspense} from "react";
-import {Search, SearchSkeleton} from "@/components/components/layout/navbar/search";
+const text= "Explore unprecedented comfort with the C-1, the most comfortable and Innovative device" +
+  "in a new world of BCI "
 
 const Hero = () => {
   return (
@@ -18,37 +17,39 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap w-full items-center">
             <div className="w-full px-4">
               <div
-                className="hero-content w-full  relative z-10000 wow fadeInUp mx-auto text-center"
+                className="hero-content w-full relative z-10000 wow fadeInUp mx-auto text-center"
                 data-wow-delay=".2s"
               >
-                <h1
-                  className="mb-6 z-1000 text-center text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
-                  The future is today!
-                </h1>
-                <p className="text-center text-2xl leading-tight font-bold text-gray-200 gap-y-6">
-                  Explore the
-                  <span
-                    className="bg-clip-text
-                    text-primary transition hover:brightness-125"
-                  >{" "}worlds
+                <div className={"w-full flex flex-col justify-center items-center"}>
+                  <h1
+                    className="mb-6 z-1000 text-center md:max-w-[1000px] text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                    Most Innovative Brain Computer Interface for your daily life
+                  </h1>
+                  <p className="text-center text-3xl font-bold tracking-[0.05em] leading-slug  text-gray-400 md:max-w-[800px]">
+                    Explore unprecedented comfort
+                   with the
+                    <span
+                      className="bg-clip-text
+                    text-gray-200 transition hover:brightness-125"
+                    >{" "}C-1
+                  </span>{" "}, the
+                    <span
+                      className="bg-clip-text
+                    text-gray-200 transition hover:brightness-125"
+                    >{" "}most comfortable and Innovative
                   </span>{" "}
-                  most innovative
-                  <span
-                    className="bg-clip-text
-                    text-primary transition hover:brightness-125"
-                  >{" "}Brain Technologies
+                     device in a
+                    <span
+                      className="bg-clip-text
+                    text-gray-200 transition hover:brightness-125"
+                    >{" "}new world of BCI
                   </span>{" "}
-                  at One
-                  <span
-                    className="bg-clip-text
-                    text-primary transition hover:brightness-125"
-                  >{" "}Marketplace
-                  </span>{" "}
-                </p>
-                <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
+                  </p>
+                </div>
 
-                </p>
-                <div className="justify-center flex w-full">
+
+
+                {/*<div className="justify-center flex w-full">
                   <Suspense fallback={ <SearchSkeleton /> }>
                     <Search formClass={"mb-9 relative w-full lg:w-80 xl:w-full max-w-[800px]"}/>
                   </Suspense>
@@ -63,7 +64,7 @@ const Hero = () => {
                       Explore our Products
                     </Link>
                   </li>
-                </ul>
+                </ul>*/}
                 <div>
                   {/*icon from every body part <Circles />*/}
                 </div>
@@ -84,3 +85,28 @@ const Hero = () => {
 };
 
 export default Hero;
+/*
+  <div className={"w-full flex flex-col justify-center items-center"}>
+
+                  <h1
+                    className="mb-6 z-1000 text-center md:max-w-[1000px] text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                    Most Innovative Brain Computer Interface for your daily life
+                  </h1>
+
+                  <p className="text-center text-2xl leading-tight font-bold text-gray-200 gap-y-6 md:max-w-[800px]">
+                    Explore unprecedented comfort
+                    <span
+                      className="bg-clip-text
+                    text-primary transition hover:brightness-125"
+                    >{" "}with the C-1, the
+                  </span>{" "}
+                    most comfortable and Innovative device
+                    <span
+                      className="bg-clip-text
+                    text-primary transition hover:brightness-125"
+                    >{" "}in a new world of BCI
+                  </span>{" "}
+                  </p>
+
+                </div>
+ */

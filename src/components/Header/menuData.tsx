@@ -1,7 +1,6 @@
 import { Menu } from "@/types/menu";
 
 const menuData: Menu[] = [
-
   {
     id: 2,
     title: "Home",
@@ -10,10 +9,85 @@ const menuData: Menu[] = [
   },
   {
     id: 3,
-    title: "BCI",
+    title: "Products",
     newTab: false,
-    path: "/category/bci/"
-  },{
+    submenu: [
+      {
+        id: 63,
+        title: "C-1",
+        path: "/#c1",
+        newTab: false,
+      },{
+        id: 636,
+        title: "Extensions",
+        path: "/under-construction",
+        newTab: false,
+      },
+    ]
+  },
+  {
+    id: 5,
+    title: "API",
+    newTab: false,
+    path: "/under-construction"
+  },
+  {
+    id: 6,
+    title: "Company",
+    newTab: false,
+    submenu: [
+      {
+        id: 63,
+        title: "Who we are",
+        path: "/who-we-are",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Contact",
+        path: "/contact",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Imprint",
+        path: "/imprint",
+        newTab: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "FAQ",
+    newTab: false,
+    path: "/#faq1"
+  },
+];
+export default menuData;
+
+/*
+  {
+    id: 6,
+    title: "Robotics",
+    newTab: false,
+    submenu: [
+      {
+        id: 63,
+        title: "Roboter Arm for home",
+        path: "/drones",
+        newTab: false,
+      },{
+        id: 63,
+        title: "or for companies,",
+        path: "/imprint",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Military",
+        path: "/contact",
+        newTab: false,
+      },
+    ],
+  },
+{
     id: 3,
     title: "Bioware",
     newTab: false,
@@ -30,49 +104,17 @@ const menuData: Menu[] = [
         newTab: false,
       },{
         id: 63,
-        title: "Roman Exo Skeleton",
-        path: "/category/bioware/roman/exo-skeleton",
+        title: "Apogee Exo Skeleton",
+        path: "/bioware/apogee-exo-skeleton",
         newTab: false,
       },/*{
         id: 63,
         title: "Utils, Extensions & Improvements",
         path: "/under-construction",
         newTab: false,
-      },*/
-    ]
-  },
-  {
-    id: 6,
-    title: "Drones",
-    newTab: false,
-    submenu: [
-      {
-        id: 63,
-        title: "Consumer",
-        path: "/drones",
-        newTab: false,
-      },{
-        id: 63,
-        title: "Gouvernment",
-        path: "/imprint",
-        newTab: false,
-      },{
-        id: 63,
-        title: "Military",
-        path: "/contact",
-        newTab: false,
       },
-    ],
-  },
-  {
-    id: 5,
-    title: "Clinicians",
-    newTab: false,
-    path: "/"
-  },
-];
-export default menuData;
-/*
+]
+},
 {
     id: 6,
     title: "Company",

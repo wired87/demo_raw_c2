@@ -1,7 +1,7 @@
 "use client";
 import {SectionT} from "@/types/offer";
 
-import React from "react";
+import React, {ReactNode} from "react";
 import {motion} from "framer-motion";
 import Image from "next/image";
 import {Explore} from "@/components/Btns/Explore";
@@ -12,12 +12,13 @@ interface t {
   index: number;
   plusMDiv?: string;
   customMotionDiv?: string;
+  cusBtn?: ReactNode,
 }
 
 
 
 export const TextRightZ: React.FC<t> = (
-  {item, index, customMotionDiv, plusMDiv}
+  {item, index, customMotionDiv, plusMDiv, cusBtn}
 ) => {
   const media = () => {
     if (typeof item.media === "string") {
@@ -32,19 +33,22 @@ export const TextRightZ: React.FC<t> = (
       )
     }
     else {
-
       return (
         <div className={"w-full h-full flex items-center justify-center "}><ImageCarousel media={item.media} /></div>
         )
     }
   }
   const getBtn = () => {
-    return (<Explore path={item.btn?.path} text={item.btn?.text}/>)
+    if (item.btn && item.btn.text && item.btn.path) {
+      return (<Explore path={item.btn?.path} text={item.btn?.text}/>)
+    } else if (cusBtn) {
+      return cusBtn
+    }
   }
   console.log("index:", index)
   if (index === 1 || index === 3 ) {
     return(
-    <section className="overflow-hidden pb-10 lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
+    <section className="overflow-hidden lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
       <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
         <div className="flex items-center gap-8 lg:gap-32.5">
           <motion.div
@@ -110,7 +114,6 @@ export const TextRightZ: React.FC<t> = (
                 opacity: 0,
                 x: -20,
               },
-
               visible: {
                 opacity: 1,
                 x: 0,

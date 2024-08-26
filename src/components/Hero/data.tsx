@@ -45,7 +45,7 @@ export const bioWareData: SliderDataT[] = [
   },
 ];
 
-export const newsData: SliderDataT[] = [
+export const newsDataMarketPlace: SliderDataT[] = [
   {
     video: "https://www.emotiv.com/cdn/shop/videos/c/vp/ffd2aeb4d13f4d358442ebc47b054517/ffd2aeb4d13f4d358442ebc47b054517.SD-480p-0.9Mbps-20029469.mp4",
     heading: "Emotiv on Board!",
@@ -70,6 +70,35 @@ export const newsData: SliderDataT[] = [
     btn: {
       path: "/contact/join-us",
       text: "Get in touch",
+    }
+  },
+];
+
+export const newsData: SliderDataT[] = [
+  {
+    video: "",
+    heading: "Product Announcement",
+    des: "We are happy to announce our first product C-1",
+    btn: {
+      path: "/under-construction",
+      text: "Track the progress",
+    }
+  },{
+    video: "",
+    heading: "Join us!",
+    des: "You want to be a part of it? We a re looking all time for new scientific team members with a heart for new " +
+      "technologies.",
+    btn: {
+      path: "/contact/join-us",
+      text: "Get in touch",
+    }
+  },{
+    video: "",
+    heading: "The Vision",
+    des: "Lets take a look together in the future of BCI, the possibilities and the impact to the society",
+    btn: {
+      path: "/contact/join-us",
+      text: "Get inspired",
     }
   },
 ]

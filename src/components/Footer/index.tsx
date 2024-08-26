@@ -62,58 +62,26 @@ const Footer = () => {
                 className="animate_top"
               >
                 <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                  Marketplace
+                  Products
                 </h4>
 
                 <ul>
                   <li>
                     <a
-                      href="/web-entwicklung"
+                      href="/#c1"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      BCI
+                      C-1
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/mobile"
+                      href="/under-construction"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      Bioware
+                      Extensions
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="/design"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Booster & Stims
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/mvp"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Nano Bots
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/mvp"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Utils
-                    </a>
-                  </li><li>
-                    <a
-                      href="/mvp"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Software
-                    </a>
-                  </li>
-
                 </ul>
               </motion.div>
 
@@ -136,7 +104,7 @@ const Footer = () => {
                 className="animate_top"
               >
                 <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                  News
+                  Software
                 </h4>
 
                 <ul>
@@ -145,28 +113,13 @@ const Footer = () => {
                       href="/under-development"
                       className="mb-3 inline-block hover:text-primary"
                     >
-                      Own Devices
+                      API
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="/under-development"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Partnerships
-                    </a>
-                  </li> <li>
-                    <a
-                      href="/under-development"
-                      className="mb-3 inline-block hover:text-primary"
-                    >
-                      Science
-                    </a>
-                  </li>
-
 
                 </ul>
-              </motion.div><motion.div
+              </motion.div>
+              <motion.div
               variants={{
                 hidden: {
                   opacity: 0,
@@ -187,30 +140,36 @@ const Footer = () => {
               <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
                 Company
               </h4>
-
               <ul>
                 <li>
                   <a
-                    href="/about"
+                    href="/who-we-are"
                     className="mb-3 inline-block hover:text-primary"
                   >
                     Who we are
                   </a>
                 </li>
 
-                <li>
-                  <a
-                    href="/contact"
-                    className="mb-3 inline-block hover:text-primary"
-                  >
-                    Investors
-                  </a>
-                </li>   <li>
+              <li>
                   <a
                     href="/contact"
                     className="mb-3 inline-block hover:text-primary"
                   >
                     Contact
+                  </a>
+                </li> <li>
+                  <a
+                    href="/#faq1"
+                    className="mb-3 inline-block hover:text-primary"
+                  >
+                    FAQ
+                  </a>
+                </li> <li>
+                  <a
+                    href="/imprint"
+                    className="mb-3 inline-block hover:text-primary"
+                  >
+                    Imprint
                   </a>
                 </li>
 
@@ -235,7 +194,6 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="animate_top"
               >
-
               </motion.div>
             </div>
           </div>
@@ -293,7 +251,7 @@ const Footer = () => {
             className="animate_top"
           >
             <p>
-              &copy; {new Date().getFullYear()} codingWizard. All rights reserved
+              &copy; {new Date().getFullYear()} Best Brain. All rights reserved
             </p>
           </motion.div>
 

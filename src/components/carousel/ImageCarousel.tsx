@@ -18,7 +18,7 @@ const  CItem: React.FC<CItemT> = ({item}) =>  {
         alt={"image.lsa"}
         className={"absolute top-0 left-0 object-cover opacity-50"}
       /> :
-      <BackgroundVideo fill src={item.video} className={"relative object-cover opacity-50"} />
+      <BackgroundVideo src={item.video} className={"relative object-cover opacity-50"} />
   }
 
   return(
@@ -49,25 +49,32 @@ export const ImageCarousel: React.FC<ImageListT> = (
 ) => {
 
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()])
+
   const mediaItem = (item: string, i:number) => {
-    return item.endsWith(".mp4") ?
-      <BackgroundVideo fill key={i} src={item} className={"relative size-full object-cover opacity-50"} /> :
+    if (item.endsWith(".mp4")) {
+      return(
+        <BackgroundVideo  key={i} src={item} className={"relative size-full object-cover opacity-50"} />
+      )
+    }
+    console.log("IMAGE:",item )
+    return(
       <Image
         fill
-        key={i}
         src={item}
-        alt={"image.lsa"}
-        className=" w-[300px] h-[300px] object-cover relative opacity-100 embla__slide"
+        alt={"image.png"}
+        className="absolute top-0 left-0 object-cover opacity-100 "
       />
+    )
   }
 
   return (
     <section className="embla size-full">
       <div className="embla__viewport size-full" ref={emblaRef}>
-        <div className="embla__container size-full">
+        <div className="embla__container w-full h-full">
           {media.map((item: string, i: number) => (
-
-              mediaItem(item, i)
+            <div className="size-full embla__slide relative" key={i}>
+              {mediaItem(item, i)}
+            </div>
 
           ))}
         </div>

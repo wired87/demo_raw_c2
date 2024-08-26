@@ -41,6 +41,6 @@ export const abilitySectionData: SectionT[] = [
     ],
     heading: "6 Colors",
     des: "Each finger can handle blunt force impact without breaking. Watch them flex back in to place with ease.",
-  },
 
+  },
 ]

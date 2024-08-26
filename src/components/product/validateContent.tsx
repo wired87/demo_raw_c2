@@ -43,7 +43,7 @@ export const validateProductContent = (product: string, company: string) => {
       }
     }
     else if (company === "roam") {
-      if (product === "exo-skeleton") {
+      if (product === "apogee-exo-skeleton") {
         return(
           <RoamExoIndex />
         )

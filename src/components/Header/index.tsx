@@ -8,7 +8,7 @@ import menuData from "./menuData";
 
 import {Logo} from "@/components/Logo";
 
-import {CartComponent} from "@/components/components/cart";
+import {DefaultBtn} from "@/components/Btns/contact";
 
 
 const Header = () => {
@@ -56,7 +56,7 @@ const Header = () => {
         }`}
       >
         <div className="self-stretch w-full h-full">
-          <div className="relative h-full self-stretch w-full flex items-center justify-start p-0">
+          <div className="relative h-full self-stretch w-full flex items-center justify-start px-5">
             <div className="w-60 max-w-full z-999 flex justify-center items-center ">
               <Logo sticky={sticky} />
             </div>
@@ -253,8 +253,21 @@ const Header = () => {
                       </svg>
                     </span>
                   </button>
+                  <DefaultBtn />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
+  );
+};
 
-                  {session?.user ? (
+export default Header;
+
+/*
+{session?.user ? (
                     <div className={""}>
                       <p
                         className={`loginBtn px-7 py-3 text-base font-medium ${
@@ -325,15 +338,4 @@ const Header = () => {
                     </>
                   )}
                   <CartComponent />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </>
-  );
-};
-
-export default Header;
-
+ */

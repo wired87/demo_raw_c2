@@ -31,31 +31,32 @@ export const abilityBoxData: BoxT[] = [
     title: "Certified in Germany", //  announce the partnership Ability Hand™
     des: "While made in the USA, Best Brain is happy to announce trade partnership with  the official reseller in Germany",
   },
-]
-export const abilityBoxData2: BoxT[] = [
+];
+
+export const mentalBoxData: BoxT[] = [
   {
-    icon: "multi-articulated-icon",
-    title: "Multi-articulated.",
-    des: "All five fingers flex and extend, and the thumb rotates electrically and manually.",
+    icon: "",
+    title: "Stress Levels",
+    des: "Helps manage chronic stress, lowering risk of chronic diseases.",
   },
   {
-    icon: "easy-to-charge-icon",
-    title: "Easy to charge.",
-    des: "The Ability Hand™ charges using USB-C in about an hour. A charge lasts all day. You can even charge your phone from your arm!",
+    icon: "",
+    title: "General Fatigue",
+    des: "Helps in preventing burnout and managing daily energy levels.",
   },
   {
-    icon: "cross-compatible-icon",
-    title: "Cross-compatible.",
-    des: "The Ability Hand™ works with most third-party EMG pattern recognition systems, EMG direct control systems, linear transducers, and force-sensitive resistors.",
+    icon: "",
+    title: "Focus and Attention",
+    des: "Increases work or study productivity, helping you achieve more.",
   },
   {
-    icon: "bluetooth-compatible-icon",
-    title: "Bluetooth compatible.",
-    des: "You can connect your hand to our iOS and Android mobile apps, so your prosthetist can fine-tune your Ability Hand™ and you can make constant improvements to its grips and functionality.",
+    icon: "",
+    title: "Meditation & Relaxation",
+    des: "Reduces anxiety and elevates mood for better mental health.",
   },
   {
-    icon: "ota-updates-icon",
-    title: "Over-the-air updates.",
-    des: "We’ll continually update the Ability Hand’s software, and you’ll be able to download those over-the-air from our app.",
+    icon: "",
+    title: "Sleep Quality",
+    des: "Contributes to better memory, mood, and cognitive performance.",
   },
 ];

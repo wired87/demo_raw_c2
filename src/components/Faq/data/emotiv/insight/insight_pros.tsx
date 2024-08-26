@@ -7,37 +7,38 @@ import { CiFilter } from "react-icons/ci";
 
 export const insightPros: DataTypes[] = [
   {
-    text: "10-20 Sensor Configuration, including Pz",
-    paragraph: "Semi-dry polymer sensors that easily penetrate through hair.",
-    icon: (<GiGearStickPattern size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
+    text: "Based on CeeGrid",
+    paragraph: "Inspired by the CeeGrid by Stefan Debener",
+    icon: (<GiGearStickPattern size={20} color={"white"} />),  
   },
   {
-    text: "Democratizing Brain Research",
-    paragraph: "Enables limitless research and diverse sample sets.",
-    icon: (<HiMiniSignal size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
+    text: "High-Quality EEG and ECG Sensors",
+    paragraph: "10 EEG and 2 ECG electrodes for accurate and reliable brainwave and health monitoring.",
+    icon: (<LuBrainCircuit size={20} color={"white"} />),
   },
+
   {
-    text: "Connects Seamlessly with EMOTIV’s Applications",
-    paragraph: "Efficient, real-time EEG data transmission.",
-    icon: (<TbAnalyze size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
+    text: "Create your personalized space",
+    paragraph: "Connect the C-1 to your smart home devices for maximized personalization of your zone.",
+    icon: (<TbAnalyze size={20} color={"white"} />),  
   },
 ];
 
 export const insightPros2: DataTypes[] = [
   {
-    text: "Brain Control",
-    paragraph: "Harnesses your brain activity for endless BCI opportunities.",
-    icon: (<LuBrainCircuit size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
-  },
-  {
     text: "Removes Interferences and Artifacts",
     paragraph: "Removes Interferences and Artifacts.",
-    icon: (<CiFilter size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
+    icon: (<CiFilter size={20} color={"white"} />),  
+  },
+  {
+    text: "9-Axis Sensor",
+    paragraph: "Enables limitless research and diverse sample sets.",
+    icon: (<HiMiniSignal size={20} color={"white"} />),
   },
   {
     text: "Minimal Set-up time",
-    paragraph: "Removes Interferences and Artifacts.",
-    icon: (<CiFilter size={20} color={"white"} />), // Replace YourIconComponent with your actual icon component if needed
+    paragraph: "Just clamp it behind the ear, turn it on and you are ready to go!",
+    icon: (<CiFilter size={20} color={"white"} />),  
   },
 
 ]

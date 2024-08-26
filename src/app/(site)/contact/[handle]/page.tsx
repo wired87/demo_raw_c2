@@ -1,6 +1,7 @@
 import {Metadata} from "next";
 
 import {TypeFormDefault} from "@/components/Contact/typeform";
+import React from "react";
 
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 const ContactPage: React.FC<any> = ({params}) => {
   console.log("PARAMS  CONTACT:", params)
   const slug = params.handle;
-  let id: string = "";
+  let id: string;
   if (slug === "ability-hand") {
     id = "ACgCpOVk";
   }

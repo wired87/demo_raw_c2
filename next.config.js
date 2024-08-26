@@ -120,6 +120,18 @@ module.exports = {
         protocol: 'https',
         hostname: 'germanbionic.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'cms.wellcome.org',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'images.fonearena.com',
+        pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'media.assettype.com',
+        pathname: '/**',
       },
     ]
   },
