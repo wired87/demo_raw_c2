@@ -6,6 +6,38 @@
 .pnp.js
 .yarn/install-state.gz
 
+
+
+# routes
+src/app/(site)/(auth)
+src/app/(site)/about
+src/app/(site)/arm
+src/app/(site)/bci
+src/app/(site)/bioware
+src/app/(site)/blogs
+src/app/(site)/category
+src/app/(site)/drones
+src/app/(site)/exo-skeletons
+src/app/(site)/leg-replacement
+src/app/(site)/news
+src/app/(site)/pricing
+src/app/(site)/your-bci
+
+# api
+src/app/api/admin
+src/app/api/auth
+src/app/api/comp
+src/app/api/contex
+src/app/api/forgot-password
+src/app/api/get-cartId
+src/app/api/get-product
+src/app/api/paymentd
+src/app/api/register
+src/app/api/revalidate
+
+
+
+
 # testing
 /coverage
 

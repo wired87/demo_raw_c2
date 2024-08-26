@@ -4,9 +4,7 @@ import SubHeroCarousel from "@/components/Hero/SubHero";
 import SectionTitle from "@/components/Common/SectionTitle";
 import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data";
 import {TextRightZ} from "@/components/offer/sections/TextRightZ";
-import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
 import {abilityBoxData} from "@/components/Box/data";
-import {sHAbilityMovie} from "@/components/Common/data";
 import BoxLoop from "@/components/Box/BoxLoop";
 import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
 import Contact from "@/components/Contact";
@@ -38,7 +36,6 @@ const data: SliderDataT[] = [
       path: "/contact/ability-hand",
       text: "Contact us",
     },
-
   },
 ];
 

@@ -32,7 +32,7 @@ const data = [
 
 export const Specifications = () => {
   return(
-    <div className={"w-full flex-col relative h-full flex justify-start items-start px-9"}>
+    <div className={"md:w-1/2 w-full flex-col relative flex justify-start items-start px-9"}>
       <ul className={"w-full flex h-full gap-y-6 justify-start items-baseline flex-col"}>
         {data.map((item, i) => (
           <li className={"flex gap-y-2 mb-8 flex-col items-start justify-start"} key={i}>

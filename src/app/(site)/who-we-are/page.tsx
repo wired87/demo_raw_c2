@@ -24,9 +24,10 @@ const persons = [
       "Vectors",
       "Neural decoder"
     ],
-    des: "Through his own online businesses and his software Company BotWorld.cloud, Benedikt could collect a lot of experience in " +
-      "Management and Software Development. In combination with his inquisitiveness and scientiffic and visionary vein," +
-      "Benedikt makes the perfect fit as a CEO for Best Brain",
+    des: "Through his online businesses and his software company, BotWorld.cloud, " +
+      "Benedikt has gained extensive experience in management and software development. " +
+      "Combined with his curiosity, scientific approach, and visionary mindset, " +
+      "Benedikt is an ideal CEO for Best Brain.",
     urls: {
       gh: "https://github.com/wired87",
       in: "https://www.linkedin.com/in/benedikt-sterra-804300263/",
@@ -49,10 +50,9 @@ const persons = [
       "Signal Processing",
       "MATLAB",
     ],
-    des: "Hussin finished his Bachelor of Science 2018 in Biomedical Engineering and decided to continue his career at " +
-      "TU-Dresden where he finished devers projects focusing on machine learning and bio engeneering." +
-      "Currently he works as Student Research Assistant in Center for Regenerative Therapies where he Explored the computational role of the 2 blades of Dentate Gyrus (DG) in various memory\n" +
-      "processes in the mouse brain.",
+    des: "Hussin earned his Bachelor of Science in Biomedical Engineering in 2018 and continued his career at TU Dresden, " +
+      "working on projects in machine learning and bioengineering. " +
+      "He is currently a Student Research Assistant at the Center for Regenerative Therapies",
     urls: {
       gh: "https://github.com/HuRashidy",
       in: "https://www.linkedin.com/in/hussin-elrashidy/",

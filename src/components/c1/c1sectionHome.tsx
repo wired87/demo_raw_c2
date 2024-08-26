@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const C1SectionHome = () => {
   return (
-    <section id={"c1"} className={"w-full flex py-20 flex-col"}>
+    <section id={"c1"} className={"w-full he-full flex py-20 flex-col"}>
       <SectionTitle
         subTitle={"Rethink consumer BCI"}
         title={"Meet the C-1"}
@@ -13,15 +13,19 @@ export const C1SectionHome = () => {
           "makes it perfect for every situation in your life."}
         center
       />
-      <div className={"" +
-        "grid md:grid-cols-2 grid-cols-1 md:grid-rows-1 grid-rows-2" +
-        "h-full w-full pt-30" +
-        ""}>
-        <Specifications />
-        <div className={"w-full h-full relative"}>
-          <Image  src={"/images/placeholder.webp"} alt={"/images/placeholder.webp"} fill className={"object-contain absolute top-0 left-0"}/>
+      <div className="flex md:flex-row flex-col h-full w-full pt-30">
+        <Specifications/>
+        <div className="md:w-1/2 w-full min-h-[400px] relative">
+
+          <Image
+            src="/images/placeholder.webp"
+            alt="Placeholder image"
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
+
     </section>
   )
 }
