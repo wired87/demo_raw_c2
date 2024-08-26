@@ -27,7 +27,6 @@ src/app/(site)/your-bci
 src/app/api/admin
 src/app/api/auth
 src/app/api/comp
-src/app/api/contex
 src/app/api/forgot-password
 src/app/api/get-cartId
 src/app/api/get-product
