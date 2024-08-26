@@ -28,9 +28,9 @@ export const TrippleUse = () => {
     <div className={"w-full flex flex-col mb-5 py-3 relative "}>
       <div className={"flex items-center justify-center"}>
         <SectionTitle
-          subtitle="Fit your needs"
+          subTitle="Fit your needs"
           title="Specified for your situation and needs"
-          paragraph="Our BCI'S are crafted for everybody to impac everydays life"
+          des="Our BCI'S are crafted for everybody to impac everydays life"
         />
       </div>
 

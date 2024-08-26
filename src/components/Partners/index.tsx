@@ -16,14 +16,13 @@ export const PartnerSection: React.FC<any> = (
 
       <div className="logos group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_white_128px,white_calc(100%-128px),_transparent_100%)]">
         <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
-          {partners.map((pa, i) => (
+          {partners.map((pa: any, i: number) => (
               <p key={i}>{pa}</p>
             ))}
         </div>
 
-        <!-- Duplicate of the above for infinite effect (you can use javascript to duplicate this too) -->
         <div className="animate-slide-left-infinite group-hover:animation-pause inline-block w-max">
-          {partners.map((pa, i) => (
+          {partners.map((pa: any, i: number) => (
               <p key={i}>{pa}</p>
             ))}
         </div>

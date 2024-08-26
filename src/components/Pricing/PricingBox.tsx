@@ -2,10 +2,6 @@ import axios from "axios";
 import React from "react";
 
 import Image from "next/image";
-import img from "../../../public/images/product/arm/img.png"
-import brain_prev from "../../../public/images/product/brain_prev.jpg"
-import vision_prev from "../../../public/images/product/vision_prev.jpg"
-import leg_prev from "../../../public/images/product/leg_prev.png"
 import {GiGearStickPattern} from "react-icons/gi";
 import { FaTools } from "react-icons/fa";
 import { FaBrain } from "react-icons/fa6";
