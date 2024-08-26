@@ -10,10 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 import { ThemeProvider } from "next-themes";
 import "../styles/index.css";
 import "../styles/prism-vsc-dark-plus.css";
-import ToasterContext from "./api/contex/ToasetContex";
 import React, { useEffect, useState } from "react";
 import {SessionProvider} from "next-auth/react";
 import {NextUIProvider} from '@nextui-org/react'
+import ToasterContext from "@/app/api/contex/ToasetContex";
 
 export default function RootLayout({
   children,

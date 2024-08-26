@@ -12,7 +12,7 @@ import {DefaultBtn} from "@/components/Btns/contact";
 
 
 const Header = () => {
-  const { data: session } = useSession();
+
 
   const pathUrl = usePathname();
   // Navbar toggle
