@@ -16,7 +16,7 @@ export const Item: React.FC<CItemT> = ({item}) =>  {
         priority={false}
         className={"w-full h-full relative dark:bg-[rgba(0,0,0,.7)] bg-[rgba(255,255,255,.7)] transition duration ease-in-out"}
       /> : (item.video) ? (
-        <BackgroundVideo fill src={item.video} className={"w-full h-full object-cover opacity-80"} />
+        <BackgroundVideo src={item.video} className={"w-full h-full object-cover opacity-80"} />
       ) : <></>
   }
 
