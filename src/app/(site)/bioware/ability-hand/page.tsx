@@ -5,7 +5,7 @@ import SectionTitle from "@/components/Common/SectionTitle";
 import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data";
 import {TextRightZ} from "@/components/offer/sections/TextRightZ";
 import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
-import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
+import {abilityBoxData} from "@/components/Box/data";
 import {sHAbilityMovie} from "@/components/Common/data";
 import BoxLoop from "@/components/Box/BoxLoop";
 import {GripSection} from "@/components/Company/Psyonics/AbilityHand/GripSection";
@@ -56,7 +56,7 @@ const AbilityHandPage = () => {
       {abilitySectionData.map((item, i) => (
         <TextRightZ item={item} index={i}/>
       ))}
-      <MovieBoxLoop data={abilityBoxData2} titleD={sHAbilityMovie}/>
+
       <Video videoId={"ulCU5QoIdyo"} />
       <BoxLoop  data={abilityBoxData} />
       <GripSection />
