@@ -79,9 +79,9 @@ const Sortiment = () => {
     <div className={"bg-transparent"}>
       <Image src={""} alt={"blur_bg.png"} className={"blur-sm object-cover"}/>
       <SectionTitle
-        subtitle={"Subtitle"}
+        subTitle={"Subtitle"}
         title={"Our Mission"}
-        paragraph={"paragraph"}
+        des={"paragraph"}
         center
       />
       {data.map((item, index) => (
