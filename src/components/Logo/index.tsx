@@ -15,7 +15,7 @@ export const Logo: React.FC<LogoT> = ({sticky}) => {
       } `}
     >
       <p className={"text-xs uppercase text-primary text-center font-bold tracking-[0.3em]"}>Best</p>
-      <Image alt={"image.j"} width={70} height={70} className={"rounded-full bg-tp"} src={"/images/header/insight.png"}/>
+      <Image alt={"image.j"} width={70} height={70} className={"rounded-full bg-tp"} src={"/images/header/img.png"}/>
       <p className={"text-xs uppercase text-primary text-center font-bold tracking-[0.3em]"}>Brain</p>
     </Link>
   )

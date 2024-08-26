@@ -3,7 +3,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
-// import { SessionProvider } from "next-auth/react";          <SessionProvider>
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,10 +27,7 @@ export default function RootLayout({
 
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+
       <head><title>Best Brain</title>
         <link rel="icon" href="/images/favicon.ico"/>
       </head>
