@@ -2,8 +2,6 @@
 import Image from "next/image";
 import {newsData} from "@/components/Hero/data";
 import {NewsCarousel} from "@/components/Hero/OfferCarousel";
-const text= "Explore unprecedented comfort with the C-1, the most comfortable and Innovative device" +
-  "in a new world of BCI "
 
 const Hero = () => {
   return (

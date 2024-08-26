@@ -5,11 +5,10 @@ import {abilitySectionData} from "@/components/Company/Psyonics/AbilityHand/data
 import SubHeroCarousel from "@/components/Hero/SubHero";
 import {SliderDataT} from "@/types/carousel";
 import BoxLoop from "@/components/Box/BoxLoop";
-import {abilityBoxData, abilityBoxData2} from "@/components/Box/data";
+import {abilityBoxData} from "@/components/Box/data";
 import Contact from "@/components/Contact";
 import SectionTitle from "../../../../components/Common/SectionTitle";
-import {MovieBoxLoop} from "@/components/Box/MovieLikeBox/MovieBoxLoop";
-import {sHAbilityMovie} from "@/components/Common/data";
+
 
 
 const data: SliderDataT[] = [
@@ -57,7 +56,6 @@ const AbilityHandIndex = () => {
       {abilitySectionData.map((item, i) => (
         <TextRightZ item={item} index={i}/>
       ))}
-      <MovieBoxLoop data={abilityBoxData2} titleD={sHAbilityMovie}/>
       <Video videoId={"ulCU5QoIdyo"} />
       <BoxLoop  data={abilityBoxData} />
       <GripSection />

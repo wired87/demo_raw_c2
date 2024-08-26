@@ -19,7 +19,7 @@ const  CItem: React.FC<CItemT> = ({item}) =>  {
         alt={"image.lsa"}
         className={"absolute top-0 left-0 object-cover opacity-50"}
       /> :
-      <BackgroundVideo fill src={item.video} className={"relative object-cover opacity-50"} />
+      <BackgroundVideo src={item.video} className={"relative object-cover opacity-50"} />
   }
 
   return(

@@ -1,12 +1,9 @@
 import SubHeroCarousel from "@/components/Hero/SubHero";
-import ProductSection from "@/components/product/ProductSection";
 import {SingleNewsSection} from "@/components/News/SingleNewsSection";
 import {whatDoBCI} from "@/components/News/data";
-import {InfiniteLogo} from "@/components/carousel/infinite/InfiniteLogo";
 import Contact from "@/components/Contact";
 
 import {SliderDataT} from "@/types/carousel";
-import {bciPartners, bioWarePartners} from "@/components/carousel/data";
 
 export const data: SliderDataT[] = [
   {
@@ -34,10 +31,8 @@ export const MainBioware = () => {
     <>
       <SubHeroCarousel data={data} />
       <div className={"px-6 mb-10 mt-7"}>
-        <ProductSection searchParams={{sort: ""}} params={{ collection: "bci" }} />
       </div>
       <SingleNewsSection data={whatDoBCI} />
-      <InfiniteLogo data={bioWarePartners}  />
       <Contact />
     </>
   )

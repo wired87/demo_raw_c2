@@ -19,7 +19,7 @@ const SingleFeatureBgImageTLeft: React.FC<SingleLeftT> = ({ item, customMedia })
           priority={false}
           className={"w-full h-full relative dark:bg-[rgba(0,0,0,.7)] bg-[rgba(255,255,255,.7)] transition duration ease-in-out"}
         /> :
-        <BackgroundVideo fill src={item.video} className={"relative w-full h-full object-cover"} />
+        <BackgroundVideo src={item.video} className={"relative w-full h-full object-cover"} />
     }
     return(
       customMedia

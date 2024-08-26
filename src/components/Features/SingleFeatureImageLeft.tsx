@@ -1,5 +1,4 @@
 import { Feature } from "@/types/feature";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const SingleFeature = ({ feature }: { feature: Feature }) => {
@@ -25,13 +24,7 @@ const SingleFeature = ({ feature }: { feature: Feature }) => {
             viewport={{ once: true }}
             className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
           >
-            <Image
-              src={img}
-              alt="About"
-              className="hidden dark:block"
-              fill
-              priority={false}
-            />
+
           </motion.div>
           <motion.div
             variants={{
