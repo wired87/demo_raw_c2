@@ -32,7 +32,9 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head ><title>Hello</title></head>
+      <head><title>Best Brain</title>
+        <link rel="icon" href="/images/favicon.ico"/>
+      </head>
 
       <body className={`dark:bg-[#000000] w-full bg-zumthor ${inter.className}`}>
           <SessionProvider>
