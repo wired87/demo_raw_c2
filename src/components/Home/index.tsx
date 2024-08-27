@@ -14,7 +14,7 @@ import {botFaqData} from "@/components/Faq/FAQ/faqData";
 
 const data = [
   {
-    media: "https://media.assettype.com/freepressjournal/2022-04/acb39c78-95f0-4ded-82a7-21e5e310ae43/W_end_LS_fitness_april_24.jpg?width=1200",
+    media: "/images/mission/check.jpg",
     heading: "Comprehensive Health and Brain Monitoring",
     des: "Integrate advanced brain and body monitoring into your daily routine with the C-1. " +
       "Featuring 12 EEG and 2 ECG channels, this compact device delivers detailed insights into your mental state, " +
@@ -22,17 +22,19 @@ const data = [
   },
   {
     media: "/images/mission/smartHome.png",
-    heading: "Smart Home Integration",
-    des: "Enhance your living environment with the C-1’s smart home connectivity. " +
-      "By monitoring your mental and physical states, the C-1 can automate actions in your home, " +
+    heading: "Interact with your Apps",
+    des: "Enhance your living environment with the C-1’s third-party-app connectivity. " +
+      "By monitoring your mental and physical states, the C-1 can interact with your Apps, " +
+      "automate actions in your home, " +
       "such as dimming lights when you’re ready to sleep or adjusting the temperature for optimal comfort.",
   },
   {
-    media: "/images/mission/check.jpg",
-    heading: "Personalized Progress Tracking",
-    des: "Track your journey towards better mental and physical health with the C-1’s personalized progress features. " +
-      "The device not only provides real-time data but also helps you analyze trends over time, " +
-      "empowering you to understand your progress and make informed decisions about your fitness and wellness goals.",
+    media: "/images/mission/os.jpg",
+    heading: "Not just an normal device",
+    des: "The C-1 features an advanced real-time operating system designed for mobile BCI. " +
+      "This OS ensures fast processing of brain and body data, " +
+      "providing users with immediate insights. It prioritizes privacy by processing data " +
+      "locally on the device, allowing users full control over their information.Hussin finished his Bachelor of Science 2018 in Biomedical Engineering and decided to continue his career at TU-Dresden where he finished devers projects focusing on machine learning and bio engeneering. For his last Project he worked as Student Research Assistant in Center for Regenerative Therapies where he Explored the computational role of the 2 blades of Dentate Gyrus (DG) in various memory processes in the mouse brain.",
   },
 ];
 
@@ -101,4 +103,13 @@ const data = [
     }
   },
 ]
+
+
+{
+    media: "/images/mission/smartHome.png",
+    heading: "Smart Home Integration",
+    des: "Enhance your living environment with the C-1’s smart home connectivity. " +
+      "By monitoring your mental and physical states, the C-1 can automate actions in your home, " +
+      "such as dimming lights when you’re ready to sleep or adjusting the temperature for optimal comfort.",
+  },
  */

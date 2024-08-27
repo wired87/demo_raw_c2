@@ -25,7 +25,6 @@ export const C1SectionHome = () => {
           />
         </div>
       </div>
-
     </section>
   )
 }
