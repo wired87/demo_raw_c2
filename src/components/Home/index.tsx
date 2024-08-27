@@ -30,12 +30,11 @@ const data = [
   },
   {
     media: "/images/mission/os.jpg",
-    heading: "Not just an normal device",
+    heading: "Not just a normal device",
     des: "The C-1 features an advanced real-time operating system designed for mobile BCI. " +
       "This OS ensures fast processing of brain and body data, " +
       "providing users with immediate insights. It prioritizes privacy by processing data " +
-      "locally on the device, allowing users full control over their information.Hussin finished his Bachelor of Science 2018 in Biomedical Engineering and decided to continue his career at TU-Dresden where he finished devers projects focusing on machine learning and bio engeneering. For his last Project he worked as Student Research Assistant in Center for Regenerative Therapies where he Explored the computational role of the 2 blades of Dentate Gyrus (DG) in various memory processes in the mouse brain.",
-  },
+      "locally on the device, allowing users full control over their information."},
 ];
 
 const homeSubMissionHeadingData: SectionTitleT = {

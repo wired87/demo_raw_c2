@@ -28,7 +28,6 @@ export const TextRightZ: React.FC<t> = (
           alt="About"
           className={`block object-contain rounded-2xl ${item.conf?.classAdd} zoomed-image`}
           fill
-          priority={false}
         />
       )
     }
@@ -50,7 +49,7 @@ export const TextRightZ: React.FC<t> = (
     return(
     <section className="overflow-hidden lg:pb-10 xl:pb-10 bg-transparent py-9 px-9">
       <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-        <div className="flex items-center gap-8 lg:gap-32.5">
+        <div className="flex items-center md:flex-row flex-col gap-8 lg:gap-32.5 h-full w-full">
           <motion.div
             variants={{
               hidden: {
@@ -66,9 +65,10 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className={customMotionDiv || `animate_left  relative mx-auto hidden aspect-[588/526.5] md:block md:w-3/4  ${plusMDiv || ""}`}>
+            className={customMotionDiv || `animate_left h-full relative mx-auto aspect-[588/526.5] md:block md:w-1/2 w-full  ${plusMDiv || ""}`}>
             {media()}
           </motion.div>
+
           <motion.div
             variants={{
               hidden: {
@@ -85,7 +85,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_right md:w-1/2"
+            className="animate_right md:w-1/2 w-full h-full"
           >
             <h4 className="font-medium uppercase text-black dark:text-white">
 
@@ -123,7 +123,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 1, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_left md:w-1/2"
+            className="animate_left md:w-1/2 w-full h-full"
           >
             <h4 className="font-medium uppercase text-black dark:text-white">
 
@@ -154,7 +154,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 1, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_right flex justify-center items-center relative mx-auto aspect-[588/526.5] md:w-3/4"
+            className="animate_right h-full relative mx-auto aspect-[588/526.5] md:block md:w-1/2 w-full"
           >
             {media()}
           </motion.div>

@@ -27,12 +27,29 @@ const menuData: Menu[] = [
   },
   {
     id: 5,
-    title: "API",
+    title: "Software",
     newTab: false,
-    path: "/under-construction"
+    submenu: [
+      {
+        id: 63,
+        title: "Cloud",
+        path: "/under-construction",
+        newTab: false,
+      },{
+        id: 63,
+        title: "API",
+        path: "/under-construction",
+        newTab: false,
+      },{
+        id: 63,
+        title: "Hub",
+        path: "/under-construction",
+        newTab: false,
+      },
+    ]
   },
   {
-    id: 6,
+      id: 6,
     title: "Company",
     newTab: false,
     submenu: [

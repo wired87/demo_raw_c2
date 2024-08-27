@@ -98,8 +98,8 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 
-                  bg-white px-6 py-4  duration-300 dark:border-body-color/20 dark:bg-dark-2 lg:visible 
+                  className={`navbar dark:bg-dark absolute right-0 z-30 w-[250px] rounded 
+                  bg-white px-6 py-4  duration-300 dark:bg-dark-2 lg:visible 
                   lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 
                   lg:dark:bg-transparent ${
                     navbarOpen ?
@@ -165,7 +165,7 @@ const Header = () => {
                               onClick={() => handleSubmenu(index)}
                               className={`ud-menu-scroll flex items-center justify-between py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${
                                 sticky
-                                  ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
+                                  ? "dark:text-white group-hover:text-primary  dark:group-hover:text-primary"
                                   : "text-white"
                               }`}>
                               {menuItem.title}
@@ -189,9 +189,9 @@ const Header = () => {
                           )}
 
                           <div
-                            className={`submenu dark:bg-dark bg-zumthor relative left-0 top-full w-[250px] rounded-sm  
+                            className={`submenu dark:bg-dark bg-white relative left-0 top-full w-[250px] rounded-sm  
                             p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible 
-                            lg:absolute lg:top-[110%] lg:block lg:opacity-0 lg:shadow-lg lg:group-hover:visible 
+                            lg:absolute lg:top-[110%]  lg:block lg:opacity-0 shadow-lg lg:group-hover:visible 
                             lg:group-hover:top-full ${
                               openIndex === index ? "!-left-[25px]" : "hidden"
                             }`}
