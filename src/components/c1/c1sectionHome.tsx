@@ -18,7 +18,7 @@ export const C1SectionHome = () => {
         <div className="md:w-1/2 w-full min-h-[400px] relative">
 
           <Image
-            src="/images/placeholder.webp"
+            src="/images/pres_light.png"
             alt="Placeholder image"
             fill
             className="object-contain"
