@@ -149,10 +149,10 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    href="/who-we-are"
+                    href="/about"
                     className="mb-3 inline-block hover:text-primary"
                   >
-                    Who we are
+                    About us
                   </a>
                 </li>
 

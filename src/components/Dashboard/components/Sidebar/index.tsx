@@ -1,6 +1,4 @@
 "use client";
-
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import SidebarItem from "@/components/Dashboard/components/Sidebar/SidebarItem";

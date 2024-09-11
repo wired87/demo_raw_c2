@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import {WhoWeAreSingle} from "@/components/who-we-are";
 import SectionTitle from "@/components/Common/SectionTitle";
+import {UrlSection} from "@/components/About/UrlSection";
 
 
 export const metadata: Metadata = {
@@ -62,12 +63,44 @@ const persons = [
       mail: "hussin_elrashidy@mailbox.tu-dresden.de"
     }
   },
+  {
+    img: "/images/about/ayush.jpg",
+    name: "Ayush Dileep",
+    role: "CTO",
+    skills: [
+      "Hardware",
+      "C",
+      "BCI knowledge & inthusiast",
+      "Python",
+    ],
+    des: "Ayush has been fascinated by BCI and the opportunities behind it since he was a small kid. Today, " +
+      "with emerging research and growing interest, he wants use his knowledge to start building own devices.",
+    urls: {
+      in: "https://www.linkedin.com/in/ayush-dileep-9420a9172/",
+    },
+    contact: {
+      tel: "+49 (0) 155 66436856",
+      mail: "hussin_elrashidy@mailbox.tu-dresden.de"
+    }
+  },
 ]
 
 
 const WhoWeAre = () => {
   return (
     <section className={"w-full flex  py-30 flex-col min-h-[1300px]"}>
+
+
+
+      <SectionTitle
+        subTitle={""}
+        title={"About us"}
+        des={""}
+        center
+      />
+
+      <UrlSection />
+
       <SectionTitle
         subTitle={"Meet the team"}
         title={"Who we are"}

@@ -10,14 +10,14 @@ export const WhoWeAreSingle = ({item}: {item:any}) => {
   const skills = item.skills;
   return (
     <div className={"w-full px-5"}>
-    <div className="w-full py-5 bg-gray-900 rounded-3xl overflow-hidden">
+    <div className="w-full py-5 bg-gray-900  overflow-hidden">
       <div className={"flex justify-center items-start w-full h-[350px] p-0"}>
-        <div className="h-[350px] w-[350px] overflow-hidden relative bg-gray-900 rounded-3xl">
-          <Image src={item.img} alt={item.img} fill className={"object-contain rounded-3xl absolute"}/>
+        <div className="h-[350px] w-[350px] overflow-hidden relative bg-gray-900 ">
+          <Image src={item.img} alt={item.img} fill className={"object-contain  absolute"}/>
         </div>
       </div>
       <div
-        className=" px-4 bg-gray py-[30px] shadow-testimonial  sm:px-[30px]"
+        className=" px-4  py-[30px] shadow-testimonial  sm:px-[30px]"
         data-wow-delay=".1s"
       >
         <h2 className={"text-white"}>
@@ -49,10 +49,12 @@ export const WhoWeAreSingle = ({item}: {item:any}) => {
         <h3 className=" mb-3 font-semibold text-white">
           Social Links
         </h3>
-        <div className={"flex flex-row gap-x-7 align-middle"}>
-          <FaGithub color={"white"} size={30}/>
-          <Link className={"text-white"} target={"_blank"} href={item.urls.gh}>Github</Link>
-        </div>
+        {item?.urls?.gh && (
+          <div className={"flex flex-row gap-x-7 align-middle"}>
+            <FaGithub color={"white"} size={30}/>
+            <Link className={"text-white"} target={"_blank"} href={item.urls.gh}>Github</Link>
+          </div>
+        )}
         <div className={"flex flex-row gap-x-7 align-middle"}>
           <FaLinkedin color={"white"} size={30}/>
           <Link className={"text-white"} target={"_blank"} href={item.urls.in}>LinkedIn</Link>
