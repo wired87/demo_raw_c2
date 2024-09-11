@@ -22,6 +22,7 @@ export const WhoWeAreSingle = ({item}: {item:any}) => {
       >
         <h2 className={"text-white"}>
           {item.name}
+
         </h2>
         <p className={"text-white mb-3"}>
           {item.role}
