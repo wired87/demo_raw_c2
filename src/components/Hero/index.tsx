@@ -15,30 +15,30 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap w-full items-center">
             <div className="w-full px-4">
               <div
-                className="hero-content w-full relative z-10000 wow fadeInUp mx-auto text-center"
+                className="hero-content w-full relative z-10000 wow fadeInUp mx-auto text-center text-white"
                 data-wow-delay=".2s"
               >
                 <div className={"w-full flex flex-col justify-center items-center"}>
                   <h1
-                    className="mb-6 z-1000 text-center md:max-w-[1000px] text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
+                    className="mb-6 z-1000 text-center  text-white md:max-w-[1000px] text-6xl text-gray-200 gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
                     Most Innovative Brain Computer Interface for your daily life
                   </h1>
-                  <p className="text-center text-3xl font-bold tracking-[0.05em] leading-slug  text-gray-400 md:max-w-[800px]">
+                  <p className="text-white text-center text-3xl font-bold tracking-[0.05em] leading-slug  text-gray-400 md:max-w-[800px]">
                     Explore unprecedented comfort
                    with the
                     <span
-                      className="bg-clip-text
+                      className="bg-clip-text text-white
                     text-gray-200 transition hover:brightness-125"
                     >{" "}C-1
                   </span>{" "}, the
                     <span
-                      className="bg-clip-text
+                      className="bg-clip-text text-white
                     text-gray-200 transition hover:brightness-125"
                     >{" "}most comfortable and Innovative
                   </span>{" "}
                      device in a
                     <span
-                      className="bg-clip-text
+                      className="bg-clip-text text-white
                     text-gray-200 transition hover:brightness-125"
                     >{" "}new world of BCI
                   </span>{" "}

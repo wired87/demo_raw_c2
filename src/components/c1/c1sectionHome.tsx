@@ -18,11 +18,12 @@ export const C1SectionHome = () => {
         <div className="md:w-1/2 w-full min-h-[400px] relative">
 
           <Image
-            src="/images/pres_light.png"
+            src="/images/device.png"
             alt="Placeholder image"
             fill
             className="object-contain"
           />
+
         </div>
       </div>
     </section>

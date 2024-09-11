@@ -42,7 +42,7 @@ const Imprint = () => {
                 alt=""
                 src="/images/imprint/icsharpemail.svg"
               />
-              <div className="flex-1 relative">info@botworld.cloud</div>
+              <div className="flex-1 relative">office@bestbrain.tech</div>
             </div>
             <div className="self-stretch flex flex-row items-start justify-start gap-[25px]">
               <div className="overflow-hidden flex flex-row items-start justify-start py-0.5 px-1 relative gap-[10px]">

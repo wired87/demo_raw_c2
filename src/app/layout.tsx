@@ -19,11 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
 
   return (
     <html suppressHydrationWarning={true} className="!scroll-smooth" lang="en">
@@ -32,7 +27,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon.ico"/>
       </head>
 
-      <body className={`dark:bg-[#000000] w-full bg-zumthor ${inter.className}`}>
+      <body className={`dark:bg-[#000000] w-full bg-zumthor ${inter.className}`} suppressHydrationWarning={true}>
           <SessionProvider>
             <ThemeProvider
               attribute="class"

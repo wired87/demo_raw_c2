@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 const Footer = () => {
@@ -34,16 +35,21 @@ const Footer = () => {
               <p className="mb-1.5 text-sectiontitle uppercase tracking-[5px]">
                 contact
               </p>
-              <a
-                href="#"
-                className="text-itemtitle font-medium text-black dark:text-white"
+              <p
+                className="text-itemtitle mb-3 font-medium text-black dark:text-white"
               >
-                info@botworld.cloud
-              </a>
+                office@bestbrain.tech
+              </p>
+              <Link
+                href="https://github.com/BestBrainOffice"
+                className="text-itemtitle font-medium text-black dark:text-white hover:text-blue700"
+              >
+                GitHub
+              </Link>
             </motion.div>
 
             <div className="flex w-full flex-col gap-8 md:flex-row md:justify-between md:gap-0 lg:w-2/3 xl:w-7/12">
-              <motion.div
+            <motion.div
                 variants={{
                   hidden: {
                     opacity: 0,

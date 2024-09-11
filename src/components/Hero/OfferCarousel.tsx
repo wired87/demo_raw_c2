@@ -26,23 +26,24 @@ export const CItem: React.FC<CItemT> = ({item}) =>  {
     if (item.design?.textColor ) {
       return item.design?.textColor
     }
-    return "text-gray-200"
+    return "gray-200"
   }
+
   const textColor = getTextColor();
   return(
-    <div  className={"border-1 border-gray-300 relative w-full md:w-[90%] flex justify-center items-center h-[500px] flex-col"}>
+    <div  className={`border-1 border-${textColor} relative w-full md:w-[90%] flex justify-center items-center h-[500px] flex-col`}>
       {
         media()
       }
       <div className={"absolute flex flex-col w-[100%] px-20 h-full p gap-y-3 bg-tp top-0 justify-center items-start"}>
-        <p className={`mb-2 z-1000 text-left md:max-w-[500px] text-3xl ${textColor} gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]`}>
+        <p className={` z-1000 mb-5 text-left md:max-w-[500px] text-3xl text-${textColor} gap-y-4 font-bold leading-tight sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]`}>
           {item.heading}</p>
-        <p className={`md:max-w-[600px] text-left ${textColor} leading-tight`}>
+        <p className={`md:max-w-[600px]   text-left text-${textColor} leading-tight`}>
           {item.des}
         </p>
         <Link
           href={item.btn.path}
-          className=" rounded-lg ml-5 bg-dark opacity-80 px-6 py-3 text-base font-medium text-white flex justify-center items-center
+          className=" transition absolute left-[5%] bottom-[20%] ml-5 bg-dark opacity-80 px-6 py-3 text-base font-medium text-white flex justify-center items-center
       duration-300 ease-in-out hover:bg-waterloo/90 dark:bg-white/10 dark:hover:bg-white/20 max-w-[300px]">
           {item.btn.text}
         </Link>
