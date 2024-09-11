@@ -1,4 +1,5 @@
 "use client"
+/*
 import { useEffect, useRef, useState } from "react";
 import RealTimeChart from "@/components/Charts/eegChart";
 import {getSynthDataAllChannels} from "@/lib/brainData/syntheticStream";
@@ -73,7 +74,7 @@ const EEGMain = () => {
     }, 1);
     return () => clearInterval(interval);
   }, [eegData]);
-  */
+
   return (
     <section className="flex flex-col items-center justify-center min-h-[1000px] w-full pt-30">
       <RealTimeChart data={eegData}/>
@@ -82,3 +83,4 @@ const EEGMain = () => {
 };
 
 export default EEGMain;
+*/

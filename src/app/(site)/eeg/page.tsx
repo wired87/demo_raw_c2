@@ -1,10 +1,9 @@
-import EEGMain from "@/components/EEG/Signal/index";
 
-
+//     <EEGMain />
 const EEGPage = () => {
 
   return(
-    <EEGMain />
+    <p> Here is nothing currently... Just me</p>
   )
 }
 export default EEGPage;
