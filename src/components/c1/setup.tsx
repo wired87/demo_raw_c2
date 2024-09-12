@@ -8,7 +8,7 @@ const setupData = [
     text: "Clamp it around the ear",
     icon: "https://www.svgrepo.com/show/65675/ear.svg"
   },{
-    text:"Tur it on",
+    text:"Turn it on",
     icon: "https://www.svgrepo.com/show/388838/turn-on.svg"
   },{
     text: "Start monitoring",

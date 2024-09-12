@@ -17,7 +17,7 @@ const data = [
     text:"Beta Waves"
   },{
     icon: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Greek_lc_gamma.svg",
-    text:"Gamme Waves"
+    text:"Gamma Waves"
   },
 ];
 
