@@ -6,10 +6,10 @@ export const UrlSection = ()=> {
       <p className="text-left text-xl  uppercase text-dark dark:text-white font-bold tracking-[0.3em]">
         For investors
       </p>
-      <a href="/deck/deck.pdf" download>
+      <a href="/deck/deck.pdf" className={"hover:text-blue-900"} download>
         Pitch Deck
       </a>
-      <Link href={"https://docs.google.com/spreadsheets/d/1oVupRCDE029bhlhDorGct9Yiv5cqgC-kngGUZhImUJ4/edit?gid=0#gid=0"}>
+      <Link className={"hover:text-blue-900"} href={"https://docs.google.com/spreadsheets/d/1oVupRCDE029bhlhDorGct9Yiv5cqgC-kngGUZhImUJ4/edit?gid=0#gid=0"}>
         Task Calculation
       </Link>
     </section>
