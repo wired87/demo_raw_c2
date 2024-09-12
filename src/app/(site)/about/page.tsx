@@ -110,7 +110,7 @@ const WhoWeAre = () => {
       <div className={
 
         "w-full grid md:grid-rows-1 grid-rows-2 md:grid-cols-2 grid-cols-1 " +
-        "items-start flex-col justify-start gap-y-7 py-30"}>
+        "items-start flex-col justify-start gap-y-7 gap-x-7 px-5 py-30"}>
 
 
         {persons.map((item, i) => (

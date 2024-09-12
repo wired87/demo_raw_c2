@@ -9,10 +9,10 @@ import { IoIosMail } from "react-icons/io";
 export const WhoWeAreSingle = ({item}: {item:any}) => {
   const skills = item.skills;
   return (
-    <div className={"w-full px-5"}>
-    <div className="w-full py-5 bg-gray-900  overflow-hidden">
-      <div className={"flex justify-center items-start w-full h-[350px] p-0"}>
-        <div className="h-[350px] w-[350px] overflow-hidden relative bg-gray-900 ">
+    <div className={"w-full px-5 bg-strokedark rounded-2xl overflow-hidden"}>
+    <div className="w-full py-5 bg-strokedark  overflow-hidden">
+      <div className={"flex justify-center bg-strokedark items-start w-full h-[350px] p-0"}>
+        <div className="h-[350px] w-[350px] overflow-hidden  relative bg-strokedark ">
           <Image src={item.img} alt={item.img} fill className={"object-contain  absolute"}/>
         </div>
       </div>
