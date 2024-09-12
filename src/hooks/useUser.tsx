@@ -1,6 +1,5 @@
 import {useState} from "react";
-import {UserInterface} from "../interfaces/userInterface";
-
+/*
 export const useUser = () => {
   const [user, setUser] = useState<UserInterface | null>(null)
 
@@ -52,3 +51,5 @@ export const useUser = () => {
   }
 
 }
+
+ */
