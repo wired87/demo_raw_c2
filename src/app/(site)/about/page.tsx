@@ -55,7 +55,7 @@ const persons = [
     ],
     des: "Hussin earned his Bachelor of Science in Biomedical Engineering in 2018 and continued his career at TU Dresden, " +
       "working on projects in machine learning and bioengineering. " +
-      "He is currently a Student Research Assistant at the Center for Regenerative Therapies",
+      "He is currently a Student Research Assistant at the Center for Regenerative Therapies.",
     urls: {
       gh: "https://github.com/HuRashidy",
       in: "https://www.linkedin.com/in/hussin-elrashidy/",
