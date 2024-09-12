@@ -20,10 +20,12 @@ const persons = [
       "TypeScript",
       "React",
       "React Native",
-      "Backend",
+      "Backend(Django)",
       "Marketing",
       "Vectors",
-      "Neural decoder"
+      "Business development",
+      "GCP",
+      "AWS",
     ],
     des: "Through his online businesses and his software company, BotWorld.cloud, " +
       "Benedikt has gained extensive experience in management and software development. " +
@@ -68,10 +70,16 @@ const persons = [
     name: "Ayush Dileep",
     role: "CTO",
     skills: [
-      "Hardware",
-      "C",
-      "BCI knowledge & inthusiast",
+      "ADS - RFE Design",
+      "VHDL ",
+      "LTSPICE",
+      "Matlab ",
       "Python",
+      "Xilinx Vivado",
+      "C/C++ and Assembly level programming",
+      "IOT",
+      "Sales",
+      "Microsoft",
     ],
     des: "Ayush has been fascinated by BCI and the opportunities behind it since he was a small kid. Today, " +
       "with emerging research and growing interest, he wants use his knowledge to start building own devices.",
