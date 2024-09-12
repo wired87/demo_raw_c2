@@ -1,4 +1,4 @@
-import {useUser} from "./useUser";
+/*import {useUser} from "./useUser";
 import React, {Dispatch, memo, SetStateAction, useCallback} from "react";
 import {useLoading} from "./useLoading";
 import {useJwt} from "./useJwt";
@@ -79,4 +79,4 @@ const MainContextProvider: React.FC<any> = (
   );
 }
 
-export default memo(MainContextProvider);
+export default memo(MainContextProvider);*/
