@@ -1,14 +1,11 @@
 import {useUser} from "./useUser";
 import React, {Dispatch, memo, SetStateAction, useCallback} from "react";
-import {MainContextProviderInterface} from "../interfaces/HookInterface";
-import { MainContext } from "../Context";
 import {useLoading} from "./useLoading";
 import {useJwt} from "./useJwt";
-import {sendObject} from "../functions/requests/SendProcess";
 import {useShowModal, useUpperLinkBarVisible} from "./useUpperLinkBar";
 import {useNavigate} from "react-router-dom";
 
-const MainContextProvider: React.FC<MainContextProviderInterface> = (
+const MainContextProvider: React.FC<any> = (
   {
     children
   }
@@ -45,14 +42,7 @@ const MainContextProvider: React.FC<MainContextProviderInterface> = (
     if (jwtToken?.refresh && jwtToken?.access && user?.auth?.uid) {
       try {
         console.log("Data sent:", postObject);
-        response = await sendObject(
-          postObject,
-          jwtToken,
-          postUrl
-        );
-        if (response) {
-          return response
-        }
+
       } catch (e: unknown) {
         if (e instanceof Error) {
           setError(e.message);
@@ -82,9 +72,10 @@ const MainContextProvider: React.FC<MainContextProviderInterface> = (
 
 
   return(
-    <MainContext.Provider value={elements}>
+    <>
       {children}
-    </MainContext.Provider>
+    </>
+
   );
 }
 
