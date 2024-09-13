@@ -46,7 +46,6 @@ export const MainContentHome = () => {
   return(
     <>
       <Hero />
-
       {/*Placeholder graphic product presentation*/}
       <C1SectionHome />
       <Setup />
