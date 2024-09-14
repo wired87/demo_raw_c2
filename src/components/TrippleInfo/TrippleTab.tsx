@@ -31,10 +31,7 @@ export const aiTabData: FeatureTab[] = [
       "boost focus, and achieve peak cognitive performance. Its advanced sensors and AI algorithms guide you toward optimal brain activity, " +
       "enhancing productivity and mental clarity throughout the day.",
     desc2: [
-      "KI-Infrastruktur",
-      "Prozessautomatisierung",
-      "Kontinuierliche Verbesserung",
-      "Echtzeit-Verarbeitung"
+
     ],
     image: "/images/learning.jpg"
   },

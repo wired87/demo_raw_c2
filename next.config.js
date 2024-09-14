@@ -136,6 +136,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'cdn.pixabay.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+        pathname: '/**',
       },
     ]
   },

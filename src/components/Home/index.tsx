@@ -29,18 +29,21 @@ const data = [
       "It can also interact with your fitness, telehealth or smart home Apps, to make your life easier",
   },
   {
-    media: "https://cdn.pixabay.com/animation/2022/09/03/07/35/07-35-06-414_512.gif",
+    media: "https://storage.googleapis.com/images_ceegrid/2_f.png",
     heading: "Stick together electrodes",
     des: "Extend the unobtrusive C1 with our adjustable electrode extension for more complex tasks. " +
       "Just stick it into the C1, turn it on, align it to the brain area are you want to focus on and you are ready to go!" +
       " This makes the C1 a real game changer."},
 ];
 
+// const turnableChipGif: string = "https://cdn.pixabay.com/animation/2022/09/03/07/35/07-35-06-414_512.gif"
+
 const homeSubMissionHeadingData: SectionTitleT = {
   subTitle: "",
   title: "",
   des:  "",
 }
+
 export const MainContentHome = () => {
   return(
     <>
