@@ -41,9 +41,7 @@ const Contact = () => {
   useEffect(() => {
     console.log("selected",selected);
   }, [selected]);
-  const handleSliderChange = (value: number) => {
-    setFormData({ ...formData, time: value });
-  };
+
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setError(false);
@@ -52,7 +50,7 @@ const Contact = () => {
       setLoading(true);
       e.preventDefault();
       try { // 'http://localhost:3000/api/' 'https://www.botworld.cloud/api/'
-        const res = await axios.post('http://localhost:3000/api/contact/', formData);
+        const res = await axios.post('https://bestbrain.tech/api/contact/', formData);
         console.log("res: ",res);
         if (res.data.ok) {
           setSuccess(true);
@@ -176,7 +174,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    className="w-full border-b text-black placeholder-dark border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
 
                   <input
@@ -186,7 +184,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    className="w-full border-b text-black placeholder-dark border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
 
@@ -198,7 +196,7 @@ const Contact = () => {
 
                     onChange={handleChange}
                     placeholder="Subject"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    className="w-full border-b text-black placeholder-dark border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
 
                   <input
@@ -207,7 +205,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Phone (optional)"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
+                    className="w-full border-b text-black placeholder-dark border-stroke bg-transparent pb-3.5 focus:border-waterloo focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark dark:focus:border-manatee dark:focus:placeholder:text-white lg:w-1/2"
                   />
                 </div>
 
@@ -219,7 +217,7 @@ const Contact = () => {
                     value={formData.message}
                     name={"message"}
                     onChange={handleChange}
-                    className="w-full border-b border-stroke bg-transparent focus:border-waterloo
+                    className="w-full border-b text-black placeholder-dark border-stroke bg-transparent focus:border-waterloo
                       focus:placeholder:text-black focus-visible:outline-none dark:border-strokedark
                       dark:focus:border-manatee dark:focus:placeholder:text-white min-h-[150px]"
                   >

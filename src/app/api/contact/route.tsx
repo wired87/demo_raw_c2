@@ -1,4 +1,3 @@
-
 import {NextResponse} from "next/server";
 import {EmailTemplate} from "@/components/EmailTemplates/ToMe";
 import {Resend} from "resend";
