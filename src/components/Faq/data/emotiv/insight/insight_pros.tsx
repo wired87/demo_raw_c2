@@ -19,7 +19,7 @@ export const insightPros: DataTypes[] = [
 
   {
     text: "Create your personalized space",
-    paragraph: "Connect the C-1 to your smart home devices for maximized personalization of your zone.",
+    paragraph: "Connect the C1 to your smart home devices for maximized personalization of your zone.",
     icon: (<TbAnalyze size={20} color={"white"} />),  
   },
 ];

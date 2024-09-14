@@ -16,25 +16,23 @@ const data = [
   },
   {
     icon:  (<CiSettings size={40} color={"white"} />),
-    title: "Adaptable Design",
-    text: "Transform the C1 with adjustable add on electrodes to a powerful BCI",
+    title: "Adaptable Device",
+    text: "Transform the C1 with adjustable 'stick-together' - add on electrodes to a powerful BCI",
 
   },
   {
     icon:  (<CiSettings size={40} color={"white"} />),
     title: "API & SDK available",
-    text: "Expand our pre defined actions with your "
+    text: "Use our models and extend our code basis"
   },
-]
+];
 
 
 const data2 = [
   {
     icon:  (<CiSettings size={40} color={"white"} />),
     title: "Adaptive Learning",
-    text: "The C-1-BCI continuously learns from you " +
-      " and ensures that the device becomes more attuned to your " +
-      "individual needs.",
+    text: "The C1 continuously learns from you.",
   },
   {
     icon: (<CiSettings size={40} color={"white"} />),
@@ -44,9 +42,8 @@ const data2 = [
  {
     icon:  (<CiSettings size={40} color={"white"} />),
     title: "Long battery life",
-    text: "The C1 is equipped for a min life cycle of 8h",
+    text: "Min life cycle of 8h",
   },
-
 ];
 
 

@@ -15,7 +15,9 @@ interface t {
   cusBtn?: ReactNode,
 }
 
-
+const textTriggerImages = [
+  "https://cdn.pixabay.com/animation/2022/09/03/07/35/07-35-06-414_512.gif"
+]
 
 export const TextRightZ: React.FC<t> = (
   {item, index, customMotionDiv, plusMDiv, cusBtn}
@@ -23,12 +25,17 @@ export const TextRightZ: React.FC<t> = (
   const media = () => {
     if (typeof item.media === "string") {
       return(
-        <Image
-          src={item.media}
-          alt="About"
-          className={`block object-contain rounded-2xl ${item.conf?.classAdd} zoomed-image`}
-          fill
-        />
+        <>
+          <Image
+            src={item.media}
+            alt="About"
+            className={`z-5 absolute object-contain rounded-2xl ${item.conf?.classAdd} zoomed-image`}
+            fill
+          />
+          {textTriggerImages.includes(item.media) && (
+            <p className={"text-black relative tracking-[0.3em] uppercase z-10 font-bold text-3xl"}>Comming Soon</p>
+          )}
+        </>
       )
     }
     else {
@@ -154,7 +161,7 @@ export const TextRightZ: React.FC<t> = (
             whileInView="visible"
             transition={{ duration: 1, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_right h-full relative mx-auto aspect-[588/526.5] md:block md:w-1/2 w-full"
+            className="animate_right items-center justify-center flex h-full relative mx-auto aspect-[588/526.5] md:w-1/2 w-full"
           >
             {media()}
           </motion.div>

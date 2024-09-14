@@ -11,30 +11,29 @@ import {C1SectionHome} from "@/components/c1/c1sectionHome";
 import {Setup} from "@/components/c1/setup";
 import FAQ from "@/components/Faq/FAQ";
 import {botFaqData} from "@/components/Faq/FAQ/faqData";
+import TrippleTab from "@/components/TrippleInfo/TrippleTab";
 
 const data = [
   {
     media: "/images/mission/check.jpg",
     heading: "Comprehensive Health and Brain Monitoring",
-    des: "Integrate advanced brain and body monitoring into your daily routine with the C-1. " +
-      "Featuring 12 EEG and 2 ECG channels, this compact device delivers detailed insights into your mental state, " +
-      "neuronal activity, heart rate, and more, helping you stay in tune with your health and well-being.",
+    des: "The wide spectrum of sensors and electrodes " +
+      "with maximized comfort provide detailed insights about your mental state, neuronal activity, heart rate, muscle movement and more," +
+      "helping you stay in tune with your sports, health and well-being."
   },
   {
     media: "/images/mission/smartHome.png",
-    heading: "Interact with your Apps",
-    des: "Enhance your living environment with the C-1’s third-party-app connectivity. " +
-      "By monitoring your mental and physical states, the C-1 can interact with your Apps, " +
-      "automate actions in your home, " +
-      "such as dimming lights when you’re ready to sleep or adjusting the temperature for optimal comfort.",
+    heading: "Real time communication",
+    des: "Enhance your living environment with the C1’s third-party-app connectivity." +
+      "By monitoring your mental and physical states, the C1 is not just a game changer in digital health. " +
+      "It can also interact with your fitness, telehealth or smart home Apps, to make your life easier",
   },
   {
-    media: "/images/mission/os.jpg",
-    heading: "Not just a normal device",
-    des: "The C-1 features an advanced real-time operating system designed for mobile BCI. " +
-      "This OS ensures fast processing of brain and body data, " +
-      "providing users with immediate insights. It prioritizes privacy by processing data " +
-      "locally on the device, allowing users full control over their information."},
+    media: "https://cdn.pixabay.com/animation/2022/09/03/07/35/07-35-06-414_512.gif",
+    heading: "Stick together electrodes",
+    des: "Extend the unobtrusive C1 with our adjustable electrode extension for more complex tasks. " +
+      "Just stick it into the C1, turn it on, align it to the brain area are you want to focus on and you are ready to go!" +
+      " This makes the C1 a real game changer."},
 ];
 
 const homeSubMissionHeadingData: SectionTitleT = {
@@ -51,6 +50,7 @@ export const MainContentHome = () => {
       <Setup />
       <Mission data={data} subHeading={homeSubMissionHeadingData}/>
       <FrequencyBandCheck />
+      <TrippleTab  titleOne={"Accident & Issues"} titleThree={}/>
       <Pros  data={insightPros} data2={insightPros2} faq={false}/>
       <FAQ  data={botFaqData}/>
       <MobileSection />
@@ -67,6 +67,11 @@ export const MainContentHome = () => {
  *       <SingleNewsSection data={whatDoBCI} />
  *       <InfiniteLogo />
  *       <Contact />
+ *
+ *       digital health
+ *       remote monitoring
+ *       accident prevention
+ *
  */
 /*
 const data = [

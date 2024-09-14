@@ -132,6 +132,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'media.assettype.com',
         pathname: '/**',
+      },{
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+        pathname: '/**',
       },
     ]
   },
