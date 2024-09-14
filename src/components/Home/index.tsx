@@ -50,7 +50,7 @@ export const MainContentHome = () => {
       <Setup />
       <Mission data={data} subHeading={homeSubMissionHeadingData}/>
       <FrequencyBandCheck />
-      <TrippleTab  titleOne={"Accident & Issues"} titleThree={}/>
+      <TrippleTab  titleOne={"Accident & Issues"} titleThree={"Cognitive Enhancement and Focus"} titleTwo={"Digital Health"}/>
       <Pros  data={insightPros} data2={insightPros2} faq={false}/>
       <FAQ  data={botFaqData}/>
       <MobileSection />

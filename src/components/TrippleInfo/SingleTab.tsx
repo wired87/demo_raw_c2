@@ -24,7 +24,7 @@ export const getPoints = (points: string[] | undefined) => {
 
 
 const SingleTab = ({ featureTab }: { featureTab: FeatureTab }) => {
-  const { title, desc1, desc2, image } = featureTab;
+  const { title, desc1, desc2, image, alt } = featureTab;
 
   const getImg = () => {
     if (typeof image === "string") {
@@ -34,12 +34,13 @@ const SingleTab = ({ featureTab }: { featureTab: FeatureTab }) => {
       if (image)
         return(
 
-          <Image src={image} alt={title} fill className="dark:hidden rounded-2xl" />
+          <Image unoptimized src={image} alt={alt || image} fill className="rounded-2xl" />
 
         );
     }
     return image;
   }
+
 
   const getDesc2 = () => {
     if (desc2) {

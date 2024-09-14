@@ -13,7 +13,7 @@ export type FeatureTab = {
   desc1: string;
   desc2: string | string[];
   image: string | ReactNode;
-  imageDark?: string;
+  alt?: string;
 };
 
 interface FTT {
@@ -24,52 +24,42 @@ interface FTT {
 
 export const aiTabData: FeatureTab[] = [
   {
-    id: "tabTwo",
-    title: "Digital Health",
-    desc1: "Wir entwickeln effiziente und zuverlässige und auf sie zugeschnittene KI-Lösungen " +
-      "mithilfe unserer Partnertools, damit Sie sich auf Ihr " +
-      "Kerngeschäft konzentrieren können.",
+    id: "tabThree",
+    title: "Cognitive Enhancement and Focus",
+    desc1: "In a world where cognitive demands are higher than ever, the C1 helps you stay ahead by monitoring and enhancing your brain's performance. " +
+      "Whether you're working, studying, or engaging in complex tasks, the C1 provides real-time feedback on your mental state, allowing you to manage stress, " +
+      "boost focus, and achieve peak cognitive performance. Its advanced sensors and AI algorithms guide you toward optimal brain activity, " +
+      "enhancing productivity and mental clarity throughout the day.",
     desc2: [
       "KI-Infrastruktur",
       "Prozessautomatisierung",
       "Kontinuierliche Verbesserung",
-      "Echtzeit-Verarbeitung",
-
+      "Echtzeit-Verarbeitung"
     ],
-    image: "2TXNZjz0",
-    imageDark: "" // "https://elements-cover-images-0.imgix.net/804e48d0-c49f-4c35-9d56-f92803e4c65d?auto=compress%2Cformat&w=1370&fit=max&s=abbcf3f437553c2a5eb4b9905b9f2fab",
+    image: "/images/learning.jpg"
   },
   {
     id: "tabOne",
-    title: "Accident prevention",
-    desc1: 'Millions of accidents and issues every month can be attributed to Stress and Anxiety, Fatigue and Sleep ' +
-      'Disorders or Depression. These numbers could be significantly reduced if had been recognized ' +
-      'earlier by checking mental states. ' +
-      'with its unobtrusive design and real time capabilities, the C1 aims to target this problem by ' +
-      'offering AI algorithms to recognize those mental states.',
+    title: "Accident Prevention",
+    desc1: "Millions of accidents and issues every month can be attributed to stress and anxiety, fatigue and sleep " +
+      "disorders, or depression. These numbers could be significantly reduced if recognized " +
+      "earlier by checking mental states. " +
+      "With its unobtrusive design and adjustable add on electrodes, the C1 aims to target this problem by " +
+      "offering real time AI algorithms to recognize these mental states.",
     desc2: [],
-    image: "/images/brand/torch.svg", // topdpo
-    imageDark: "2TXNZjz0",
+    image: "/images/machine_worker.jpg",
+    alt: "https://de.freepik.com/fotos-kostenlos/blick-auf-einen-maennlichen-ingenieur-bei-der-arbeit-zur-feier-des-ingenieurentages_236279127.htm#fromView=search&page=1&position=3&uuid=39d0d76e-b930-471c-b142-f60858187666"
   },
-
   {
-    id: "tabThree",
+    id: "tabTwo",
     title: "Digital Health",
-    desc2: [
-      "KI-Modelle",
-      "Datenanalyse & -visualisierung",
-      "Bildverarbeitung",
-      "Support Agenten",
-      "Natürliche Sprachverarbeitung (NLP)",
-      "Gesichtserkennung",
-      "Und vieles mehr..."
-    ],
-    desc1: "Digital health is changing with more and more innovative products. The C1 goes beyond with its real time capabilities " +
-      "and wide spectrum of electrodes and sensors" +
-      "finding its path in a lot of application areas like Remote monitoring, elderly care and fitness & health tracking",
-    image: "/images/ki/sys.webp", // <FeaturesTabCarousel img={shopImg}/>,
-    imageDark: "/images/doc.jpg",
-  },
+    desc2: [],
+    desc1: "Digital health is evolving with more and more innovative products. The C1 goes beyond with its real-time capabilities " +
+      "and wide spectrum of electrodes and sensors, " +
+      "finding its path in various application areas like remote monitoring, elderly care, and fitness & health tracking by creating your digital twin.",
+    image: "/images/doc.jpg"
+  }
+
 ];
 
 
@@ -90,12 +80,14 @@ const TrippleTab: React.FC<FTT> = (
           <div className="absolute -top-16 -z-1 mx-auto h-[350px] w-[90%]">
             <Image
               fill
+              unoptimized
               className="dark:hidden"
               src="/images/shape/shape-dotted-light.svg"
               alt="Dotted Shape"
             />
             <Image
               fill
+              unoptimized
               className="hidden dark:block"
               src="/images/shape/shape-dotted-dark.svg"
               alt="Dotted Shape"
