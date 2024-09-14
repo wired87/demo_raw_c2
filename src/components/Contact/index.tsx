@@ -49,8 +49,8 @@ const Contact = () => {
     if (!loading) {
       setLoading(true);
       e.preventDefault();
-      try { // 'http://localhost:3000/api/' 'https://www.botworld.cloud/api/'
-        const res = await axios.post('https://bestbrain.tech/api/contact/', formData);
+      try { // 'http://localhost:3000/api/' 'https://www.bestbrain.tech/api/contact/'
+        const res = await axios.post('https://www.bestbrain.tech/api/contact/', formData);
         console.log("res: ",res);
         if (res.data.ok) {
           setSuccess(true);
