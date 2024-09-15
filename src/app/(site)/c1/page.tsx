@@ -1,7 +1,7 @@
 import {Video} from "@/components/Video";
 import {SliderDataT} from "@/types/carousel";
 import SubHeroCarousel from "@/components/Hero/SubHero";
-#
+
 import Contact from "@/components/Contact";
 import {C1SectionHome} from "@/components/c1/c1sectionHome";
 import {Setup} from "@/components/c1/setup";
