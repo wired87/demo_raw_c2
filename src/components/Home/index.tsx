@@ -7,11 +7,12 @@ import {FrequencyBandCheck} from "@/components/FrequencyBandCheck";
 import Contact from "../Contact";
 import Pros from "@/components/Faq";
 import {insightPros, insightPros2} from "@/components/Faq/data/emotiv/insight/insight_pros";
-import {C1SectionHome} from "@/components/c1/c1sectionHome";
-import {Setup} from "@/components/c1/setup";
+
 import FAQ from "@/components/Faq/FAQ";
 import {botFaqData} from "@/components/Faq/FAQ/faqData";
 import TrippleTab from "@/components/TrippleInfo/TrippleTab";
+import {C1SectionHome} from "@/components/c1/c1sectionHome";
+import {Setup} from "@/components/c1/setup";
 
 const data = [
   {
@@ -19,7 +20,11 @@ const data = [
     heading: "Comprehensive Health and Brain Monitoring",
     des: "The wide spectrum of sensors and electrodes " +
       "with maximized comfort provide detailed insights about your mental state, neuronal activity, heart rate, muscle movement and more," +
-      "helping you stay in tune with your sports, health and well-being."
+      "helping you stay in tune with your sports, health and well-being.",
+    btn: {
+      path: "/u1",
+      text: "Explore",
+    }
   },
   {
     media: "/images/mission/smartHome.png",
@@ -27,6 +32,10 @@ const data = [
     des: "Enhance your living environment with the C1’s third-party-app connectivity." +
       "By monitoring your mental and physical states, the C1 is not just a game changer in digital health. " +
       "It can also interact with your fitness, telehealth or smart home Apps, to make your life easier",
+    btn: {
+      path: "/ability-hand",
+      text: "Explore",
+    }
   },
   {
     media: "https://storage.googleapis.com/images_ceegrid/2_f.png",

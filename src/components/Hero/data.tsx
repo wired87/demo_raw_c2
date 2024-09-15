@@ -5,11 +5,11 @@ import {SliderDataT} from "@/types/carousel";
 
 export const newsData: SliderDataT[] = [
   {
-    video: "",
+    img: "/images/img_1.png",
     heading: "Product Announcement",
-    des: "We are happy to announce our first product C-1",
+    des: "We are happy to announce our first product C1",
     btn: {
-      path: "/#c1",
+      path: "/c1/#c1",
       text: "Track the progress",
     },
     design: {textColor: "white"}

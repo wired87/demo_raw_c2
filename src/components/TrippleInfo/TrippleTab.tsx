@@ -43,14 +43,20 @@ export const aiTabData: FeatureTab[] = [
       "earlier by checking mental states. " +
       "With its unobtrusive design and adjustable add on electrodes, the C1 aims to target this problem by " +
       "offering real time AI algorithms to recognize these mental states.",
-    desc2: [],
+    desc2: [
+      ""
+    ],
     image: "/images/machine_worker.jpg",
     alt: "https://de.freepik.com/fotos-kostenlos/blick-auf-einen-maennlichen-ingenieur-bei-der-arbeit-zur-feier-des-ingenieurentages_236279127.htm#fromView=search&page=1&position=3&uuid=39d0d76e-b930-471c-b142-f60858187666"
   },
   {
     id: "tabTwo",
     title: "Digital Health",
-    desc2: [],
+    desc2: [
+      "Fitness & Sports",
+      "Elderly Care",
+      "Remote Monitoring",
+    ],
     desc1: "Digital health is evolving with more and more innovative products. The C1 goes beyond with its real-time capabilities " +
       "and wide spectrum of electrodes and sensors, " +
       "finding its path in various application areas like remote monitoring, elderly care, and fitness & health tracking by creating your digital twin.",
