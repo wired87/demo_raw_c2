@@ -11,8 +11,7 @@ import {insightPros, insightPros2} from "@/components/Faq/data/emotiv/insight/in
 import FAQ from "@/components/Faq/FAQ";
 import {botFaqData} from "@/components/Faq/FAQ/faqData";
 import TrippleTab from "@/components/TrippleInfo/TrippleTab";
-import {C1SectionHome} from "@/components/c1/c1sectionHome";
-import {Setup} from "@/components/c1/setup";
+
 
 const data = [
   {
@@ -46,10 +45,13 @@ const data = [
 ];
 
 // const turnableChipGif: string = "https://cdn.pixabay.com/animation/2022/09/03/07/35/07-35-06-414_512.gif"
-
+/*
+  <C1SectionHome />
+      <Setup />
+ */
 const homeSubMissionHeadingData: SectionTitleT = {
-  subTitle: "",
-  title: "",
+  subTitle: "The Sortiment",
+  title: "Our Products",
   des:  "",
 }
 
@@ -58,8 +60,7 @@ export const MainContentHome = () => {
     <>
       <Hero />
       {/*Placeholder graphic product presentation*/}
-      <C1SectionHome />
-      <Setup />
+
       <Mission data={data} subHeading={homeSubMissionHeadingData}/>
       <FrequencyBandCheck />
       <TrippleTab  titleOne={"Accident & Issues"} titleThree={"Cognitive Enhancement and Focus"} titleTwo={"Digital Health"}/>

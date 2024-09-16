@@ -1,4 +1,3 @@
-import {Video} from "@/components/Video";
 import {SliderDataT} from "@/types/carousel";
 import SubHeroCarousel from "@/components/Hero/SubHero";
 
