@@ -50,7 +50,7 @@ const Contact = () => {
       setLoading(true);
       e.preventDefault();
       try { // 'http://localhost:3000/api/' 'https://www.bestbrain.tech/api/contact/'
-        const res = await axios.post('http://localhost:3000/api/contact/', formData);
+        const res = await axios.post('https://www.bestbrain.tech/api/contact/', formData);
         console.log("res: ",res);
         if (res.data.ok) {
           setSuccess(true);
