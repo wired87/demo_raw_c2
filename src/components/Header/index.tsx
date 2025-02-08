@@ -3,11 +3,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {useEffect, useState} from "react";
 
-import menuData from "./menuData";
 
 import {Logo} from "@/components/Logo";
 
 import {DefaultBtn} from "@/components/Btns/contact";
+import {menuData} from "@/components/Header/menuData";
 
 
 const Header = () => {

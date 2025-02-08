@@ -115,7 +115,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="px-4 bg-white relative md:px-8 2xl:px-0 my-15 w-full h-full border-1 dark:border-strokedark">
+      <section id={"contact"} className="px-4 bg-white relative md:px-8 2xl:px-0 my-15 w-full h-full border-1 dark:border-strokedark">
         <div className="absolute inset-0 bg-gray-300">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.954213807517!2d13.695810876795147!3d51.03546637170986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709c57778bb2587%3A0x203281e8cb8c69b1!2sKlingestra%C3%9Fe%2022%2C%2001159%20Dresden!5e0!3m2!1sde!2sde!4v1724592625371!5m2!1sde!2sde"

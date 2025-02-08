@@ -25,41 +25,62 @@ interface FTT {
 export const aiTabData: FeatureTab[] = [
   {
     id: "tabThree",
-    title: "Cognitive Enhancement and Focus",
-    desc1: "In a world where cognitive demands are higher than ever, the C1 helps you stay ahead by monitoring and enhancing your brain's performance. " +
-      "Whether you're working, studying, or engaging in complex tasks, the C1 provides real-time feedback on your mental state, allowing you to manage stress, " +
-      "boost focus, and achieve peak cognitive performance. Its advanced sensors and AI algorithms guide you toward optimal brain activity, " +
-      "enhancing productivity and mental clarity throughout the day.",
+    title: "Smart Therapeutic Cells",
+    desc1: "AI-generated synthetic cells can be programmed to detect and repair damaged tissue, " +
+      "offering new solutions in regenerative medicine.",
     desc2: [
-
+"Personalized cell-based treatments\n" +
+"\n" +
+"Faster healing with targeted repair\n" +
+"\n" +
+"Reduced risk of rejection\n" +
+"\n" +
+"Scalable production\n" +
+"\n" +
+"Non-invasive applications\n" +
+"\n" +
+"Long-term regenerative potential"
     ],
     image: "/images/learning.jpg"
   },
   {
     id: "tabOne",
-    title: "Accident Prevention",
-    desc1: "Millions of accidents and issues every month can be attributed to stress and anxiety, fatigue and sleep " +
-      "disorders, or depression. These numbers could be significantly reduced if recognized " +
-      "earlier by checking mental states. " +
-      "With its unobtrusive design and adjustable add on electrodes, the C1 aims to target this problem by " +
-      "offering real time AI algorithms to recognize these mental states.",
+    title: "Industrial Biomanufacturing",
+    desc1: "AI-designed cells can be used to produce sustainable biomaterials, replacing traditional chemical processes.",
     desc2: [
-      ""
+      "Lower environmental footprint\n",
+      "\n" +
+      "Cost-effective biomaterial production\n",
+      "\n" +
+      "Scalable for mass manufacturing\n",
+      "\n" +
+      "Biodegradable alternatives to plastics\n",
+      "\n" +
+      "Customizable biological outputs\n",
+      "\n" +
+      "Efficient and renewable resource utilization"
     ],
     image: "/images/machine_worker.jpg",
     alt: "https://de.freepik.com/fotos-kostenlos/blick-auf-einen-maennlichen-ingenieur-bei-der-arbeit-zur-feier-des-ingenieurentages_236279127.htm#fromView=search&page=1&position=3&uuid=39d0d76e-b930-471c-b142-f60858187666"
   },
   {
     id: "tabTwo",
-    title: "Digital Health",
+    title: "Neuronal Development",
     desc2: [
-      "Fitness & Sports",
-      "Elderly Care",
-      "Remote Monitoring",
+      "Win the war against disease\n" ,
+      "\n" +
+      "Adaptive learning integration\n" ,
+      "\n" +
+      "Long-term compatibility\n" +
+      "\n" +
+      "Non-invasive monitoring\n",
+      "\n" +
+      "Cognitive enhancement potential\n",
+      "\n" +
+      "Scalable applications",
+
     ],
-    desc1: "Digital health is evolving with more and more innovative products. The C1 goes beyond with its real-time capabilities " +
-      "and wide spectrum of electrodes and sensors, " +
-      "finding its path in various application areas like remote monitoring, elderly care, and fitness & health tracking by creating your digital twin.",
+    desc1: " AI-generated neural cells can improve brain-computer interfaces by enhancing connectivity and adaptability.",
     image: "/images/doc.jpg"
   }
 

@@ -1,16 +1,16 @@
-import {MainContentHome} from "@/components/Home";
 import {Metadata} from "next";
+import B1 from "@/app/(site)/b1/page";
 
 
 export const metadata: Metadata = {
-  title: "The future is now!",
-  description: "Experience the next stage of evolution up close",
+  title: "BestBrain",
+  description: "",
 };
 export default async function Home() {
 
   return (
     <main>
-      <MainContentHome />
+      <B1 />
     </main>
   );
 }

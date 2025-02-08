@@ -1,12 +1,14 @@
 "use client"
 
 
-import {UserInterface,} from "../../interfaces/userInterface";
 
 import {useNavigate} from "react-router-dom";
 import {Button} from "@mui/material";
 
-import {useUser} from "@/hooks/useUser";
+//import {useUser} from "@/hooks/useUser";
+import Sidebar from "@/components/Dashboard/components/Sidebar";
+import {useCallback, useEffect, useState} from "react";
+import {useUser} from "@nextui-org/user";
 
 
 const Dashboard = () => {
@@ -18,18 +20,18 @@ const Dashboard = () => {
   // todo if true systemerror modal pop up - refresh
   const [e, setE] = useState<string>("");
 
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    setUserData()
+    /*setUserData()
       .then(() => {
         console.log("User set...");
       })
       .catch((e) => {
         console.log("Error occurred:", e);
-      });
+      });*/
   }, []);
 
   const setUserData = async (): Promise<void> => {
@@ -54,9 +56,9 @@ const Dashboard = () => {
     }
   };
 
-  const getDashboard = async (localUser: UserInterface) => {
+  const getDashboard = async (localUser: unknown) => {
     console.log("Current user:", localUser);
-
+    /*
     try {
       const res = await axios.post(
         "https://wired66.pythonanywhere.com/dashboard/info/",
@@ -82,7 +84,7 @@ const Dashboard = () => {
         updateUser(localUser);
         saveUser(localUser);
         setUid(localUser?.auth?.uid || "");
-        dispatch(authActions.Login({ user: localUser }));
+        //dispatch(authActions.Login({ user: localUser }));
 
       } else {
         console.log("Invalid request...")
@@ -96,17 +98,17 @@ const Dashboard = () => {
       }
     } finally {
       setLoading(false);
-    }
+    }*/
   };
 
   const botTableContent = useCallback(() => {
     console.log("uid:", uid);
     return(
-      <BotsTable bots={user?.bots} user={user} loading={loading} error={e} />
+      <></>
     )
   }, [user, loading, e, user?.bots, user?.bots]);
-
-
+  //<BotsTable bots={user?.bots} user={user} loading={loading} error={e} />
+  // <Lottie options={defaultOptions(sub)} height={100} width={100} />
   const planCard = (  ) => {
     if ( user?.plan ) {
       return(
@@ -127,7 +129,7 @@ const Dashboard = () => {
             <div className="text-2xl text-white">Subscription status: { user?.plan?.status }</div>
           </div>
           <div className={"flex items-center justify-center"}>
-            <Lottie options={defaultOptions(sub)} height={100} width={100} />
+
           </div>
         </div>
       )
@@ -161,9 +163,12 @@ const Dashboard = () => {
       </div>
     )
   }
-
+  const [s_open, setOpen] = useState(false);
+  const updateOpen =() => {
+    setOpen(!s_open)
+  }
   return (
-    <Sidebar>
+    <Sidebar setSidebarOpen={updateOpen} sidebarOpen={s_open}>
       <div className="
       lg:px-[150px]
 
@@ -189,3 +194,4 @@ const Dashboard = () => {
 export default Dashboard;
 
 
+ 
