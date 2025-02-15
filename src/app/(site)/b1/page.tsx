@@ -13,6 +13,7 @@ import FAQ from "@/components/Faq/FAQ";
 import {botFaqData} from "@/components/Faq/FAQ/faqData";
 import {MobileSection} from "@/components/MobileApp/Section";
 import {SectionTitleT} from "@/types/title";
+import TestSection from "@/components/testSection";
 
 const data = [
   {
@@ -39,7 +40,16 @@ const homeSubMissionHeadingData: SectionTitleT = {
 }
 const dataS: SliderDataT[] = [
   {
-    img: "/images/testing.avif",
+    img: "",
+    heading: "Sign up for early testing!™",
+    des: "Fill out the contact form and to request exclusive early access",
+    btn: {
+      path: "/#contact",
+      text: "Contact",
+    },
+    design: {textColor: "text-black"}
+  },{
+    img: "https://www.youtube.com/watch?v=xuZVAezwEgg",
     heading: "Sign up for early testing!™",
     des: "Fill out the contact form and to request exclusive early access",
     btn: {
@@ -49,11 +59,30 @@ const dataS: SliderDataT[] = [
     design: {textColor: "text-black"}
   },
 ];
+
+
+const programSectionPros = [
+  {
+    title: "Edit ontology & Gene groups",
+  }
+]
+
+
+
+
+
 const B1 = () => {
 
   return (
     <div className={"size-full pt-10"}>
       <SubHeroCarousel data={dataS} />
+
+
+
+
+
+
+
       <C1SectionHome />
       <Setup />
       <Mission data={data} subHeading={homeSubMissionHeadingData}/>
@@ -61,6 +90,7 @@ const B1 = () => {
       <TrippleTab  titleOne={"Accident & Issues"} titleThree={"Cognitive Enhancement and Focus"} titleTwo={"Digital Health"}/>
       <Pros  data={insightPros} data2={insightPros2} faq={false}/>
       <FAQ  data={botFaqData}/>
+      <TestSection />
       <MobileSection />
       <Contact />
     </div>

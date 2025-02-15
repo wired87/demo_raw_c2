@@ -13,6 +13,10 @@ module.exports = {
         pathname: '/s/files/**'
       },{
         protocol: 'https',
+        hostname: 'cellpose.org',
+        pathname: '/s/files/**'
+      },{
+        protocol: 'https',
         hostname: 'news.mit.edu',
         pathname: '/**'
       },

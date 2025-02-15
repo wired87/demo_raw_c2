@@ -8,12 +8,11 @@ import {Button} from "@mui/material";
 //import {useUser} from "@/hooks/useUser";
 import Sidebar from "@/components/Dashboard/components/Sidebar";
 import {useCallback, useEffect, useState} from "react";
-import {useUser} from "@nextui-org/user";
 
 
 const Dashboard = () => {
 
-  const { user, saveUser, updateUser, checkUserAvailability } = useUser();
+  //const { user, saveUser, updateUser, checkUserAvailability } = useUser();
   const [loading, setLoading] = useState<boolean>(false);
   const [uid, setUid] = useState<string>("");
 
@@ -34,7 +33,7 @@ const Dashboard = () => {
       });*/
   }, []);
 
-  const setUserData = async (): Promise<void> => {
+  /*const setUserData = async (): Promise<void> => {
     setLoading(true);
 
 
@@ -98,16 +97,18 @@ const Dashboard = () => {
       }
     } finally {
       setLoading(false);
-    }*/
-  };
+    }
+  };*/
 
   const botTableContent = useCallback(() => {
     console.log("uid:", uid);
     return(
       <></>
     )
-  }, [user, loading, e, user?.bots, user?.bots]);
-  //<BotsTable bots={user?.bots} user={user} loading={loading} error={e} />
+  }, []);
+
+
+  /*<BotsTable bots={user?.bots} user={user} loading={loading} error={e} />
   // <Lottie options={defaultOptions(sub)} height={100} width={100} />
   const planCard = (  ) => {
     if ( user?.plan ) {
@@ -119,10 +120,8 @@ const Dashboard = () => {
           sm:w-full">
           <div>
             <div className="text-5xl font-semibold text-white text-bold">
-              {user?.auth?.email}
             </div>
             <div className="text-3xl font-semibold text-white text-bold">
-              {user?.plan.name}
             </div>
             <div className="text-2xl text-white">Chats remaining: { user?.plan.chatsLeft }</div>
             <div className="text-2xl text-white">Unused Bots: { user?.plan.totalBotsIncluded }</div>
@@ -137,7 +136,7 @@ const Dashboard = () => {
       return(
         <div className="px-6 justify-between bg-white  flex flex-row items-center shadow-sm bg-gradient-to-r from-cyan-500 to-blue-500
          py-4 rounded-lg text-gray-800">
-          <LoadingIndicator loading={loading}/>
+
         </div>
       )
     } else if (e && e.length > 0 ) {
@@ -162,7 +161,7 @@ const Dashboard = () => {
         </div>
       </div>
     )
-  }
+  }*/
   const [s_open, setOpen] = useState(false);
   const updateOpen =() => {
     setOpen(!s_open)
@@ -177,9 +176,7 @@ const Dashboard = () => {
       sm:px-[0]
 
       relative flex w-full mx-auto mb-12">
-        {
-          planCard()
-        }
+        
       </div>
 
       <div className="px-4 max-w-7xl mx-auto sm:px-6 bg-white lg:px-8">
@@ -194,4 +191,3 @@ const Dashboard = () => {
 export default Dashboard;
 
 
- 

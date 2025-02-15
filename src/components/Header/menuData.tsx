@@ -14,7 +14,7 @@ export const menuData: Menu[] = [
     submenu: [
       {
         id: 63,
-        title: "Visualisation",
+        title: "Cell Visualisation",
         path: "/under-construction",
         newTab: false,
       },{
