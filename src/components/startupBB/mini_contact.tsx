@@ -132,7 +132,7 @@ const MiniContact = () => {
               whileInView="visible"
               transition={{duration: 1, delay: 0.1}}
               viewport={{once: true}}
-              className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8
+              className="animate_top w-full rounded-lg p-7.5 shadow-solid-8
               dark:border-strokedark md:w-3/5 lg:w-3/4 xl:p-15"
             >
 
@@ -158,7 +158,7 @@ const MiniContact = () => {
                 <div className="mb-11.5 flex flex-col">
                   <h3 className={"bold text-black mb-8 mt-4 underline-offset-2"}>How we can help?</h3>
                   <textarea
-                    placeholder="Hi!"
+                    placeholder="Whats your concern?"
                     required
                     value={formData.message}
                     name={"message"}

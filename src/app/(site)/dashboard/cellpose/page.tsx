@@ -5,11 +5,7 @@ export default function UploadFile() {
   const [uploading, setUploading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files.length > 0) {
-      setFile(event.target?.files[0]);
-    }
-  };
+
 
   const handleUpload = async () => {
     if (!file) {
@@ -23,12 +19,7 @@ export default function UploadFile() {
     setUploading(true);
 
     try {
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await res.json();
+      const data = null
       setResponse(data);
     } catch (error) {
       console.error("Upload failed:", error);
@@ -39,7 +30,7 @@ export default function UploadFile() {
 
   return (
     <div>
-      <input type="file" onChange={handleFileChange} />
+      <input type="file" />
       <button onClick={handleUpload} disabled={uploading}>
         {uploading ? "Uploading..." : "Upload"}
       </button>
