@@ -1,16 +1,9 @@
-import {Metadata} from "next";
-import B1 from "@/app/(site)/b1/page";
+/**
+ * Prompt: yesterday, you coded a anatomical human with clickable nodes.
+ * bring it back — home route renders the engine workspace.
+ */
+import { EngineWorkspace } from "@/components/EngineWorkspace";
 
-
-export const metadata: Metadata = {
-  title: "BestBrain",
-  description: "",
-};
-export default async function Home() {
-
-  return (
-    <main>
-      <B1 />
-    </main>
-  );
+export default function Home() {
+  return <EngineWorkspace />;
 }

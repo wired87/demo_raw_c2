@@ -1,0 +1,14 @@
+{
+  "name": "firegraph-client",
+  "version": "0.1.0",
+  "description": "Three.js knowledge-graph viewer — extracted from wired87/bb_front",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "src/index.d.ts",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "three": ">=0.176.0"
+  },
+  "license": "MIT"
+}

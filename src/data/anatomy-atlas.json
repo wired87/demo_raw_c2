@@ -1,0 +1,93 @@
+{
+  "version": "1.1",
+  "schema": "uberon_holographic_atlas",
+  "description": "UBERON-mapped anatomical sub-regions with labelled SVG paths for holographic detail views.",
+  "regions": {
+    "brain": {
+      "uberon_id": "UBERON:0000955",
+      "label": "Brain",
+      "viewBox": "0 0 280 320",
+      "ols_enrich": true,
+      "sub_regions": [
+        { "id": "cerebrum", "uberon_id": "UBERON:0000956", "label": "Cerebrum", "lx": 175, "ly": 72, "d": "M140 24 C90 24 48 58 42 108 C38 148 52 178 78 196 L202 196 C228 178 242 148 238 108 C232 58 190 24 140 24 Z" },
+        { "id": "cerebral_cortex", "uberon_id": "UBERON:0000988", "label": "Cerebral cortex", "lx": 200, "ly": 48, "d": "M140 34 C100 34 68 62 64 100 C60 132 72 158 90 172 L190 172 C208 158 220 132 216 100 C212 62 180 34 140 34 Z" },
+        { "id": "thalamus", "uberon_id": "UBERON:0000960", "label": "Thalamus", "lx": 155, "ly": 128, "d": "M118 112 L118 148 L162 148 L162 112 Z" },
+        { "id": "hypothalamus", "uberon_id": "UBERON:0001898", "label": "Hypothalamus", "lx": 155, "ly": 162, "d": "M124 152 L124 172 L156 172 L156 152 Z" },
+        { "id": "hippocampus", "uberon_id": "UBERON:0002703", "label": "Hippocampus", "lx": 72, "ly": 148, "d": "M78 128 C62 138 58 158 68 178 L92 168 C88 152 84 138 78 128 Z" },
+        { "id": "amygdala", "uberon_id": "UBERON:0001870", "label": "Amygdala", "lx": 100, "ly": 178, "d": "M96 168 L96 188 L112 188 L112 168 Z" },
+        { "id": "midbrain", "uberon_id": "UBERON:0001891", "label": "Midbrain", "lx": 155, "ly": 192, "d": "M122 178 L122 202 L158 202 L158 178 Z" },
+        { "id": "pons", "uberon_id": "UBERON:0002278", "label": "Pons", "lx": 155, "ly": 218, "d": "M126 204 L126 224 L154 224 L154 204 Z" },
+        { "id": "brainstem", "uberon_id": "UBERON:0002298", "label": "Brainstem", "lx": 155, "ly": 252, "d": "M132 224 L128 278 L152 278 L148 224 Z" },
+        { "id": "cerebellum", "uberon_id": "UBERON:0002037", "label": "Cerebellum", "lx": 200, "ly": 268, "d": "M92 218 C72 228 62 252 68 278 C74 298 102 308 140 308 C178 308 206 298 212 278 C218 252 208 228 188 218 Z" }
+      ]
+    },
+    "heart": {
+      "uberon_id": "UBERON:0000948",
+      "label": "Heart",
+      "viewBox": "0 0 220 260",
+      "ols_enrich": false,
+      "sub_regions": [
+        { "id": "atrium", "uberon_id": "UBERON:0002082", "label": "Atrium", "lx": 110, "ly": 58, "d": "M110 30 C80 30 58 52 58 78 C58 98 78 112 110 112 C142 112 162 98 162 78 C162 52 140 30 110 30 Z" },
+        { "id": "left_ventricle", "uberon_id": "UBERON:0002084", "label": "Left ventricle", "lx": 72, "ly": 175, "d": "M72 118 C58 138 52 168 62 198 L98 208 C108 178 104 148 92 118 Z" },
+        { "id": "right_ventricle", "uberon_id": "UBERON:0002087", "label": "Right ventricle", "lx": 148, "ly": 175, "d": "M148 118 C162 138 168 168 158 198 L122 208 C112 178 116 148 128 118 Z" }
+      ]
+    },
+    "chest": {
+      "uberon_id": "UBERON:0000974",
+      "label": "Thorax",
+      "viewBox": "0 0 260 220",
+      "ols_enrich": false,
+      "sub_regions": [
+        { "id": "lung_left", "uberon_id": "UBERON:0002048", "label": "Left lung", "lx": 65, "ly": 110, "d": "M40 40 L40 180 L90 180 L90 40 Z" },
+        { "id": "lung_right", "uberon_id": "UBERON:0002048", "label": "Right lung", "lx": 195, "ly": 110, "d": "M170 40 L170 180 L220 180 L220 40 Z" },
+        { "id": "heart_ref", "uberon_id": "UBERON:0000948", "label": "Heart", "lx": 130, "ly": 120, "d": "M130 80 C118 80 110 92 110 108 C110 128 130 150 130 150 C130 150 150 128 150 108 C150 92 142 80 130 80 Z" }
+      ]
+    },
+    "abdomen": {
+      "uberon_id": "UBERON:0000916",
+      "label": "Abdomen",
+      "viewBox": "0 0 260 220",
+      "ols_enrich": false,
+      "sub_regions": [
+        { "id": "liver", "uberon_id": "UBERON:0002107", "label": "Liver", "lx": 175, "ly": 72, "d": "M130 48 L130 128 L220 128 L220 48 Z" },
+        { "id": "stomach", "uberon_id": "UBERON:0000945", "label": "Stomach", "lx": 75, "ly": 100, "d": "M48 72 L48 148 L112 148 L112 72 Z" },
+        { "id": "intestine", "uberon_id": "UBERON:0001242", "label": "Intestine", "lx": 130, "ly": 185, "d": "M72 158 L72 198 L188 198 L188 158 Z" }
+      ]
+    },
+    "head": {
+      "uberon_id": "UBERON:0000033",
+      "label": "Head",
+      "viewBox": "0 0 220 240",
+      "ols_enrich": false,
+      "sub_regions": [
+        { "id": "brain_ref", "uberon_id": "UBERON:0000955", "label": "Brain", "lx": 110, "ly": 95, "d": "M110 48 C78 48 54 72 54 104 C54 136 78 160 110 160 C142 160 166 136 166 104 C166 72 142 48 110 48 Z" },
+        { "id": "eye_left", "uberon_id": "UBERON:0000970", "label": "Left eye", "lx": 72, "ly": 108, "d": "M58 96 L58 118 L86 118 L86 96 Z" },
+        { "id": "eye_right", "uberon_id": "UBERON:0000970", "label": "Right eye", "lx": 148, "ly": 108, "d": "M134 96 L134 118 L162 118 L162 96 Z" }
+      ]
+    }
+  },
+  "body_part_slugs": {
+    "brain": "brain",
+    "head": "head",
+    "heart": "heart",
+    "chest": "chest",
+    "abdomen": "abdomen",
+    "neck": "head",
+    "pelvis": "abdomen",
+    "left_arm": "chest",
+    "right_arm": "chest",
+    "left_thigh": "abdomen",
+    "right_thigh": "abdomen",
+    "left_leg": "abdomen",
+    "right_leg": "abdomen",
+    "left_forearm": "chest",
+    "right_forearm": "chest",
+    "left_hand": "chest",
+    "right_hand": "chest",
+    "left_foot": "abdomen",
+    "right_foot": "abdomen",
+    "lung": "chest",
+    "liver": "abdomen",
+    "kidney": "abdomen"
+  }
+}

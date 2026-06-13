@@ -1,0 +1,374 @@
+/**
+ * Prompt: improve overall GUI design — parchment research surface, tokens, focus states.
+ */
+
+:root {
+  --acid-page: #ebe4d4;
+  --acid-page-deep: #e2d9c8;
+  --acid-page-light: #f8f4ec;
+  --acid-card: #fffdf8;
+  --acid-card-inset: #faf7f0;
+  --acid-ink: #2c2416;
+  --acid-ink-muted: #6b5d4a;
+  --acid-ink-faint: #9a8b78;
+  --acid-rule: #d8cdb8;
+  --acid-accent: #8b4513;
+  --acid-accent-soft: #f2cc8f;
+  --acid-danger: #c0392b;
+  --acid-danger-bg: #fdecea;
+  --acid-radius: 12px;
+  --acid-radius-lg: 16px;
+  --acid-shadow: 0 2px 8px rgba(44, 36, 22, 0.08);
+  --acid-font-sans: var(--font-sans, "IBM Plex Sans", system-ui, sans-serif);
+  --acid-font-mono: var(--font-mono, "IBM Plex Mono", ui-monospace, monospace);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--acid-page);
+  background-image: radial-gradient(ellipse at 18% 0%, var(--acid-page-light) 0%, var(--acid-page) 48%, var(--acid-page-deep) 100%);
+  color: var(--acid-ink);
+  font-family: var(--acid-font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+button,
+textarea,
+input,
+select {
+  font: inherit;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--acid-accent-soft);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #f2cc8f88;
+  color: var(--acid-ink);
+}
+
+/* ── Layout shell ─────────────────────────────────────────────────────── */
+
+.acid-shell {
+  min-height: 100vh;
+  color: var(--acid-ink);
+}
+
+.acid-main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 20px 72px;
+}
+
+.acid-hero {
+  margin-bottom: 8px;
+  padding: 18px 22px;
+  border-radius: var(--acid-radius-lg);
+  border: 1px solid var(--acid-rule);
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.95) 0%, rgba(250, 247, 240, 0.88) 100%);
+  box-shadow: var(--acid-shadow);
+}
+
+.acid-hero h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.acid-hero p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--acid-ink-muted);
+  max-width: 52rem;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+
+.acid-btn {
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+.acid-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.acid-btn--primary {
+  background: var(--acid-accent);
+  color: var(--acid-card);
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(139, 69, 19, 0.28);
+}
+
+.acid-btn--ghost {
+  background: transparent;
+  border: 1px solid var(--acid-rule);
+  color: var(--acid-ink-muted);
+}
+
+.acid-nav-btn {
+  border: 1px solid var(--acid-rule);
+  background: var(--acid-card-inset);
+  color: var(--acid-ink-muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.acid-nav-btn:hover {
+  background: var(--acid-card);
+  color: var(--acid-ink);
+  border-color: var(--acid-accent-soft);
+}
+
+/* ── Chunk recovery banner ────────────────────────────────────────────── */
+
+.acid-chunk-banner {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--acid-radius);
+  background: #2c2416;
+  color: #fffdf8;
+  font-size: 13px;
+  box-shadow: 0 8px 32px rgba(44, 36, 22, 0.35);
+}
+
+.acid-chunk-reload {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  background: var(--acid-accent-soft);
+  color: var(--acid-ink);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Error / loading states ───────────────────────────────────────────── */
+
+.acid-error-shell,
+.acid-loading-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.acid-error-card {
+  max-width: 480px;
+  padding: 32px;
+  border-radius: var(--acid-radius-lg);
+  border: 1px solid var(--acid-rule);
+  background: var(--acid-card);
+  box-shadow: var(--acid-shadow);
+}
+
+.acid-error-card h1 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.acid-error-card p {
+  margin: 0;
+  color: var(--acid-ink-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.acid-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.acid-loading-shell {
+  flex-direction: column;
+  gap: 16px;
+  color: var(--acid-ink-muted);
+  font-size: 14px;
+}
+
+.acid-loading-pulse {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid var(--acid-rule);
+  border-top-color: var(--acid-accent);
+  animation: acidSpin 0.85s linear infinite;
+}
+
+@keyframes acidSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Pipeline build overlay (live step yields) ─────────────────────────── */
+
+.acid-pipeline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(44, 36, 22, 0.42);
+  backdrop-filter: blur(4px);
+}
+
+.acid-pipeline-card {
+  width: min(520px, 100%);
+  max-height: min(85vh, 640px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--acid-radius-lg);
+  border: 1px solid var(--acid-rule);
+  background: var(--acid-card);
+  box-shadow: 0 20px 60px rgba(44, 36, 22, 0.28);
+}
+
+.acid-pipeline-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid var(--acid-rule);
+}
+
+.acid-pipeline-pulse {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 3px solid var(--acid-rule);
+  border-top-color: var(--acid-accent);
+  animation: acidSpin 0.85s linear infinite;
+}
+
+.acid-pipeline-bar {
+  height: 4px;
+  background: var(--acid-card-inset);
+  margin: 0 24px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.acid-pipeline-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--acid-accent), var(--acid-accent-soft));
+  transition: width 0.35s ease;
+}
+
+.acid-pipeline-steps {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 8px 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.acid-pipeline-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--acid-ink-muted);
+}
+
+.acid-pipeline-step--running {
+  background: var(--acid-card-inset);
+  color: var(--acid-ink);
+  font-weight: 500;
+}
+
+.acid-pipeline-step--done {
+  color: var(--acid-ink);
+}
+
+.acid-pipeline-step-icon {
+  width: 18px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 12px;
+  font-family: var(--acid-font-mono);
+}
+
+.acid-pipeline-step--running .acid-pipeline-step-icon {
+  color: var(--acid-accent);
+}
+
+.acid-pipeline-step--done .acid-pipeline-step-icon {
+  color: #81b29a;
+}
+
+.acid-pipeline-step-label {
+  flex: 1;
+  min-width: 0;
+}
+
+.acid-pipeline-step-meta {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--acid-font-mono);
+  color: var(--acid-ink-faint);
+}
+
+@keyframes holoScan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 28px;
+  }
+}
