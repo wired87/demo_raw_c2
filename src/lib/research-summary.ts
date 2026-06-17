@@ -1,5 +1,5 @@
 /**
- * Research summary types — mirrors server-dir/pipeline/research_summary.py
+ * Research summary types — mirrors server/pipeline/research_summary.py
  *
  * Prompt: align GUI with drug stack + ephys API payloads.
  */

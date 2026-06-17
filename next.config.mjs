@@ -1,6 +1,6 @@
 /**
  * Prompt: return a react / next project as frontend — 3 independent parts:
- * frontend (gui), server (server-dir), actual code (repo root pipeline).
+ * frontend (gui), server (server), actual code (repo root pipeline).
  */
 /** @type {import('next').NextConfig} */
 const nextConfig = {

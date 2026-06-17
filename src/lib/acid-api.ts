@@ -1,5 +1,5 @@
 /**
- * REST client for BME DRF API (`server-dir`).
+ * REST client for BME DRF API (`server`).
  *
  * Prompt: adapt anatomical structure — BRAIN_TERMS presets via GET /api/brain-terms/.
  * Prompt: NDJSON pipeline stream — live step yields for graph build loading overlay.
